@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5kU-21-3IP">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Z5r-DM-MOZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5kU-21-3IP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="t1W-t0-AYQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4a7-cC-Xlp" kind="relationship" relationship="rootViewController" id="rnA-1h-ORf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="31O-Bo-5Kx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="671.01449275362324" y="83.705357142857139"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="6M8-Hn-aJP">
+            <objects>
+                <viewController id="4a7-cC-Xlp" customClass="LoginViewController" customModule="LabsScaffolding" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="INU-fS-Snd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ProfileViewer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5PD-AN-dC8">
+                                <rect key="frame" x="20" y="148" width="374" height="41"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQk-Xf-had">
+                                <rect key="frame" x="149" y="460" width="116" height="30"/>
+                                <state key="normal" title="Sign in with Okta"/>
+                                <connections>
+                                    <action selector="signIn:" destination="4a7-cC-Xlp" eventType="touchUpInside" id="qez-xn-3z4"/>
+                                    <segue destination="aOC-qF-9qB" kind="presentation" identifier="ShowDetailProfileList" modalPresentationStyle="fullScreen" id="B6X-WH-OHW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="CQk-Xf-had" firstAttribute="centerX" secondItem="R8l-LV-vJe" secondAttribute="centerX" id="33M-xN-Icr"/>
+                            <constraint firstItem="R8l-LV-vJe" firstAttribute="trailing" secondItem="5PD-AN-dC8" secondAttribute="trailing" constant="20" id="92e-Gc-Zsm"/>
+                            <constraint firstItem="5PD-AN-dC8" firstAttribute="top" secondItem="R8l-LV-vJe" secondAttribute="top" constant="60" id="A3L-5m-35a"/>
+                            <constraint firstItem="5PD-AN-dC8" firstAttribute="leading" secondItem="R8l-LV-vJe" secondAttribute="leading" constant="20" id="Cj8-2L-Zdq"/>
+                            <constraint firstItem="CQk-Xf-had" firstAttribute="centerY" secondItem="R8l-LV-vJe" secondAttribute="centerY" id="p8n-WM-9px"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="R8l-LV-vJe"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fm5-ES-PwH"/>
+                    <connections>
+                        <segue destination="o9A-9L-jW8" kind="presentation" identifier="ModalAddProfile" id="vYb-th-yYx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fcT-Mn-ZnW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1545" y="84"/>
+        </scene>
+        <!--Profiles-->
+        <scene sceneID="3Na-TO-5aB">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profiles" id="aOC-qF-9qB" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7XU-Dw-F8B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2212" y="98"/>
+        </scene>
+        <!--Add Profile View Controller-->
+        <scene sceneID="Rcb-Kk-CcR">
+            <objects>
+                <viewController id="o9A-9L-jW8" customClass="AddProfileViewController" customModule="LabsScaffolding" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ECQ-R5-khC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="C7b-Qv-MEf">
+                                <rect key="frame" x="20" y="69" width="374" height="136"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UhE-9G-fp3">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yi1-iK-B9t">
+                                        <rect key="frame" x="0.0" y="51" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Avatar URL:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dji-1H-z5a">
+                                        <rect key="frame" x="0.0" y="102" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Your Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8x-4x-PO2">
+                                <rect key="frame" x="20" y="20" width="374" height="41"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iny-A2-ZpV">
+                                <rect key="frame" x="0.0" y="759" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem title="Cancel" id="QPd-zf-qIe">
+                                        <connections>
+                                            <action selector="cancel:" destination="o9A-9L-jW8" id="8TD-lm-QGr"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ZQn-wd-Ebp"/>
+                                    <barButtonItem title="Add" id="PxD-RX-bGd">
+                                        <connections>
+                                            <action selector="addProfile:" destination="o9A-9L-jW8" id="p87-z6-0cl"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="s8x-4x-PO2" firstAttribute="top" secondItem="Qhm-Qa-x5Q" secondAttribute="top" constant="20" id="3Su-8M-ISi"/>
+                            <constraint firstItem="Qhm-Qa-x5Q" firstAttribute="trailing" secondItem="C7b-Qv-MEf" secondAttribute="trailing" constant="20" id="7wV-1j-SH3"/>
+                            <constraint firstItem="Qhm-Qa-x5Q" firstAttribute="trailing" secondItem="s8x-4x-PO2" secondAttribute="trailing" constant="20" id="CWE-ZY-3WU"/>
+                            <constraint firstItem="C7b-Qv-MEf" firstAttribute="top" secondItem="s8x-4x-PO2" secondAttribute="bottom" constant="8" id="Hd7-FI-2EG"/>
+                            <constraint firstItem="Iny-A2-ZpV" firstAttribute="bottom" secondItem="Qhm-Qa-x5Q" secondAttribute="bottom" id="dFY-SM-QEi"/>
+                            <constraint firstItem="Iny-A2-ZpV" firstAttribute="trailing" secondItem="Qhm-Qa-x5Q" secondAttribute="trailing" id="eEW-YI-8jf"/>
+                            <constraint firstItem="C7b-Qv-MEf" firstAttribute="leading" secondItem="Qhm-Qa-x5Q" secondAttribute="leading" constant="20" id="o3G-Bl-sfO"/>
+                            <constraint firstItem="s8x-4x-PO2" firstAttribute="leading" secondItem="Qhm-Qa-x5Q" secondAttribute="leading" constant="20" id="wDJ-jB-J5T"/>
+                            <constraint firstItem="Iny-A2-ZpV" firstAttribute="leading" secondItem="Qhm-Qa-x5Q" secondAttribute="leading" id="zL2-65-RPg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Qhm-Qa-x5Q"/>
+                    </view>
+                    <connections>
+                        <outlet property="avatarURLTextField" destination="Dji-1H-z5a" id="ndo-Kg-vgf"/>
+                        <outlet property="emailTextField" destination="Yi1-iK-B9t" id="t5e-8a-YIE"/>
+                        <outlet property="nameTextField" destination="UhE-9G-fp3" id="lQ2-Bv-bL7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ewZ-5N-Q8F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2355" y="-376"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "OktaAuth",
+        "repositoryURL": "git@github.com:SpencerCurtis/OktaAuth.git",
+        "state": {
+          "branch": null,
+          "revision": "5285ed31593ca4cb0b2a2b2a23678d00e5d0e9db",
+          "version": "0.1.9"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
