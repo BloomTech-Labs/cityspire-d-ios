@@ -13,7 +13,7 @@ struct Profile: Codable {
     let id: String
     let email: String
     let name: String
-    let avatarURL: URL
+    let avatarURL: URL?
     var avatarImage: UIImage? = nil
     
     enum CodingKeys: String, CodingKey {

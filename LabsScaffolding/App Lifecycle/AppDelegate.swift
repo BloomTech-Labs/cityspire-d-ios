@@ -16,9 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        OktaAuth.shared.setUpConfiguration(baseURL: URL(string: "https://dev-886474.okta.com/")!,
-                                           clientID: "0oafca90iqbWwsV0R4x6",
+        OktaAuth.shared.setUpConfiguration(baseURL: URL(string: "https://auth.lambdalabs.dev/")!,
+                                           clientID: "0oalwkxvqtKeHBmLI4x6",
                                            redirectURI: "labs://scaffolding/implicit/callback")
+        
+        _ = ProfileController.shared
         return true
     }
 

@@ -24,13 +24,11 @@ class ProfileListViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: .oktaAuthenticationSuccessful, object: nil)
-        
     }
     
     @objc func refresh() {
         profileController.getAllProfiles {
-            print("Finished")
+            self.tableView.reloadData()
         }
     }
     

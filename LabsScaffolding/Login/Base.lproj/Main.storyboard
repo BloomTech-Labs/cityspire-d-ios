@@ -44,7 +44,6 @@
                                 <state key="normal" title="Sign in with Okta"/>
                                 <connections>
                                     <action selector="signIn:" destination="4a7-cC-Xlp" eventType="touchUpInside" id="qez-xn-3z4"/>
-                                    <segue destination="aOC-qF-9qB" kind="presentation" identifier="ShowDetailProfileList" modalPresentationStyle="fullScreen" id="B6X-WH-OHW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -61,6 +60,7 @@
                     <navigationItem key="navigationItem" id="fm5-ES-PwH"/>
                     <connections>
                         <segue destination="o9A-9L-jW8" kind="presentation" identifier="ModalAddProfile" id="vYb-th-yYx"/>
+                        <segue destination="aOC-qF-9qB" kind="presentation" identifier="ShowDetailProfileList" modalPresentationStyle="fullScreen" id="Tfb-bT-2YH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcT-Mn-ZnW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -70,10 +70,12 @@
         <!--Profiles-->
         <scene sceneID="3Na-TO-5aB">
             <objects>
-                <viewControllerPlaceholder storyboardName="Profiles" id="aOC-qF-9qB" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Profiles" id="aOC-qF-9qB" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="LNe-Yc-RsA"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7XU-Dw-F8B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2212" y="98"/>
+            <point key="canvasLocation" x="2231" y="84"/>
         </scene>
         <!--Add Profile View Controller-->
         <scene sceneID="Rcb-Kk-CcR">

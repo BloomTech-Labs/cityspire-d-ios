@@ -17,7 +17,8 @@ class ProfileDetailViewController: UIViewController {
     var profileController: ProfileController = ProfileController.shared
     var profile: Profile?
 
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
         updateViews()
     }
     
@@ -31,8 +32,8 @@ class ProfileDetailViewController: UIViewController {
         
         if let avatarImage = profile.avatarImage {
             avatarImageView.image = avatarImage
-        } else {
-            profileController.image(for: profile.avatarURL, completion: { [weak self] (avatarImage) in
+        } else if let avatarURL = profile.avatarURL {
+            profileController.image(for: avatarURL, completion: { [weak self] (avatarImage) in
                 self?.avatarImageView.image = avatarImage
             })
         }

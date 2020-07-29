@@ -13,15 +13,22 @@ class ProfileController {
     
     static let shared = ProfileController()
     
-    var profiles: [Profile] = []
+    private(set) var profiles: [Profile] = []
     
     private let baseURL = URL(string: "https://labs-api-starter.herokuapp.com/")!
     
     private init() {
-   
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(refreshProfiles),
+                                               name: .oktaAuthenticationSuccessful,
+                                               object: nil)
     }
     
-    func getAllProfiles(completion: @escaping () -> Void) {
+    @objc func refreshProfiles() {
+        getAllProfiles()
+    }
+    
+    func getAllProfiles(completion: @escaping () -> Void = {}) {
         
         guard let oktaCredentials = OktaAuth.shared.oktaCredentials else {
             completion()
@@ -32,7 +39,7 @@ class ProfileController {
         let requestURL = baseURL.appendingPathComponent("profiles")
         var request = URLRequest(url: requestURL)
         
-        request.addValue("Bearer \(oktaCredentials.accessToken)", forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer \(oktaCredentials.idToken)", forHTTPHeaderField: "Authorization")
         
         let dataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
             
@@ -97,7 +104,7 @@ class ProfileController {
             .appendingPathComponent(userID)
         var request = URLRequest(url: requestURL)
         
-        request.addValue("Bearer \(oktaCredentials.accessToken)", forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer \(oktaCredentials.idToken)", forHTTPHeaderField: "Authorization")
         
         let dataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
             
@@ -156,7 +163,7 @@ class ProfileController {
         let requestURL = baseURL.appendingPathComponent("profiles")
         var request = URLRequest(url: requestURL)
         request.httpMethod = "POST"
-        request.addValue("Bearer \(oktaCredentials.accessToken)", forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer \(oktaCredentials.idToken)", forHTTPHeaderField: "Authorization")
         
         do {
             request.httpBody = try JSONEncoder().encode(profile)
@@ -188,7 +195,6 @@ class ProfileController {
                 completion()
             }
         }
-        
         dataTask.resume()
     }
     
@@ -196,18 +202,23 @@ class ProfileController {
         let dataTask = URLSession.shared.dataTask(with: url) { (data, _, error) in
             if let error = error {
                 NSLog("Error fetching image for url: \(url.absoluteString), error: \(error)")
-                completion(nil)
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
                 return
             }
             
             guard let data = data,
                 let image = UIImage(data: data) else {
-                    completion(nil)
+                    DispatchQueue.main.async {
+                        completion(nil)
+                    }
                     return
             }
-            completion(image)
+            DispatchQueue.main.async {
+                completion(image)
+            }
         }
-        
         dataTask.resume()
     }
 }
