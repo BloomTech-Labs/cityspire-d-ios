@@ -15,18 +15,19 @@ class ProfileListViewController: UIViewController {
     
     var profileController = ProfileController.shared
     
+    // MARK: - View Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         
+        refresh()
     }
     
-    @objc func refresh() {
+    // MARK: - Private Methods
+    
+    private func refresh() {
         profileController.getAllProfiles {
             self.tableView.reloadData()
         }
@@ -58,6 +59,7 @@ extension ProfileListViewController: UITableViewDelegate, UITableViewDataSource 
         
         let profile = profileController.profiles[indexPath.row]
         cell.textLabel?.text = profile.name
+        cell.detailTextLabel?.text = profile.email
         
         return cell
     }

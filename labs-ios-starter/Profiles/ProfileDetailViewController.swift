@@ -10,22 +10,33 @@ import UIKit
 
 class ProfileDetailViewController: UIViewController {
 
+    // MARK: - Properties and Outlets
+    
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
     var profileController: ProfileController = ProfileController.shared
     var profile: Profile?
+    
+    // MARK: - View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
     }
     
+    // MARK: - Private Methods
+    
+    
+    // MARK: View Setup
+    
     private func updateViews() {
         
         guard let profile = profile,
             isViewLoaded else { return }
+        
+        title = "Details"
         
         nameLabel.text = profile.name
         emailLabel.text = profile.email

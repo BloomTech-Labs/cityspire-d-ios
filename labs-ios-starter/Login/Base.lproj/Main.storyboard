@@ -12,8 +12,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5kU-21-3IP" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="t1W-t0-AYQ">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="t1W-t0-AYQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -25,22 +25,16 @@
             </objects>
             <point key="canvasLocation" x="671.01449275362324" y="83.705357142857139"/>
         </scene>
-        <!--Login View Controller-->
+        <!--ProfileViewer-->
         <scene sceneID="6M8-Hn-aJP">
             <objects>
-                <viewController id="4a7-cC-Xlp" customClass="LoginViewController" customModule="LabsScaffolding" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4a7-cC-Xlp" customClass="LoginViewController" customModule="labs_ios_starter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="INU-fS-Snd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ProfileViewer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5PD-AN-dC8">
-                                <rect key="frame" x="20" y="148" width="374" height="41"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQk-Xf-had">
-                                <rect key="frame" x="149" y="460" width="116" height="30"/>
+                                <rect key="frame" x="149" y="486" width="116" height="30"/>
                                 <state key="normal" title="Sign in with Okta"/>
                                 <connections>
                                     <action selector="signIn:" destination="4a7-cC-Xlp" eventType="touchUpInside" id="qez-xn-3z4"/>
@@ -49,15 +43,12 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="CQk-Xf-had" firstAttribute="centerX" secondItem="R8l-LV-vJe" secondAttribute="centerX" id="33M-xN-Icr"/>
-                            <constraint firstItem="R8l-LV-vJe" firstAttribute="trailing" secondItem="5PD-AN-dC8" secondAttribute="trailing" constant="20" id="92e-Gc-Zsm"/>
-                            <constraint firstItem="5PD-AN-dC8" firstAttribute="top" secondItem="R8l-LV-vJe" secondAttribute="top" constant="60" id="A3L-5m-35a"/>
-                            <constraint firstItem="5PD-AN-dC8" firstAttribute="leading" secondItem="R8l-LV-vJe" secondAttribute="leading" constant="20" id="Cj8-2L-Zdq"/>
-                            <constraint firstItem="CQk-Xf-had" firstAttribute="centerY" secondItem="R8l-LV-vJe" secondAttribute="centerY" id="p8n-WM-9px"/>
+                            <constraint firstItem="CQk-Xf-had" firstAttribute="centerX" secondItem="INU-fS-Snd" secondAttribute="centerXWithinMargins" id="5R1-zz-EZZ"/>
+                            <constraint firstItem="CQk-Xf-had" firstAttribute="centerY" secondItem="INU-fS-Snd" secondAttribute="centerYWithinMargins" id="ADM-g9-0Ut"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="R8l-LV-vJe"/>
                     </view>
-                    <navigationItem key="navigationItem" id="fm5-ES-PwH"/>
+                    <navigationItem key="navigationItem" title="ProfileViewer" id="fm5-ES-PwH"/>
                     <connections>
                         <segue destination="o9A-9L-jW8" kind="presentation" identifier="ModalAddProfile" id="vYb-th-yYx"/>
                         <segue destination="aOC-qF-9qB" kind="presentation" identifier="ShowDetailProfileList" modalPresentationStyle="fullScreen" id="Tfb-bT-2YH"/>
@@ -80,7 +71,7 @@
         <!--Add Profile View Controller-->
         <scene sceneID="Rcb-Kk-CcR">
             <objects>
-                <viewController id="o9A-9L-jW8" customClass="AddProfileViewController" customModule="LabsScaffolding" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="o9A-9L-jW8" customClass="AddProfileViewController" customModule="labs_ios_starter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ECQ-R5-khC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

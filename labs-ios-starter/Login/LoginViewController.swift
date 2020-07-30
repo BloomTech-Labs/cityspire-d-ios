@@ -11,7 +11,7 @@ import OktaAuth
 
 class LoginViewController: UIViewController {
     
-    
+    let profileController = ProfileController.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
     
     @objc func checkForExistingProfile() {
         
-        ProfileController.shared.checkForExistingLoggedInUserProfile { [weak self] (exists) in
+        profileController.checkForExistingLoggedInUserProfile { [weak self] (exists) in
             
             guard let self = self,
                 self.presentedViewController == nil else { return }
@@ -42,14 +42,17 @@ class LoginViewController: UIViewController {
         }
     }
     
+    // MARK: - Navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ModalAddProfile" {
             guard let addProfileVC = segue.destination as? AddProfileViewController else { return }
-            
             addProfileVC.delegate = self
         }
     }
 }
+
+// MARK: - Add Profile Delegate
 
 extension LoginViewController: AddProfileDelegate {
     func profileWasAdded() {

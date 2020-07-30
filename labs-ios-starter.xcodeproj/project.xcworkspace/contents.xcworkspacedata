@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/spencercurtis/Documents/Developing/Lambda School/labs-ios-starter/labs-ios-starter.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>
