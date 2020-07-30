@@ -25,3 +25,8 @@ struct Profile: Codable {
         case avatarURL = "avatarUrl"
     }
 }
+
+struct ProfileWithMessage: Codable {
+    let profile: Profile
+    let message: String?
+}

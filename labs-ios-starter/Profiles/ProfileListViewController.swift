@@ -43,6 +43,7 @@ class ProfileListViewController: UIViewController {
                     return
             }
             
+            profileDetailVC.isUsersProfile = false
             profileDetailVC.profile = profileController.profiles[indexPath.row]
         }
     }

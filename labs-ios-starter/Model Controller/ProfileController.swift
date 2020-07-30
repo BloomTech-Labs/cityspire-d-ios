@@ -13,6 +13,7 @@ class ProfileController {
     
     static let shared = ProfileController()
     
+    private(set) var authenticatedUserProfile: Profile?
     private(set) var profiles: [Profile] = []
     
     private let baseURL = URL(string: "https://labs-api-starter.herokuapp.com/")!
@@ -77,17 +78,24 @@ class ProfileController {
         dataTask.resume()
     }
     
-    func checkForExistingLoggedInUserProfile(completion: @escaping (Bool) -> Void) {
+    func getAuthenticatedUserProfile(completion: @escaping () -> Void = { }) {
         guard let userID = OktaAuth.shared.oktaCredentials?.userID else {
-            completion(false)
+            completion()
             NSLog("UserID does not exist. Unable to get logged in profile from API")
             return
         }
         
         getSingleProfile(userID) { (profile) in
-            DispatchQueue.main.async {            
-                completion(profile != nil)
+            self.authenticatedUserProfile = profile
+            DispatchQueue.main.async {
+                completion()
             }
+        }
+    }
+    
+    func checkForExistingAuthenticatedUserProfile(completion: @escaping (Bool) -> Void) {
+        getAuthenticatedUserProfile {
+            completion(self.authenticatedUserProfile != nil)
         }
     }
     
@@ -141,6 +149,70 @@ class ProfileController {
         dataTask.resume()
     }
     
+    func updateAuthenticatedUserProfile(_ profile: Profile, with name: String, email: String, avatarURL: URL, completion: @escaping (Profile) -> Void) {
+        
+        defer {
+            DispatchQueue.main.async {
+                completion(profile)
+            }
+        }
+        
+        guard let oktaCredentials = OktaAuth.shared.oktaCredentials else {
+            NSLog("Credentials do not exist. Unable to update authenticated user profile in API")
+            return
+        }
+        
+        let requestURL = baseURL
+            .appendingPathComponent("profiles")
+        
+        var request = URLRequest(url: requestURL)
+        request.httpMethod = "PUT"
+        request.addValue("Bearer \(oktaCredentials.idToken)", forHTTPHeaderField: "Authorization")
+        
+        do {
+            request.httpBody = try JSONEncoder().encode(profile)
+        } catch {
+            NSLog("Error encoding profile JSON: \(error)")
+            return
+        }
+        
+        let dataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            
+            var profile = profile
+            
+            defer {
+                DispatchQueue.main.async {
+                    completion(profile)
+                }
+            }
+            
+            if let error = error {
+                NSLog("Error adding profile: \(error)")
+                return
+            }
+            
+            if let response = response as? HTTPURLResponse,
+                response.statusCode != 200 {
+                NSLog("Returned status code is not the expected 200. Instead it is \(response.statusCode)")
+                return
+            }
+            
+            guard let data = data else {
+                NSLog("No data returned from updating profile")
+                return
+            }
+            
+            do {
+                profile = try JSONDecoder().decode(ProfileWithMessage.self, from: data).profile
+                self.authenticatedUserProfile = profile
+            } catch {
+                NSLog("Error decoding `ProfileWithMessage`: \(error)")
+            }
+        }
+        
+        dataTask.resume()
+    }
+    
     func createProfile(with email: String, name: String, avatarURL: URL) -> Profile? {
         guard let oktaCredentials = OktaAuth.shared.oktaCredentials,
             let userID = oktaCredentials.userID else {
@@ -149,6 +221,8 @@ class ProfileController {
         }
         return Profile(id: userID, email: email, name: name, avatarURL: avatarURL)
     }
+    
+    // NOTE: This method is unused, but left as an example for creating a profile on the scaffolding backend.
     
     func addProfile(_ profile: Profile, completion: @escaping () -> Void) {
         

@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
     
     @objc func checkForExistingProfile() {
         
-        profileController.checkForExistingLoggedInUserProfile { [weak self] (exists) in
+        profileController.checkForExistingAuthenticatedUserProfile { [weak self] (exists) in
             
             guard let self = self,
                 self.presentedViewController == nil else { return }
