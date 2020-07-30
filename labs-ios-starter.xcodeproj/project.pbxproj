@@ -26,7 +26,7 @@
 /* Begin PBXFileReference section */
 		463AD24224CF275900447BB8 /* ProfileDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailViewController.swift; sourceTree = "<group>"; };
 		463AD24424CF2CDB00447BB8 /* AddProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProfileViewController.swift; sourceTree = "<group>"; };
-		466C4270249A8748007D033E /* LabsScaffolding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LabsScaffolding.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		466C4270249A8748007D033E /* labs-ios-starter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "labs-ios-starter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		466C4273249A8748007D033E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		466C4275249A8748007D033E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		466C427A249A8748007D033E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -67,7 +67,7 @@
 		466C4267249A8748007D033E = {
 			isa = PBXGroup;
 			children = (
-				466C4272249A8748007D033E /* LabsScaffolding */,
+				466C4272249A8748007D033E /* labs-ios-starter */,
 				466C4271249A8748007D033E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -75,12 +75,12 @@
 		466C4271249A8748007D033E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				466C4270249A8748007D033E /* LabsScaffolding.app */,
+				466C4270249A8748007D033E /* labs-ios-starter.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		466C4272249A8748007D033E /* LabsScaffolding */ = {
+		466C4272249A8748007D033E /* labs-ios-starter */ = {
 			isa = PBXGroup;
 			children = (
 				46BEB4EB24C98EB400FE0CD1 /* Model */,
@@ -93,7 +93,7 @@
 				466C4281249A8749007D033E /* Info.plist */,
 				466C4287249A889F007D033E /* File Organization.md */,
 			);
-			path = LabsScaffolding;
+			path = "labs-ios-starter";
 			sourceTree = "<group>";
 		};
 		46BEB4EA24C98EA300FE0CD1 /* Helpers */ = {
@@ -143,9 +143,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		466C426F249A8748007D033E /* LabsScaffolding */ = {
+		466C426F249A8748007D033E /* labs-ios-starter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 466C4284249A8749007D033E /* Build configuration list for PBXNativeTarget "LabsScaffolding" */;
+			buildConfigurationList = 466C4284249A8749007D033E /* Build configuration list for PBXNativeTarget "labs-ios-starter" */;
 			buildPhases = (
 				466C426C249A8748007D033E /* Sources */,
 				466C426D249A8748007D033E /* Frameworks */,
@@ -155,12 +155,12 @@
 			);
 			dependencies = (
 			);
-			name = LabsScaffolding;
+			name = "labs-ios-starter";
 			packageProductDependencies = (
 				46BEB4DE24C8F88C00FE0CD1 /* OktaAuth */,
 			);
 			productName = LabsScaffolding;
-			productReference = 466C4270249A8748007D033E /* LabsScaffolding.app */;
+			productReference = 466C4270249A8748007D033E /* labs-ios-starter.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -178,7 +178,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 466C426B249A8748007D033E /* Build configuration list for PBXProject "LabsScaffolding" */;
+			buildConfigurationList = 466C426B249A8748007D033E /* Build configuration list for PBXProject "labs-ios-starter" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -194,7 +194,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				466C426F249A8748007D033E /* LabsScaffolding */,
+				466C426F249A8748007D033E /* labs-ios-starter */,
 			);
 		};
 /* End PBXProject section */
@@ -405,7 +405,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		466C426B249A8748007D033E /* Build configuration list for PBXProject "LabsScaffolding" */ = {
+		466C426B249A8748007D033E /* Build configuration list for PBXProject "labs-ios-starter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				466C4282249A8749007D033E /* Debug */,
@@ -414,7 +414,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		466C4284249A8749007D033E /* Build configuration list for PBXNativeTarget "LabsScaffolding" */ = {
+		466C4284249A8749007D033E /* Build configuration list for PBXNativeTarget "labs-ios-starter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				466C4285249A8749007D033E /* Debug */,
