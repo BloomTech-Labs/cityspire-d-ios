@@ -41,4 +41,18 @@ class LoginViewController: UIViewController {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ModalAddProfile" {
+            guard let addProfileVC = segue.destination as? AddProfileViewController else { return }
+            
+            addProfileVC.delegate = self
+        }
+    }
+}
+
+extension LoginViewController: AddProfileDelegate {
+    func profileWasAdded() {
+        checkForExistingProfile()
+    }
 }

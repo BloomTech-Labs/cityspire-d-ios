@@ -124,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				46BEB4E424C98CDC00FE0CD1 /* LoginViewController.swift */,
+				463AD24424CF2CDB00447BB8 /* AddProfileViewController.swift */,
 				466C4279249A8748007D033E /* Main.storyboard */,
 			);
 			path = Login;
@@ -134,7 +135,6 @@
 			children = (
 				46BEB4E824C98DAF00FE0CD1 /* ProfileListViewController.swift */,
 				463AD24224CF275900447BB8 /* ProfileDetailViewController.swift */,
-				463AD24424CF2CDB00447BB8 /* AddProfileViewController.swift */,
 				46BEB4F024C98F0D00FE0CD1 /* Profiles.storyboard */,
 			);
 			path = Profiles;

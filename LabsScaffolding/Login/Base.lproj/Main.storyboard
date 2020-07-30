@@ -127,6 +127,9 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="yu2-g9-PBg">
+                                <rect key="frame" x="188.5" y="285" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -134,8 +137,10 @@
                             <constraint firstItem="Qhm-Qa-x5Q" firstAttribute="trailing" secondItem="C7b-Qv-MEf" secondAttribute="trailing" constant="20" id="7wV-1j-SH3"/>
                             <constraint firstItem="Qhm-Qa-x5Q" firstAttribute="trailing" secondItem="s8x-4x-PO2" secondAttribute="trailing" constant="20" id="CWE-ZY-3WU"/>
                             <constraint firstItem="C7b-Qv-MEf" firstAttribute="top" secondItem="s8x-4x-PO2" secondAttribute="bottom" constant="8" id="Hd7-FI-2EG"/>
+                            <constraint firstItem="yu2-g9-PBg" firstAttribute="centerX" secondItem="Qhm-Qa-x5Q" secondAttribute="centerX" id="ViN-cC-H19"/>
                             <constraint firstItem="Iny-A2-ZpV" firstAttribute="bottom" secondItem="Qhm-Qa-x5Q" secondAttribute="bottom" id="dFY-SM-QEi"/>
                             <constraint firstItem="Iny-A2-ZpV" firstAttribute="trailing" secondItem="Qhm-Qa-x5Q" secondAttribute="trailing" id="eEW-YI-8jf"/>
+                            <constraint firstItem="yu2-g9-PBg" firstAttribute="top" secondItem="C7b-Qv-MEf" secondAttribute="bottom" constant="80" id="kOW-af-OHz"/>
                             <constraint firstItem="C7b-Qv-MEf" firstAttribute="leading" secondItem="Qhm-Qa-x5Q" secondAttribute="leading" constant="20" id="o3G-Bl-sfO"/>
                             <constraint firstItem="s8x-4x-PO2" firstAttribute="leading" secondItem="Qhm-Qa-x5Q" secondAttribute="leading" constant="20" id="wDJ-jB-J5T"/>
                             <constraint firstItem="Iny-A2-ZpV" firstAttribute="leading" secondItem="Qhm-Qa-x5Q" secondAttribute="leading" id="zL2-65-RPg"/>
@@ -143,6 +148,7 @@
                         <viewLayoutGuide key="safeArea" id="Qhm-Qa-x5Q"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="yu2-g9-PBg" id="2wk-dL-L7d"/>
                         <outlet property="avatarURLTextField" destination="Dji-1H-z5a" id="ndo-Kg-vgf"/>
                         <outlet property="emailTextField" destination="Yi1-iK-B9t" id="t5e-8a-YIE"/>
                         <outlet property="nameTextField" destination="UhE-9G-fp3" id="lQ2-Bv-bL7"/>

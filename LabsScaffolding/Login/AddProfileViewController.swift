@@ -8,11 +8,18 @@
 
 import UIKit
 
+protocol AddProfileDelegate: class {
+    func profileWasAdded()
+}
+
 class AddProfileViewController: UIViewController {
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var avatarURLTextField: UITextField!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    weak var delegate: AddProfileDelegate?
     
     var profileController: ProfileController = ProfileController.shared
     var keyboardDismissalTapRecognizer: UITapGestureRecognizer!
@@ -52,8 +59,16 @@ class AddProfileViewController: UIViewController {
                 return
         }
         
+        activityIndicator.startAnimating()
+        
         profileController.addProfile(profile) { [weak self] in
-            self?.dismiss(animated: true, completion: nil)
+            
+            guard let self = self else { return }
+            
+            self.activityIndicator.stopAnimating()
+            self.dismiss(animated: true, completion: {
+                self.delegate?.profileWasAdded()
+            })
         }
     }
 }
