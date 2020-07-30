@@ -45,7 +45,11 @@ class ProfileDetailViewController: UIViewController {
             avatarImageView.image = avatarImage
         } else if let avatarURL = profile.avatarURL {
             profileController.image(for: avatarURL, completion: { [weak self] (avatarImage) in
-                self?.avatarImageView.image = avatarImage
+                
+                guard let self = self else { return }
+                
+                self.profile?.avatarImage = avatarImage
+                self.avatarImageView.image = avatarImage
             })
         }
     }
