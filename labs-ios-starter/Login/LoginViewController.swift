@@ -12,23 +12,46 @@ import OktaAuth
 class LoginViewController: UIViewController {
     
     let profileController = ProfileController.shared
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(checkForExistingProfile),
-                                               name: .oktaAuthenticationSuccessful,
-                                               object: nil)
+        
+        NotificationCenter.default.addObserver(forName: .oktaAuthenticationSuccessful,
+                                               object: nil,
+                                               queue: .main,
+                                               using: checkForExistingProfile)
+        
+        NotificationCenter.default.addObserver(forName: .oktaAuthenticationExpired,
+                                               object: nil,
+                                               queue: .main,
+                                               using: alertUserOfExpiredCredentials)
+        
     }
     
-
+    // MARK: - Actions
+    
     @IBAction func signIn(_ sender: Any) {
         UIApplication.shared.open(ProfileController.shared.oktaAuth.identityAuthURL()!)
     }
     
-    @objc func checkForExistingProfile() {
-        
+    // MARK: - Private Methods
+    
+    private func alertUserOfExpiredCredentials(_ notification: Notification) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.presentSimpleAlert(with: "Your Okta credentials have expired",
+                           message: "Please sign in again",
+                           preferredStyle: .alert,
+                           dismissText: "Dimiss")
+        }
+    }
+    
+    // MARK: Notification Handling
+    
+    private func checkForExistingProfile(with notification: Notification) {
+        checkForExistingProfile()
+    }
+    
+    private func checkForExistingProfile() {
         profileController.checkForExistingAuthenticatedUserProfile { [weak self] (exists) in
             
             guard let self = self,

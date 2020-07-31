@@ -216,10 +216,10 @@
             </objects>
             <point key="canvasLocation" x="1060.8695652173915" y="193.52678571428569"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Profile Tab Bar View Controller-->
         <scene sceneID="IUW-ly-e69">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="qoB-kH-nth" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="qoB-kH-nth" customClass="ProfileTabBarViewController" customModule="labs_ios_starter" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4CC-np-kAJ">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
