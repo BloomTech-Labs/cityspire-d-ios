@@ -24,7 +24,7 @@ class LoginViewController: UIViewController {
     
 
     @IBAction func signIn(_ sender: Any) {
-        UIApplication.shared.open(OktaAuth.shared.identityAuthURL()!)
+        UIApplication.shared.open(ProfileController.shared.oktaAuth.identityAuthURL()!)
     }
     
     @objc func checkForExistingProfile() {

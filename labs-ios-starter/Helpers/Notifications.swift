@@ -11,4 +11,5 @@ import Foundation
 extension Notification.Name {
     static let oktaAuthenticationSuccessful = Notification.Name("oktaAuthenticationSuccessful")
     static let oktaAuthenticationFailed = Notification.Name("oktaAuthenticationFailed")
+    static let oktaAuthenticationExpired = Notification.Name("oktaAuthenticationExpired")
 }
