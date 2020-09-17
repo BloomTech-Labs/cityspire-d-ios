@@ -14,7 +14,7 @@
 		466C427B249A8748007D033E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 466C4279249A8748007D033E /* Main.storyboard */; };
 		466C427D249A8749007D033E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 466C427C249A8749007D033E /* Assets.xcassets */; };
 		466C4280249A8749007D033E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 466C427E249A8749007D033E /* LaunchScreen.storyboard */; };
-		46BEB4DF24C8F88C00FE0CD1 /* OktaAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 46BEB4DE24C8F88C00FE0CD1 /* OktaAuth */; };
+		46908EB62513C971003252BA /* OktaAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 46908EB52513C971003252BA /* OktaAuth */; };
 		46BEB4E124C9828800FE0CD1 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BEB4E024C9828800FE0CD1 /* Profile.swift */; };
 		46BEB4E524C98CDC00FE0CD1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BEB4E424C98CDC00FE0CD1 /* LoginViewController.swift */; };
 		46BEB4E724C98D8900FE0CD1 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BEB4E624C98D8900FE0CD1 /* Notifications.swift */; };
@@ -51,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46BEB4DF24C8F88C00FE0CD1 /* OktaAuth in Frameworks */,
+				46908EB62513C971003252BA /* OktaAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,7 +163,7 @@
 			);
 			name = "labs-ios-starter";
 			packageProductDependencies = (
-				46BEB4DE24C8F88C00FE0CD1 /* OktaAuth */,
+				46908EB52513C971003252BA /* OktaAuth */,
 			);
 			productName = LabsScaffolding;
 			productReference = 466C4270249A8748007D033E /* labs-ios-starter.app */;
@@ -194,7 +194,7 @@
 			);
 			mainGroup = 466C4267249A8748007D033E;
 			packageReferences = (
-				46BEB4DD24C8F88C00FE0CD1 /* XCRemoteSwiftPackageReference "OktaAuth" */,
+				46908EB42513C971003252BA /* XCRemoteSwiftPackageReference "OktaAuth" */,
 			);
 			productRefGroup = 466C4271249A8748007D033E /* Products */;
 			projectDirPath = "";
@@ -379,12 +379,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "labs-ios-starter/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LambdaSchool.LabsScaffolding;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -397,12 +399,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "labs-ios-starter/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LambdaSchool.LabsScaffolding;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -434,20 +438,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		46BEB4DD24C8F88C00FE0CD1 /* XCRemoteSwiftPackageReference "OktaAuth" */ = {
+		46908EB42513C971003252BA /* XCRemoteSwiftPackageReference "OktaAuth" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:SpencerCurtis/OktaAuth.git";
+			repositoryURL = "https://github.com/SpencerCurtis/OktaAuth.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.1;
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		46BEB4DE24C8F88C00FE0CD1 /* OktaAuth */ = {
+		46908EB52513C971003252BA /* OktaAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 46BEB4DD24C8F88C00FE0CD1 /* XCRemoteSwiftPackageReference "OktaAuth" */;
+			package = 46908EB42513C971003252BA /* XCRemoteSwiftPackageReference "OktaAuth" */;
 			productName = OktaAuth;
 		};
 /* End XCSwiftPackageProductDependency section */
