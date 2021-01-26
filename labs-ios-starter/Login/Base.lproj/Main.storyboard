@@ -89,7 +89,7 @@
         <!--Profile-->
         <scene sceneID="i8W-6t-GSn">
             <objects>
-                <viewController id="HYb-kU-wbp" customClass="ProfileTabBarViewController" customModule="labs_ios_starter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HYb-kU-wbp" customClass="MyProfileViewController" customModule="labs_ios_starter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aCr-pV-qis">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -181,7 +181,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="bSL-v9-Ave"/>
                     <connections>
-                        <outlet property="profileImageOutlet" destination="jFz-tt-Yg4" id="UTB-Qc-0pf"/>
+                        <outlet property="profileImageOutlet" destination="jFz-tt-Yg4" id="TZ6-HU-mB8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X2b-9g-cRC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
