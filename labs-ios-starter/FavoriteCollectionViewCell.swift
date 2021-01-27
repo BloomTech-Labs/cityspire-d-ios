@@ -22,7 +22,7 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
     
     let backgroundImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "city")
+        imageView.image = UIImage(named: "New York")
         imageView.contentMode = .scaleToFill
         
         return imageView
