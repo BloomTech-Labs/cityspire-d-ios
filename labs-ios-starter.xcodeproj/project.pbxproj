@@ -23,6 +23,8 @@
 		46BEB4F124C98F0D00FE0CD1 /* Profiles.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BEB4F024C98F0D00FE0CD1 /* Profiles.storyboard */; };
 		46BF10BE24D388FF001C6753 /* UIViewController+SimpleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */; };
 		46C2BC9224D432F90077E49D /* ProfileTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C2BC9124D432F90077E49D /* ProfileTabBarViewController.swift */; };
+		50FDDEA625BFC8AF007941CC /* FavoritesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FDDEA525BFC8AF007941CC /* FavoritesCollectionViewController.swift */; };
+		50FDDEB025C09A96007941CC /* FavoriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FDDEAF25C09A96007941CC /* FavoriteCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		46BEB4F024C98F0D00FE0CD1 /* Profiles.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profiles.storyboard; sourceTree = "<group>"; };
 		46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SimpleAlert.swift"; sourceTree = "<group>"; };
 		46C2BC9124D432F90077E49D /* ProfileTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabBarViewController.swift; sourceTree = "<group>"; };
+		50FDDEA525BFC8AF007941CC /* FavoritesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCollectionViewController.swift; sourceTree = "<group>"; };
+		50FDDEAF25C09A96007941CC /* FavoriteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 				466C427C249A8749007D033E /* Assets.xcassets */,
 				466C4281249A8749007D033E /* Info.plist */,
 				466C4287249A889F007D033E /* File Organization.md */,
+				50FDDEA525BFC8AF007941CC /* FavoritesCollectionViewController.swift */,
+				50FDDEAF25C09A96007941CC /* FavoriteCollectionViewCell.swift */,
 			);
 			path = "labs-ios-starter";
 			sourceTree = "<group>";
@@ -224,10 +230,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50FDDEB025C09A96007941CC /* FavoriteCollectionViewCell.swift in Sources */,
 				46BEB4EE24C98ECC00FE0CD1 /* ProfileController.swift in Sources */,
 				46BF10BE24D388FF001C6753 /* UIViewController+SimpleAlert.swift in Sources */,
 				46BEB4E724C98D8900FE0CD1 /* Notifications.swift in Sources */,
 				46BEB4E124C9828800FE0CD1 /* Profile.swift in Sources */,
+				50FDDEA625BFC8AF007941CC /* FavoritesCollectionViewController.swift in Sources */,
 				46BEB4E924C98DAF00FE0CD1 /* ProfileListViewController.swift in Sources */,
 				463AD24524CF2CDB00447BB8 /* AddProfileViewController.swift in Sources */,
 				466C4274249A8748007D033E /* AppDelegate.swift in Sources */,
