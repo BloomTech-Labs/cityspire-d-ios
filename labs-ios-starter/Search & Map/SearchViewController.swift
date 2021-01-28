@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import MapKit
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, UISearchBarDelegate, MKMapViewDelegate {
+
+    @IBOutlet var searchBar: UISearchBar!
+    @IBOutlet var mapView: MKMapView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
