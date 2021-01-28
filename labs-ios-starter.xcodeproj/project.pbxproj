@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1753D83425BFE231004F9E73 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1753D83325BFE231004F9E73 /* MyProfileViewController.swift */; };
+		17FECA6225C2B89F0065F864 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 17FECA6125C2B89F0065F864 /* IQKeyboardManagerSwift */; };
 		463AD24324CF275900447BB8 /* ProfileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463AD24224CF275900447BB8 /* ProfileDetailViewController.swift */; };
 		463AD24524CF2CDB00447BB8 /* AddProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463AD24424CF2CDB00447BB8 /* AddProfileViewController.swift */; };
 		466C4274249A8748007D033E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C4273249A8748007D033E /* AppDelegate.swift */; };
@@ -58,6 +59,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46908EB62513C971003252BA /* OktaAuth in Frameworks */,
+				17FECA6225C2B89F0065F864 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +175,7 @@
 			name = "labs-ios-starter";
 			packageProductDependencies = (
 				46908EB52513C971003252BA /* OktaAuth */,
+				17FECA6125C2B89F0065F864 /* IQKeyboardManagerSwift */,
 			);
 			productName = LabsScaffolding;
 			productReference = 466C4270249A8748007D033E /* labs-ios-starter.app */;
@@ -204,6 +207,7 @@
 			mainGroup = 466C4267249A8748007D033E;
 			packageReferences = (
 				46908EB42513C971003252BA /* XCRemoteSwiftPackageReference "OktaAuth" */,
+				17FECA6025C2B89F0065F864 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 466C4271249A8748007D033E /* Products */;
 			projectDirPath = "";
@@ -391,7 +395,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6UK9B9BTNM;
 				INFOPLIST_FILE = "labs-ios-starter/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -411,7 +415,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6UK9B9BTNM;
 				INFOPLIST_FILE = "labs-ios-starter/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -450,6 +454,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		17FECA6025C2B89F0065F864 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.6;
+			};
+		};
 		46908EB42513C971003252BA /* XCRemoteSwiftPackageReference "OktaAuth" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SpencerCurtis/OktaAuth.git";
@@ -461,6 +473,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		17FECA6125C2B89F0065F864 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 17FECA6025C2B89F0065F864 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
 		46908EB52513C971003252BA /* OktaAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 46908EB42513C971003252BA /* XCRemoteSwiftPackageReference "OktaAuth" */;
