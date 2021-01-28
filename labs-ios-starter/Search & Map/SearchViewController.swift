@@ -19,10 +19,42 @@ class SearchViewController: UIViewController, UISearchBarDelegate, MKMapViewDele
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print(searchBar.text!)
+        doGeoCode(searchBar.text ?? "")
     }
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
+    }
+
+    private func doGeoCode(_ query: String) {
+        let geocoder = CLGeocoder()
+        geocoder.geocodeAddressString(query) { placemarks, error in
+            guard error == nil else {
+                print("geocode error: \(error!)")
+                return
+            }
+            guard
+                let placemark = placemarks?.first,
+                let location = placemark.location,
+                let circularRegion = placemark.region as? CLCircularRegion
+            else {
+                fatalError("placemark problem")
+            }
+
+            self.mapView.removeAnnotations(self.mapView.annotations)
+
+            let annotation = MKPointAnnotation()
+            annotation.title = placemark.name
+            annotation.coordinate = location.coordinate
+            self.mapView.addAnnotation(annotation)
+
+            let center = circularRegion.center
+            let radius = circularRegion.radius
+            let multiplier = 4.0
+            let region = MKCoordinateRegion(center: center, latitudinalMeters: radius*multiplier, longitudinalMeters: radius*multiplier)
+            self.mapView.setRegion(region, animated: true)
+
+            self.searchBar.resignFirstResponder()
+        }
     }
 }
