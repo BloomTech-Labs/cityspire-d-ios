@@ -57,14 +57,10 @@ class LoginViewController: UIViewController {
             guard let self = self,
                 self.presentedViewController == nil else { return }
             
-            // This code will find the story board and locate the inital tab bar screen and present that if the user's login was sucessfull.
-            
-            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            
-            let tabBarViewController = storyBoard.instantiateViewController(withIdentifier: "InitalTabBarView")
+            // This will perform a segue to our tab bar view if sucessfull and will show an alert if not.
 
             if exists {
-                self.navigationController?.pushViewController(tabBarViewController, animated: true)
+                self.performSegue(withIdentifier: "SegueToTabBarController", sender: nil)
             } else {
                 let alert = UIAlertController(title: "Login Failed", message: "Please try again", preferredStyle: .alert)
                 let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
