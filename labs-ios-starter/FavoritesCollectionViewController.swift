@@ -47,13 +47,9 @@ extension FavoritesCollectionViewController: UICollectionViewDelegateFlowLayout,
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! FavoriteCollectionViewCell
         
-        //cell.layer.borderWidth = 2
-        //cell.layer.borderColor = UIColor.blue.cgColor
         cell.layer.cornerRadius = 10
         let currentObject = cities[indexPath.row]
         cell.cityNameLabel.text = currentObject
-//        cell.backgroundView = cell.backgroundImageView
-        //cell.backgroundView = UIImageView.init(image: UIImage(named: currentObject))
         cell.backgroundView = cell.backgroundImageView
         
         return cell
@@ -62,7 +58,7 @@ extension FavoritesCollectionViewController: UICollectionViewDelegateFlowLayout,
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellWidth = (5 / 6) * self.collectionView.bounds.width
-        let cellSpacing = (1/16) * self.collectionView.bounds.width
+        //let cellSpacing = (1/16) * self.collectionView.bounds.width
                 
         return CGSize(width: cellWidth, height: cellWidth)
     }
