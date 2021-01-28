@@ -17,4 +17,12 @@ class SearchViewController: UIViewController, UISearchBarDelegate, MKMapViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print(searchBar.text!)
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
 }
