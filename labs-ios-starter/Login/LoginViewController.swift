@@ -57,11 +57,26 @@ class LoginViewController: UIViewController {
             guard let self = self,
                 self.presentedViewController == nil else { return }
             
+            // This will perform a segue to our tab bar view if sucessfull and will show an alert if not.
+
             if exists {
-                self.performSegue(withIdentifier: "ShowDetailProfileList", sender: nil)
+                self.performSegue(withIdentifier: "SegueToTabBarController", sender: nil)
             } else {
-                self.performSegue(withIdentifier: "ModalAddProfile", sender: nil)
+                let alert = UIAlertController(title: "Login Failed", message: "Please try again", preferredStyle: .alert)
+                let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                
+                alert.addAction(action)
+                
+                self.present(alert, animated: true, completion: nil)
             }
+            
+            
+// ATTENTION: ORIGINAL CODE
+//            if exists {
+//                self.performSegue(withIdentifier: "ShowDetailProfileList", sender: nil)
+//            } else {
+//                self.performSegue(withIdentifier: "ModalAddProfile", sender: nil)
+//            }
         }
     }
     
