@@ -1,33 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y9z-7g-ibd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4a7-cC-Xlp">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="Z5r-DM-MOZ">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5kU-21-3IP" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="t1W-t0-AYQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="4a7-cC-Xlp" kind="relationship" relationship="rootViewController" id="rnA-1h-ORf"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="31O-Bo-5Kx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="671.01449275362324" y="83.705357142857139"/>
-        </scene>
         <!--ProfileViewer-->
         <scene sceneID="6M8-Hn-aJP">
             <objects>
@@ -37,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQk-Xf-had">
-                                <rect key="frame" x="129.5" y="366.5" width="116" height="30"/>
+                                <rect key="frame" x="129.5" y="318.5" width="116" height="30"/>
                                 <state key="normal" title="Sign in with Okta"/>
                                 <connections>
                                     <action selector="signIn:" destination="4a7-cC-Xlp" eventType="touchUpInside" id="qez-xn-3z4"/>
@@ -55,6 +37,7 @@
                     <connections>
                         <segue destination="o9A-9L-jW8" kind="presentation" identifier="ModalAddProfile" id="vYb-th-yYx"/>
                         <segue destination="aOC-qF-9qB" kind="presentation" identifier="ShowDetailProfileList" modalPresentationStyle="fullScreen" id="Tfb-bT-2YH"/>
+                        <segue destination="Y9z-7g-ibd" kind="presentation" identifier="SegueToTabBarController" modalPresentationStyle="fullScreen" id="JvO-Mp-KYq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcT-Mn-ZnW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -286,23 +269,56 @@
         <!--Search-->
         <scene sceneID="jNc-lM-FjL">
             <objects>
-                <viewController id="9QV-Nz-J2q" sceneMemberID="viewController">
+                <viewController id="9QV-Nz-J2q" customClass="SearchViewController" customModule="labs_ios_starter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ewh-6n-F4n">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zSi-3b-abU">
+                                <rect key="frame" x="0.0" y="56" width="375" height="562"/>
+                                <connections>
+                                    <outlet property="delegate" destination="9QV-Nz-J2q" id="SZl-qI-ekc"/>
+                                </connections>
+                            </mapView>
+                            <searchBar contentMode="redraw" placeholder="Search a US city" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pfm-H9-J0k">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="9QV-Nz-J2q" id="y36-NL-8xE"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="u2M-5P-ONF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zSi-3b-abU" firstAttribute="bottom" secondItem="u2M-5P-ONF" secondAttribute="bottom" id="FEK-m6-uPo"/>
+                            <constraint firstItem="Pfm-H9-J0k" firstAttribute="leading" secondItem="u2M-5P-ONF" secondAttribute="leading" id="Lod-FI-F8R"/>
+                            <constraint firstItem="zSi-3b-abU" firstAttribute="trailing" secondItem="u2M-5P-ONF" secondAttribute="trailing" id="WR5-6Q-Rd6"/>
+                            <constraint firstItem="zSi-3b-abU" firstAttribute="leading" secondItem="u2M-5P-ONF" secondAttribute="leading" id="ZlQ-we-iKc"/>
+                            <constraint firstItem="Pfm-H9-J0k" firstAttribute="top" secondItem="u2M-5P-ONF" secondAttribute="top" id="hdp-Xk-5Y2"/>
+                            <constraint firstItem="zSi-3b-abU" firstAttribute="top" secondItem="Pfm-H9-J0k" secondAttribute="bottom" id="raj-eV-UPb"/>
+                            <constraint firstItem="Pfm-H9-J0k" firstAttribute="trailing" secondItem="u2M-5P-ONF" secondAttribute="trailing" id="wj9-e3-5GO"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="4ZR-3A-HCD"/>
+                    <connections>
+                        <outlet property="mapView" destination="zSi-3b-abU" id="GcO-8e-fKu"/>
+                        <outlet property="searchBar" destination="Pfm-H9-J0k" id="Pww-lG-ppl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EwV-uT-k3v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4409" y="-455"/>
+            <point key="canvasLocation" x="4408.8000000000002" y="-455.62218890554726"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="65p-QO-b3h">
             <objects>
-                <tabBarController id="Y9z-7g-ibd" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="InitalTabBarView" id="Y9z-7g-ibd" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="DJ8-fV-VyI"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ztZ-ic-zba">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
