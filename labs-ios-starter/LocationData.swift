@@ -18,6 +18,7 @@ struct LocationData : Codable {
     let population: Int
     let rank: Int
     let stateName: String
+    let pollution: AirQualityData?
     
     
     enum CodingKeys: String, CodingKey {
@@ -27,6 +28,7 @@ struct LocationData : Codable {
         case population
         case rank
         case stateName = "state"
+        case pollution
     }
 }
 
