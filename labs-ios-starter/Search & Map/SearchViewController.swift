@@ -40,6 +40,13 @@ class SearchViewController: UIViewController, UISearchBarDelegate, MKMapViewDele
             else {
                 fatalError("placemark problem")
             }
+            guard
+                let country = placemark.country,
+                country == "United States"
+            else {
+                print("Data is only available for the United States.")
+                return
+            }
 
             self.mapView.removeAnnotations(self.mapView.annotations)
 
