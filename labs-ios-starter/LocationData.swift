@@ -15,8 +15,8 @@ struct LocationData : Codable {
     let cityName: String
     let latitude: Double
     let longitude: Double
-    let population: Int
-    let rank: Int
+    let population: String
+    let rank: String
     let stateName: String
     let pollution: AirQualityData?
     

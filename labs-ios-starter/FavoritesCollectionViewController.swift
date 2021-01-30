@@ -12,7 +12,7 @@ class FavoritesCollectionViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     let cities = ["New York", "Rio", "Orlando", "Miami", "San Diego", "Houston", "Kansas City"]
-    
+    let locationController = LocationDataModelController()
     
     
     // MARK: - Life Cycle
@@ -23,6 +23,16 @@ class FavoritesCollectionViewController: UIViewController {
         collectionView.dataSource = self
         view.backgroundColor = .lightGray
         collectionView.backgroundColor = .lightGray
+        
+        locationController.fetchAllCities(city: "Denver", state: "Colorado") { (locationDataArray, error) in
+            if let error = error {
+                print(error)
+            }
+            
+            
+            print(locationDataArray.first)
+            
+        }
     }
     
 
