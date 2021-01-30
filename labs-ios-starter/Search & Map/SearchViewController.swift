@@ -55,10 +55,9 @@ class SearchViewController: UIViewController, UISearchBarDelegate, MKMapViewDele
             annotation.coordinate = location.coordinate
             self.mapView.addAnnotation(annotation)
 
-            let center = circularRegion.center
+            let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
             let radius = circularRegion.radius
-            let multiplier = 4.0
-            let region = MKCoordinateRegion(center: center, latitudinalMeters: radius*multiplier, longitudinalMeters: radius*multiplier)
+            let region = MKCoordinateRegion(center: center, latitudinalMeters: radius*2, longitudinalMeters: radius*2)
             self.mapView.setRegion(region, animated: true)
 
             self.searchBar.resignFirstResponder()
