@@ -9,10 +9,13 @@
 import UIKit
 
 class FavoritesCollectionViewController: UIViewController {
+    
+    // MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
     
+    // MARK: - Properties
     let cities = ["New York", "Rio", "Orlando", "Miami", "San Diego", "Houston", "Kansas City"]
-    
+    let locationController = LocationDataModelController()
     
     
     // MARK: - Life Cycle
@@ -23,6 +26,13 @@ class FavoritesCollectionViewController: UIViewController {
         collectionView.dataSource = self
         view.backgroundColor = .lightGray
         collectionView.backgroundColor = .lightGray
+        
+        locationController.fetchAllCities(city: "Denver", state: "Colorado") { (locationDataArray, error) in
+            if let error = error {
+                print(error)
+            }
+            self.fetchAQIForCity()
+        }
     }
     
 
@@ -33,7 +43,15 @@ class FavoritesCollectionViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-
+    
+    // For now this function just searches for los angeles' air quality but we can modify it later.
+    private func fetchAQIForCity() {
+        self.locationController.fetchAQIForCity(cityName: "Los Angeles", stateName: "California") { (aqi, error) in
+            if let error = error {
+                print(error)
+            }
+        }
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout, UICollectionViewDataSource
@@ -68,5 +86,4 @@ extension FavoritesCollectionViewController: UICollectionViewDelegateFlowLayout,
         
         return UIEdgeInsets(top: 20, left: sectionSpacing, bottom: 20, right: sectionSpacing)
     }
-    
 }
