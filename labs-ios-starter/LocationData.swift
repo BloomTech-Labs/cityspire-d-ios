@@ -32,14 +32,24 @@ struct LocationData : Codable {
     }
 }
 
+
+
 struct AirQualityData : Codable {
 //    /http://api.airvisual.com/v2/city?city=Los Angeles&state=California&country=USA&key={{YOUR_API_KEY}}
 
+    let data: Data
+}
+
+struct Data: Codable {
+    let current: Current
+}
+
+struct Current : Codable {
     let pollution: Pollution
 }
 
 struct Pollution : Codable {
-    let airQualityIndex: String
+    let airQualityIndex: Int
     
     enum CodingKeys: String, CodingKey {
         case airQualityIndex = "aqius"
