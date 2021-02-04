@@ -1,13 +1,13 @@
-## [Pull Request Title](#Link_to_corresponding_Trello_card)
+# [Pull Request Title](#Link_to_corresponding_Trello_card)
 
-### Files Modified:
+## Files Modified:
 
 - SampleFile1.js
 - Example.js
 - AnotherSample.js
 - YetAnotherSampleFile.js
 
-### Details:
+## Details:
 
 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
 2. ullamco laboris nisi ut aliquip ex ea commodo consequat.
