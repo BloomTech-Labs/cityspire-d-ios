@@ -27,6 +27,7 @@
 		46C2BC9224D432F90077E49D /* ProfileTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C2BC9124D432F90077E49D /* ProfileTabBarViewController.swift */; };
 		503FD95825C49F9500741B1F /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FD95725C49F9500741B1F /* LocationData.swift */; };
 		503FD95B25C4B76500741B1F /* LocationDataModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FD95A25C4B76500741B1F /* LocationDataModelController.swift */; };
+		503FD9B225CBA46900741B1F /* MapContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FD9B125CBA46900741B1F /* MapContainerViewController.swift */; };
 		50FDDEA625BFC8AF007941CC /* FavoritesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FDDEA525BFC8AF007941CC /* FavoritesCollectionViewController.swift */; };
 		50FDDEB025C09A96007941CC /* FavoriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FDDEAF25C09A96007941CC /* FavoriteCollectionViewCell.swift */; };
 		638CA13225C2674E00B996B9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638CA13125C2674E00B996B9 /* SearchViewController.swift */; };
@@ -54,6 +55,7 @@
 		46C2BC9124D432F90077E49D /* ProfileTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabBarViewController.swift; sourceTree = "<group>"; };
 		503FD95725C49F9500741B1F /* LocationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
 		503FD95A25C4B76500741B1F /* LocationDataModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDataModelController.swift; sourceTree = "<group>"; };
+		503FD9B125CBA46900741B1F /* MapContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContainerViewController.swift; sourceTree = "<group>"; };
 		50FDDEA525BFC8AF007941CC /* FavoritesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCollectionViewController.swift; sourceTree = "<group>"; };
 		50FDDEAF25C09A96007941CC /* FavoriteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionViewCell.swift; sourceTree = "<group>"; };
 		638CA13125C2674E00B996B9 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				50FDDEAF25C09A96007941CC /* FavoriteCollectionViewCell.swift */,
 				503FD95725C49F9500741B1F /* LocationData.swift */,
 				503FD95A25C4B76500741B1F /* LocationDataModelController.swift */,
+				503FD9B125CBA46900741B1F /* MapContainerViewController.swift */,
 			);
 			path = "labs-ios-starter";
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 			files = (
 				503FD95825C49F9500741B1F /* LocationData.swift in Sources */,
 				50FDDEB025C09A96007941CC /* FavoriteCollectionViewCell.swift in Sources */,
+				503FD9B225CBA46900741B1F /* MapContainerViewController.swift in Sources */,
 				46BEB4EE24C98ECC00FE0CD1 /* ProfileController.swift in Sources */,
 				46BF10BE24D388FF001C6753 /* UIViewController+SimpleAlert.swift in Sources */,
 				46BEB4E724C98D8900FE0CD1 /* Notifications.swift in Sources */,
