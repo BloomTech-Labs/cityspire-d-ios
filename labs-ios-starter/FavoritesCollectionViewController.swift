@@ -14,8 +14,7 @@ class FavoritesCollectionViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: - Properties
-    let cities = ["New York", "Rio", "Orlando", "Miami", "San Diego", "Houston", "Kansas City"]
-    let locationController = LocationDataModelController()
+    let cityNetworkClient = CityNetworkClient()
     
     
     // MARK: - Life Cycle
@@ -27,11 +26,16 @@ class FavoritesCollectionViewController: UIViewController {
         view.backgroundColor = .lightGray
         collectionView.backgroundColor = .lightGray
         
-        locationController.fetchAllCities(city: "Denver", state: "Colorado") { (locationDataArray, error) in
-            if let error = error {
-                print(error)
+        cityNetworkClient.fetchAllCities { (result) in
+            do {
+                if try result.get() {
+                    DispatchQueue.main.async {
+                        self.collectionView.reloadData()
+                    }
+                }
+            } catch {
+                print("Error unable to fetch cities.")
             }
-            self.fetchAQIForCity()
         }
     }
     
@@ -43,22 +47,13 @@ class FavoritesCollectionViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    
-    // For now this function just searches for los angeles' air quality but we can modify it later.
-    private func fetchAQIForCity() {
-        self.locationController.fetchAQIForCity(cityName: "Los Angeles", stateName: "California") { (aqi, error) in
-            if let error = error {
-                print(error)
-            }
-        }
-    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout, UICollectionViewDataSource
 extension FavoritesCollectionViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return cities.count
+        return self.cityNetworkClient.cities.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -66,8 +61,8 @@ extension FavoritesCollectionViewController: UICollectionViewDelegateFlowLayout,
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! FavoriteCollectionViewCell
         
         cell.layer.cornerRadius = 10
-        let currentObject = cities[indexPath.row]
-        cell.cityNameLabel.text = currentObject
+        let currentObject = self.cityNetworkClient.cities[indexPath.row]
+        cell.cityNameLabel.text = currentObject.cityName
         cell.backgroundView = cell.backgroundImageView
         
         return cell
