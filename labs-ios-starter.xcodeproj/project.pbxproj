@@ -25,8 +25,7 @@
 		46BEB4F124C98F0D00FE0CD1 /* Profiles.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BEB4F024C98F0D00FE0CD1 /* Profiles.storyboard */; };
 		46BF10BE24D388FF001C6753 /* UIViewController+SimpleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */; };
 		46C2BC9224D432F90077E49D /* ProfileTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C2BC9124D432F90077E49D /* ProfileTabBarViewController.swift */; };
-		503FD95825C49F9500741B1F /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FD95725C49F9500741B1F /* LocationData.swift */; };
-		503FD95B25C4B76500741B1F /* LocationDataModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FD95A25C4B76500741B1F /* LocationDataModelController.swift */; };
+		503FD9B225CBA46900741B1F /* MapContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FD9B125CBA46900741B1F /* MapContainerViewController.swift */; };
 		503FDA2D25D0F16800741B1F /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FDA2C25D0F16800741B1F /* City.swift */; };
 		503FDA3A25D0F35100741B1F /* CityNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FDA3925D0F35100741B1F /* CityNetworkClient.swift */; };
 		50FDDEA625BFC8AF007941CC /* FavoritesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FDDEA525BFC8AF007941CC /* FavoritesCollectionViewController.swift */; };
@@ -54,8 +53,7 @@
 		46BEB4F024C98F0D00FE0CD1 /* Profiles.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profiles.storyboard; sourceTree = "<group>"; };
 		46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SimpleAlert.swift"; sourceTree = "<group>"; };
 		46C2BC9124D432F90077E49D /* ProfileTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabBarViewController.swift; sourceTree = "<group>"; };
-		503FD95725C49F9500741B1F /* LocationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
-		503FD95A25C4B76500741B1F /* LocationDataModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDataModelController.swift; sourceTree = "<group>"; };
+		503FD9B125CBA46900741B1F /* MapContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContainerViewController.swift; sourceTree = "<group>"; };
 		503FDA2C25D0F16800741B1F /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		503FDA3925D0F35100741B1F /* CityNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityNetworkClient.swift; sourceTree = "<group>"; };
 		50FDDEA525BFC8AF007941CC /* FavoritesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCollectionViewController.swift; sourceTree = "<group>"; };
@@ -117,7 +115,7 @@
 				466C4287249A889F007D033E /* File Organization.md */,
 				50FDDEA525BFC8AF007941CC /* FavoritesCollectionViewController.swift */,
 				50FDDEAF25C09A96007941CC /* FavoriteCollectionViewCell.swift */,
-				503FDA2F25D0F27C00741B1F /* KelsonMockDataAndController */,
+				503FD9B125CBA46900741B1F /* MapContainerViewController.swift */,
 				503FDA2C25D0F16800741B1F /* City.swift */,
 				503FDA3925D0F35100741B1F /* CityNetworkClient.swift */,
 			);
@@ -169,15 +167,6 @@
 				46BEB4F024C98F0D00FE0CD1 /* Profiles.storyboard */,
 			);
 			path = Profiles;
-			sourceTree = "<group>";
-		};
-		503FDA2F25D0F27C00741B1F /* KelsonMockDataAndController */ = {
-			isa = PBXGroup;
-			children = (
-				503FD95725C49F9500741B1F /* LocationData.swift */,
-				503FD95A25C4B76500741B1F /* LocationDataModelController.swift */,
-			);
-			path = KelsonMockDataAndController;
 			sourceTree = "<group>";
 		};
 		638CA13025C266B200B996B9 /* Search & Map */ = {
@@ -268,13 +257,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				503FD95825C49F9500741B1F /* LocationData.swift in Sources */,
 				50FDDEB025C09A96007941CC /* FavoriteCollectionViewCell.swift in Sources */,
+				503FD9B225CBA46900741B1F /* MapContainerViewController.swift in Sources */,
 				503FDA2D25D0F16800741B1F /* City.swift in Sources */,
 				46BEB4EE24C98ECC00FE0CD1 /* ProfileController.swift in Sources */,
 				46BF10BE24D388FF001C6753 /* UIViewController+SimpleAlert.swift in Sources */,
 				46BEB4E724C98D8900FE0CD1 /* Notifications.swift in Sources */,
-				503FD95B25C4B76500741B1F /* LocationDataModelController.swift in Sources */,
 				46BEB4E124C9828800FE0CD1 /* Profile.swift in Sources */,
 				50FDDEA625BFC8AF007941CC /* FavoritesCollectionViewController.swift in Sources */,
 				46BEB4E924C98DAF00FE0CD1 /* ProfileListViewController.swift in Sources */,

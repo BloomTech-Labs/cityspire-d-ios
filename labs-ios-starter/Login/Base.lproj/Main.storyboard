@@ -79,6 +79,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <segue destination="Ha3-cF-h01" kind="presentation" identifier="SegueToDetailMapView" modalPresentationStyle="fullScreen" id="QBe-qN-2cE"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -100,6 +103,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WEi-ki-Y99" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4404" y="201.94902548725639"/>
+        </scene>
+        <!--Map Container View Controller-->
+        <scene sceneID="dCb-XO-6gf">
+            <objects>
+                <viewController id="Ha3-cF-h01" customClass="MapContainerViewController" customModule="labs_ios_starter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Gq-UI-zFc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rHX-yf-SfC">
+                                <rect key="frame" x="0.0" y="409" width="375" height="258"/>
+                                <connections>
+                                    <segue destination="d9d-1f-IRx" kind="embed" id="OH0-zN-0GO"/>
+                                </connections>
+                            </containerView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lk0-TG-c2E">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="418"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="esh-bV-xJO"/>
+                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                        <constraints>
+                            <constraint firstItem="rHX-yf-SfC" firstAttribute="trailing" secondItem="esh-bV-xJO" secondAttribute="trailing" id="0ZB-gR-XU3"/>
+                            <constraint firstItem="lk0-TG-c2E" firstAttribute="top" secondItem="esh-bV-xJO" secondAttribute="top" id="F13-5z-9Hu"/>
+                            <constraint firstItem="rHX-yf-SfC" firstAttribute="leading" secondItem="esh-bV-xJO" secondAttribute="leading" id="Hs4-SY-v0v"/>
+                            <constraint firstItem="lk0-TG-c2E" firstAttribute="leading" secondItem="esh-bV-xJO" secondAttribute="leading" id="KWB-MJ-KaK"/>
+                            <constraint firstItem="lk0-TG-c2E" firstAttribute="trailing" secondItem="esh-bV-xJO" secondAttribute="trailing" id="d0u-3g-9PZ"/>
+                            <constraint firstItem="rHX-yf-SfC" firstAttribute="bottom" secondItem="esh-bV-xJO" secondAttribute="bottom" id="eq7-i8-ggi"/>
+                            <constraint firstItem="rHX-yf-SfC" firstAttribute="top" secondItem="esh-bV-xJO" secondAttribute="top" constant="409" id="oxs-Cf-WvY"/>
+                            <constraint firstItem="rHX-yf-SfC" firstAttribute="top" secondItem="lk0-TG-c2E" secondAttribute="bottom" constant="-9" id="sLS-li-cPb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ixe-VG-0wN"/>
+                    <connections>
+                        <outlet property="mapView" destination="lk0-TG-c2E" id="Khd-2n-4ix"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="etO-79-Xpy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5309.6000000000004" y="201.94902548725639"/>
         </scene>
         <!--Profile-->
         <scene sceneID="i8W-6t-GSn">
@@ -291,6 +334,12 @@
                                     <outlet property="delegate" destination="9QV-Nz-J2q" id="y36-NL-8xE"/>
                                 </connections>
                             </searchBar>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0bo-Vk-dPK">
+                                <rect key="frame" x="0.0" y="380" width="375" height="238"/>
+                                <connections>
+                                    <segue destination="d9d-1f-IRx" kind="embed" id="f4m-uy-KBa"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="u2M-5P-ONF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -299,13 +348,18 @@
                             <constraint firstItem="Pfm-H9-J0k" firstAttribute="leading" secondItem="u2M-5P-ONF" secondAttribute="leading" id="Lod-FI-F8R"/>
                             <constraint firstItem="zSi-3b-abU" firstAttribute="trailing" secondItem="u2M-5P-ONF" secondAttribute="trailing" id="WR5-6Q-Rd6"/>
                             <constraint firstItem="zSi-3b-abU" firstAttribute="leading" secondItem="u2M-5P-ONF" secondAttribute="leading" id="ZlQ-we-iKc"/>
+                            <constraint firstItem="0bo-Vk-dPK" firstAttribute="top" secondItem="Pfm-H9-J0k" secondAttribute="bottom" constant="324" id="cS3-nI-fqg"/>
+                            <constraint firstItem="0bo-Vk-dPK" firstAttribute="bottom" secondItem="u2M-5P-ONF" secondAttribute="bottom" id="gE6-uI-bAG"/>
                             <constraint firstItem="Pfm-H9-J0k" firstAttribute="top" secondItem="u2M-5P-ONF" secondAttribute="top" id="hdp-Xk-5Y2"/>
+                            <constraint firstItem="0bo-Vk-dPK" firstAttribute="trailing" secondItem="u2M-5P-ONF" secondAttribute="trailing" id="jdy-Ud-ATZ"/>
+                            <constraint firstItem="0bo-Vk-dPK" firstAttribute="leading" secondItem="u2M-5P-ONF" secondAttribute="leading" id="m8N-yH-q9O"/>
                             <constraint firstItem="zSi-3b-abU" firstAttribute="top" secondItem="Pfm-H9-J0k" secondAttribute="bottom" id="raj-eV-UPb"/>
                             <constraint firstItem="Pfm-H9-J0k" firstAttribute="trailing" secondItem="u2M-5P-ONF" secondAttribute="trailing" id="wj9-e3-5GO"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="4ZR-3A-HCD"/>
                     <connections>
+                        <outlet property="containerView" destination="0bo-Vk-dPK" id="va6-s4-g1a"/>
                         <outlet property="mapView" destination="zSi-3b-abU" id="GcO-8e-fKu"/>
                         <outlet property="searchBar" destination="Pfm-H9-J0k" id="Pww-lG-ppl"/>
                     </connections>
@@ -415,7 +469,38 @@
             </objects>
             <point key="canvasLocation" x="2355" y="-376"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="td6-lU-I3Y">
+            <objects>
+                <viewController id="d9d-1f-IRx" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="odw-dI-I4m">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="258"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82f-hk-hEp">
+                                <rect key="frame" x="66" y="50" width="243" height="158"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstItem="82f-hk-hEp" firstAttribute="leading" secondItem="odw-dI-I4m" secondAttribute="leadingMargin" constant="50" id="2tX-Gr-Ul2"/>
+                            <constraint firstItem="82f-hk-hEp" firstAttribute="top" secondItem="odw-dI-I4m" secondAttribute="topMargin" constant="50" id="h75-B4-vc6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="82f-hk-hEp" secondAttribute="trailing" constant="50" id="kPJ-Oq-cam"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="82f-hk-hEp" secondAttribute="bottom" constant="50" id="w8c-oX-4Kg"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yz8-6E-RUt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5542" y="-427"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="OH0-zN-0GO"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Male" width="200" height="248"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
@@ -423,6 +508,12 @@
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

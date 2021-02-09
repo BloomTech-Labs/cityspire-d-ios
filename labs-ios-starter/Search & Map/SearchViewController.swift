@@ -13,13 +13,17 @@ class SearchViewController: UIViewController, UISearchBarDelegate, MKMapViewDele
 
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var mapView: MKMapView!
-
+    @IBOutlet weak var containerView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        containerView.isHidden = true
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         doGeoCode(searchBar.text ?? "")
+        containerView.isHidden = false
     }
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
