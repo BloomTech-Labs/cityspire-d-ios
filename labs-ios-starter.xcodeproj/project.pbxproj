@@ -31,6 +31,7 @@
 		50FDDEA625BFC8AF007941CC /* FavoritesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FDDEA525BFC8AF007941CC /* FavoritesCollectionViewController.swift */; };
 		50FDDEB025C09A96007941CC /* FavoriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FDDEAF25C09A96007941CC /* FavoriteCollectionViewCell.swift */; };
 		638CA13225C2674E00B996B9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638CA13125C2674E00B996B9 /* SearchViewController.swift */; };
+		63BF5D7E25D23F550096D5D4 /* ToastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF5D7D25D23F550096D5D4 /* ToastViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		50FDDEA525BFC8AF007941CC /* FavoritesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCollectionViewController.swift; sourceTree = "<group>"; };
 		50FDDEAF25C09A96007941CC /* FavoriteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionViewCell.swift; sourceTree = "<group>"; };
 		638CA13125C2674E00B996B9 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		63BF5D7D25D23F550096D5D4 /* ToastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				638CA13125C2674E00B996B9 /* SearchViewController.swift */,
+				63BF5D7D25D23F550096D5D4 /* ToastViewController.swift */,
 			);
 			path = "Search & Map";
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				46BEB4E724C98D8900FE0CD1 /* Notifications.swift in Sources */,
 				46BEB4E124C9828800FE0CD1 /* Profile.swift in Sources */,
 				50FDDEA625BFC8AF007941CC /* FavoritesCollectionViewController.swift in Sources */,
+				63BF5D7E25D23F550096D5D4 /* ToastViewController.swift in Sources */,
 				46BEB4E924C98DAF00FE0CD1 /* ProfileListViewController.swift in Sources */,
 				463AD24524CF2CDB00447BB8 /* AddProfileViewController.swift in Sources */,
 				1753D83425BFE231004F9E73 /* MyProfileViewController.swift in Sources */,
