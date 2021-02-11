@@ -13,11 +13,21 @@ struct City : Codable {
     let cityCode: String
     let cityId: String
     let stateAbreviation: String
+    let rentAverage: String?
+    let walkScore: String?
+    let crimeScore: String?
+    let airQuality: String?
+    let lifeScore: String?
     
     enum CodingKeys: String, CodingKey {
         case cityName = "city"
         case cityCode = "city_code"
         case cityId = "id"
         case stateAbreviation = "state"
+        case rentAverage
+        case walkScore
+        case crimeScore
+        case airQuality
+        case lifeScore
     }
 }
