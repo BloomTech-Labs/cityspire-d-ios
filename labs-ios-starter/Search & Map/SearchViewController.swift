@@ -15,6 +15,8 @@ class SearchViewController: UIViewController, UISearchBarDelegate, MKMapViewDele
     @IBOutlet var mapView: MKMapView!
     @IBOutlet weak var containerView: UIView!
     
+    var toastVC: ToastViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,18 +25,40 @@ class SearchViewController: UIViewController, UISearchBarDelegate, MKMapViewDele
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         doGeoCode(searchBar.text ?? "")
-        containerView.isHidden = false
     }
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let toastVC = segue.destination as? ToastViewController {
+            self.toastVC = toastVC
+        }
     }
 
     private func doGeoCode(_ query: String) {
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(query) { placemarks, error in
             guard error == nil else {
-                print("geocode error: \(error!)")
+                guard let error = error as? CLError else {
+                    NSLog("Geocode error was not a CLError: \(error!)")
+                    return
+                }
+                
+                let message: String
+                switch error.code {
+                case .network:
+                    message = "Network error. Please connect device to internet."
+                case .geocodeFoundNoResult:
+                    message = "No result found."
+                case .locationUnknown:
+                    message = "Location unknown."
+                default:
+                    message = "Error occured. Please try again."
+                    NSLog("Unknown error occured: \((error as NSError).localizedDescription)")
+                }
+                self.toastVC.showMessage(message)
                 return
             }
             guard
@@ -48,7 +72,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, MKMapViewDele
                 let country = placemark.country,
                 country == "United States"
             else {
-                print("Data is only available for the United States.")
+                self.toastVC.showMessage("Data is only available for the United States.")
                 return
             }
 
