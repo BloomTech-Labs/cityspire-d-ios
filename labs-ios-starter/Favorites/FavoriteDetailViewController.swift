@@ -1,5 +1,5 @@
 //
-//  MapContainerViewController.swift
+//  FavoriteDetailViewController.swift
 //  labs-ios-starter
 //
 //  Created by Kelson Hartle on 2/3/21.
@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class MapContainerViewController: UIViewController {
+class FavoriteDetailViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {

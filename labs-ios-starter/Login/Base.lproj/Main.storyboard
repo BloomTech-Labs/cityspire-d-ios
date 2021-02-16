@@ -104,10 +104,10 @@
             </objects>
             <point key="canvasLocation" x="4404" y="201.94902548725639"/>
         </scene>
-        <!--Map Container View Controller-->
+        <!--Favorite Detail View Controller-->
         <scene sceneID="dCb-XO-6gf">
             <objects>
-                <viewController id="Ha3-cF-h01" customClass="MapContainerViewController" customModule="labs_ios_starter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ha3-cF-h01" customClass="FavoriteDetailViewController" customModule="labs_ios_starter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Gq-UI-zFc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -496,11 +496,11 @@
             <objects>
                 <viewController id="d9d-1f-IRx" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="odw-dI-I4m">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="243"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="258"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82f-hk-hEp">
-                                <rect key="frame" x="66" y="50" width="243" height="143"/>
+                                <rect key="frame" x="66" y="50" width="243" height="158"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -603,7 +603,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="f4m-uy-KBa"/>
+        <segue reference="OH0-zN-0GO"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Male" width="200" height="248"/>
