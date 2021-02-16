@@ -106,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				46BEB4EB24C98EB400FE0CD1 /* Model */,
+				636FD1E825DB87970052AEA3 /* Network */,
 				46BEB4EC24C98EBB00FE0CD1 /* Model Controller */,
 				46BEB4EF24C98ED900FE0CD1 /* Login */,
 				638CA13025C266B200B996B9 /* Search & Map */,
@@ -118,8 +119,6 @@
 				50FDDEA525BFC8AF007941CC /* FavoritesCollectionViewController.swift */,
 				50FDDEAF25C09A96007941CC /* FavoriteCollectionViewCell.swift */,
 				503FD9B125CBA46900741B1F /* MapContainerViewController.swift */,
-				503FDA2C25D0F16800741B1F /* City.swift */,
-				503FDA3925D0F35100741B1F /* CityNetworkClient.swift */,
 			);
 			path = "labs-ios-starter";
 			sourceTree = "<group>";
@@ -137,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				46BEB4E024C9828800FE0CD1 /* Profile.swift */,
+				503FDA2C25D0F16800741B1F /* City.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -169,6 +169,14 @@
 				46BEB4F024C98F0D00FE0CD1 /* Profiles.storyboard */,
 			);
 			path = Profiles;
+			sourceTree = "<group>";
+		};
+		636FD1E825DB87970052AEA3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				503FDA3925D0F35100741B1F /* CityNetworkClient.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		638CA13025C266B200B996B9 /* Search & Map */ = {
