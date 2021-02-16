@@ -51,12 +51,6 @@ class CityNetworkClient {
         }.resume()
     }
     
-//    // fetch rent
-//    {
-//      "msg": "average rent",
-//      "score": 4,
-//      "avg_rent": 2100
-//    }
     func fetchAverageRent(forCity city: String, completion: @escaping (Result<Rent, NetworkError>) -> Void) {
         
         let averageRentForCityURL = baseDSURL.appendingPathComponent("rent_scr/\(city)")
@@ -82,16 +76,10 @@ class CityNetworkClient {
     }
     
     
-//
-//    // fetch walk score
-//    {
-//      "msg": "city walk score",
-//      "score": 4,
-//      "raw_score": 75
-//    }
     func fetchWalkScore(forCity city: String, completion: @escaping (Result<WalkScore, NetworkError>) -> Void) {
         
         let walkScoreURL = baseDSURL.appendingPathComponent("walk_scr/\(city)")
+        print(walkScoreURL)
         
         URLSession.shared.dataTask(with: walkScoreURL) { (data, _, error) in
             if let error = error {
@@ -112,13 +100,6 @@ class CityNetworkClient {
             }
         }.resume()
     }
-    
-    
-//    // crime score
-//    {
-//      "msg": "crime score",
-//      "score": 4,
-//    }
     
     func fetchCrimeScore(forCity city: String, completion: @escaping (Result<CrimeScore, NetworkError>) -> Void) {
         
@@ -143,13 +124,7 @@ class CityNetworkClient {
             }
         }.resume()
     }
-//
-//    // airquality score
-//    {
-//      "msg": "air quality score",
-//      "score": 5,
-//    }
-    
+
     func fetchAirQuality(forCity city: String, completion: @escaping (Result<AirQuality, NetworkError>) -> Void) {
         
         let airQualityCityURL = baseDSURL.appendingPathComponent("air_qual_scr/\(city)")
@@ -173,12 +148,6 @@ class CityNetworkClient {
             }
         }.resume()
     }
-//
-//    // overall score
-//    {
-//      "msg": "overall quality of life score",
-//      "score": 4,
-//    }
     
     func fetchLifeScore(forCity city: String, completion: @escaping (Result<LifeScore, NetworkError>) -> Void) {
         

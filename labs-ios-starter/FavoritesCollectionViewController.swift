@@ -31,11 +31,24 @@ class FavoritesCollectionViewController: UIViewController {
                 if try result.get() {
                     DispatchQueue.main.async {
                         self.collectionView.reloadData()
+                        self.doThis()
                     }
                 }
             } catch {
                 print("Error unable to fetch cities.")
             }
+        }
+    }
+    
+    func doThis() {
+        cityNetworkClient.fetchWalkScore(forCity: cityNetworkClient.cities.last?.cityName ?? "") { (result) in
+            do {
+                let result = try result.get()
+                print(result.score)
+            } catch {
+                
+            }
+            
         }
     }
     
