@@ -31,24 +31,41 @@ class FavoritesCollectionViewController: UIViewController {
                 if try result.get() {
                     DispatchQueue.main.async {
                         self.collectionView.reloadData()
-                        self.doThis()
                     }
                 }
             } catch {
                 print("Error unable to fetch cities.")
             }
         }
-    }
-    
-    func doThis() {
-        cityNetworkClient.fetchWalkScore(forCity: cityNetworkClient.cities.last?.cityName ?? "") { (result) in
-            do {
-                let result = try result.get()
-                print(result.score)
-            } catch {
-                
-            }
-            
+        
+        cityNetworkClient.fetchAverageRent(forCity: "Chicago") { (result) in
+            print(result)
+            print("rent score")
+        }
+
+        cityNetworkClient.fetchCrimeScore(forCity: "Chicago") { (result) in
+            print(result)
+            print("crime score")
+        }
+
+        cityNetworkClient.fetchWalkScore(forCity: "Chicago") { (result) in
+            print(result)
+            print("walk score")
+        }
+
+        cityNetworkClient.fetchAirQuality(forCity: "Chicago") { (result) in
+            print(result)
+            print("airquality score")
+        }
+
+        cityNetworkClient.fetchLifeScore(forCity: "Chicago") { (result) in
+            print(result)
+            print("life score")
+        }
+        
+        cityNetworkClient.fetchPopulationForAGivenCity(forCity: "Chicago") { (result) in
+            print(result)
+            print("population score")
         }
     }
     

@@ -22,9 +22,8 @@ enum NetworkError: Error {
 class CityNetworkClient {
     
     var cities: [City] = []
-    var baseDSURL = URL(string: "https://cityspire.dananderson.dev")!
+    var baseDSURL = URL(string: "http://cityspire-d-ds-01.eba-5qfhebrw.us-east-1.elasticbeanstalk.com/")!
     let jsonDecoder = JSONDecoder()
-    
     
     func fetchAllCities(completion: @escaping (Result<Bool, NetworkError>) -> Void) {
         let allCitiesURL = baseDSURL.appendingPathComponent("cities")
@@ -53,7 +52,7 @@ class CityNetworkClient {
     
     func fetchAverageRent(forCity city: String, completion: @escaping (Result<Rent, NetworkError>) -> Void) {
         
-        let averageRentForCityURL = baseDSURL.appendingPathComponent("rent_scr/\(city)")
+        let averageRentForCityURL = baseDSURL.appendingPathComponent("rent_rate/\(city)")
         
         URLSession.shared.dataTask(with: averageRentForCityURL) { (data, _, error) in
             if let error = error {
@@ -168,6 +167,30 @@ class CityNetworkClient {
                 completion(.success(lifeScore))
             } catch {
                 print("Error unable to decode the data")
+                completion(.failure(.noDecode))
+            }
+        }.resume()
+    }
+    
+    func fetchPopulationForAGivenCity(forCity city: String, completion: @escaping (Result<Population, NetworkError>) -> Void) {
+        
+        let averageScoreCityURL = baseDSURL.appendingPathComponent("population_data/\(city)")
+        
+        URLSession.shared.dataTask(with: averageScoreCityURL) { (data, _, error) in
+            if let error = error {
+                print("Error \(error)")
+            }
+            
+            guard let data = data else {
+                print("No Data Returned from API")
+                return
+            }
+            
+            do {
+                let lifeScore = try self.jsonDecoder.decode(Population.self, from: data)
+                completion(.success(lifeScore))
+            } catch let error {
+                print("Error unable to decode the data \(error)")
                 completion(.failure(.noDecode))
             }
         }.resume()

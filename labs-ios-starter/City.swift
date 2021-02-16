@@ -11,13 +11,14 @@ import Foundation
 struct City : Codable {
     let cityName: String
     let cityCode: String
-    let cityId: String
+    let cityId: Int
     let stateAbreviation: String
     let rentAverage: Rent?
     let walkScore: WalkScore?
     let crimeScore: CrimeScore?
     let airQuality: AirQuality?
     let lifeScore: LifeScore?
+    let population: Population?
     
     enum CodingKeys: String, CodingKey {
         case cityName = "city"
@@ -29,6 +30,7 @@ struct City : Codable {
         case crimeScore
         case airQuality
         case lifeScore
+        case population
     }
 }
 
@@ -41,7 +43,7 @@ struct Rent : Codable {
 struct WalkScore : Codable {
     let msg: String
     let score: Int
-    let raw_score: Int
+    
 }
 
 struct CrimeScore : Codable {
@@ -57,4 +59,8 @@ struct AirQuality : Codable {
 struct LifeScore : Codable {
     let msg: String
     let score: Int
+}
+
+struct Population: Codable {
+   let population: Double
 }
