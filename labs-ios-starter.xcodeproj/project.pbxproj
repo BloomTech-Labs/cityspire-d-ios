@@ -25,9 +25,7 @@
 		46BEB4F124C98F0D00FE0CD1 /* Profiles.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BEB4F024C98F0D00FE0CD1 /* Profiles.storyboard */; };
 		46BF10BE24D388FF001C6753 /* UIViewController+SimpleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */; };
 		46C2BC9224D432F90077E49D /* ProfileTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C2BC9124D432F90077E49D /* ProfileTabBarViewController.swift */; };
-		503FD9B225CBA46900741B1F /* FavoriteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FD9B125CBA46900741B1F /* FavoriteDetailViewController.swift */; };
 		503C24E225DCAE3A004321C7 /* ScoreKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503C24E125DCAE3A004321C7 /* ScoreKeys.swift */; };
-		503FD9B225CBA46900741B1F /* MapContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FD9B125CBA46900741B1F /* MapContainerViewController.swift */; };
 		503FDA2D25D0F16800741B1F /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FDA2C25D0F16800741B1F /* City.swift */; };
 		503FDA3A25D0F35100741B1F /* CityNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FDA3925D0F35100741B1F /* CityNetworkClient.swift */; };
 		50FDDEA625BFC8AF007941CC /* FavoritesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FDDEA525BFC8AF007941CC /* FavoritesCollectionViewController.swift */; };
@@ -57,9 +55,7 @@
 		46BEB4F024C98F0D00FE0CD1 /* Profiles.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profiles.storyboard; sourceTree = "<group>"; };
 		46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SimpleAlert.swift"; sourceTree = "<group>"; };
 		46C2BC9124D432F90077E49D /* ProfileTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabBarViewController.swift; sourceTree = "<group>"; };
-		503FD9B125CBA46900741B1F /* FavoriteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetailViewController.swift; sourceTree = "<group>"; };
 		503C24E125DCAE3A004321C7 /* ScoreKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreKeys.swift; sourceTree = "<group>"; };
-		503FD9B125CBA46900741B1F /* MapContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContainerViewController.swift; sourceTree = "<group>"; };
 		503FDA2C25D0F16800741B1F /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		503FDA3925D0F35100741B1F /* CityNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityNetworkClient.swift; sourceTree = "<group>"; };
 		50FDDEA525BFC8AF007941CC /* FavoritesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCollectionViewController.swift; sourceTree = "<group>"; };
@@ -182,7 +178,6 @@
 			children = (
 				50FDDEA525BFC8AF007941CC /* FavoritesCollectionViewController.swift */,
 				50FDDEAF25C09A96007941CC /* FavoriteCollectionViewCell.swift */,
-				503FD9B125CBA46900741B1F /* FavoriteDetailViewController.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -294,7 +289,6 @@
 			files = (
 				636FD1E725DB86990052AEA3 /* SharedDetailViewController.swift in Sources */,
 				50FDDEB025C09A96007941CC /* FavoriteCollectionViewCell.swift in Sources */,
-				503FD9B225CBA46900741B1F /* FavoriteDetailViewController.swift in Sources */,
 				503FDA2D25D0F16800741B1F /* City.swift in Sources */,
 				46BEB4EE24C98ECC00FE0CD1 /* ProfileController.swift in Sources */,
 				46BF10BE24D388FF001C6753 /* UIViewController+SimpleAlert.swift in Sources */,
