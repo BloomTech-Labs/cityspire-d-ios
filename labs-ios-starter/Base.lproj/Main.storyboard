@@ -104,10 +104,10 @@
             </objects>
             <point key="canvasLocation" x="4404" y="201.94902548725639"/>
         </scene>
-        <!--Map Container View Controller-->
+        <!--Favorite Detail View Controller-->
         <scene sceneID="dCb-XO-6gf">
             <objects>
-                <viewController id="Ha3-cF-h01" customClass="MapContainerViewController" customModule="labs_ios_starter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ha3-cF-h01" customClass="FavoriteDetailViewController" customModule="labs_ios_starter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Gq-UI-zFc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -491,10 +491,10 @@
             </objects>
             <point key="canvasLocation" x="2355" y="-376"/>
         </scene>
-        <!--View Controller-->
+        <!--Shared Detail View Controller-->
         <scene sceneID="td6-lU-I3Y">
             <objects>
-                <viewController id="d9d-1f-IRx" sceneMemberID="viewController">
+                <viewController id="d9d-1f-IRx" customClass="SharedDetailViewController" customModule="labs_ios_starter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="odw-dI-I4m">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="243"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

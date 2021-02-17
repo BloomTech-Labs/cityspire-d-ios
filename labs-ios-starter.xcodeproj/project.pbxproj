@@ -26,11 +26,11 @@
 		46BF10BE24D388FF001C6753 /* UIViewController+SimpleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */; };
 		46C2BC9224D432F90077E49D /* ProfileTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C2BC9124D432F90077E49D /* ProfileTabBarViewController.swift */; };
 		503C24E225DCAE3A004321C7 /* ScoreKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503C24E125DCAE3A004321C7 /* ScoreKeys.swift */; };
-		503FD9B225CBA46900741B1F /* MapContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FD9B125CBA46900741B1F /* MapContainerViewController.swift */; };
 		503FDA2D25D0F16800741B1F /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FDA2C25D0F16800741B1F /* City.swift */; };
 		503FDA3A25D0F35100741B1F /* CityNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FDA3925D0F35100741B1F /* CityNetworkClient.swift */; };
 		50FDDEA625BFC8AF007941CC /* FavoritesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FDDEA525BFC8AF007941CC /* FavoritesCollectionViewController.swift */; };
 		50FDDEB025C09A96007941CC /* FavoriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FDDEAF25C09A96007941CC /* FavoriteCollectionViewCell.swift */; };
+		636FD1E725DB86990052AEA3 /* SharedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636FD1E625DB86990052AEA3 /* SharedDetailViewController.swift */; };
 		638CA13225C2674E00B996B9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638CA13125C2674E00B996B9 /* SearchViewController.swift */; };
 		63BF5D7E25D23F550096D5D4 /* ToastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF5D7D25D23F550096D5D4 /* ToastViewController.swift */; };
 /* End PBXBuildFile section */
@@ -56,11 +56,11 @@
 		46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SimpleAlert.swift"; sourceTree = "<group>"; };
 		46C2BC9124D432F90077E49D /* ProfileTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabBarViewController.swift; sourceTree = "<group>"; };
 		503C24E125DCAE3A004321C7 /* ScoreKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreKeys.swift; sourceTree = "<group>"; };
-		503FD9B125CBA46900741B1F /* MapContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContainerViewController.swift; sourceTree = "<group>"; };
 		503FDA2C25D0F16800741B1F /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		503FDA3925D0F35100741B1F /* CityNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityNetworkClient.swift; sourceTree = "<group>"; };
 		50FDDEA525BFC8AF007941CC /* FavoritesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCollectionViewController.swift; sourceTree = "<group>"; };
 		50FDDEAF25C09A96007941CC /* FavoriteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionViewCell.swift; sourceTree = "<group>"; };
+		636FD1E625DB86990052AEA3 /* SharedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedDetailViewController.swift; sourceTree = "<group>"; };
 		638CA13125C2674E00B996B9 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		63BF5D7D25D23F550096D5D4 /* ToastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,20 +108,19 @@
 			isa = PBXGroup;
 			children = (
 				46BEB4EB24C98EB400FE0CD1 /* Model */,
+				636FD1E825DB87970052AEA3 /* Network */,
 				46BEB4EC24C98EBB00FE0CD1 /* Model Controller */,
 				46BEB4EF24C98ED900FE0CD1 /* Login */,
 				638CA13025C266B200B996B9 /* Search & Map */,
+				636FD1E525DB842F0052AEA3 /* Shared */,
+				636FD1E425DB816A0052AEA3 /* Favorites */,
 				46BEB4F224C98F1100FE0CD1 /* Profiles */,
 				46BEB4EA24C98EA300FE0CD1 /* Helpers */,
 				465DAA2724BD0BC100D94C24 /* App Lifecycle */,
+				466C4279249A8748007D033E /* Main.storyboard */,
 				466C427C249A8749007D033E /* Assets.xcassets */,
 				466C4281249A8749007D033E /* Info.plist */,
 				466C4287249A889F007D033E /* File Organization.md */,
-				50FDDEA525BFC8AF007941CC /* FavoritesCollectionViewController.swift */,
-				50FDDEAF25C09A96007941CC /* FavoriteCollectionViewCell.swift */,
-				503FD9B125CBA46900741B1F /* MapContainerViewController.swift */,
-				503FDA2C25D0F16800741B1F /* City.swift */,
-				503FDA3925D0F35100741B1F /* CityNetworkClient.swift */,
 				503C24E125DCAE3A004321C7 /* ScoreKeys.swift */,
 			);
 			path = "labs-ios-starter";
@@ -140,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				46BEB4E024C9828800FE0CD1 /* Profile.swift */,
+				503FDA2C25D0F16800741B1F /* City.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -157,7 +157,6 @@
 			children = (
 				46BEB4E424C98CDC00FE0CD1 /* LoginViewController.swift */,
 				463AD24424CF2CDB00447BB8 /* AddProfileViewController.swift */,
-				466C4279249A8748007D033E /* Main.storyboard */,
 				46C2BC9124D432F90077E49D /* ProfileTabBarViewController.swift */,
 				1753D83325BFE231004F9E73 /* MyProfileViewController.swift */,
 			);
@@ -172,6 +171,31 @@
 				46BEB4F024C98F0D00FE0CD1 /* Profiles.storyboard */,
 			);
 			path = Profiles;
+			sourceTree = "<group>";
+		};
+		636FD1E425DB816A0052AEA3 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				50FDDEA525BFC8AF007941CC /* FavoritesCollectionViewController.swift */,
+				50FDDEAF25C09A96007941CC /* FavoriteCollectionViewCell.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		636FD1E525DB842F0052AEA3 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				636FD1E625DB86990052AEA3 /* SharedDetailViewController.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		636FD1E825DB87970052AEA3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				503FDA3925D0F35100741B1F /* CityNetworkClient.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		638CA13025C266B200B996B9 /* Search & Map */ = {
@@ -263,8 +287,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				636FD1E725DB86990052AEA3 /* SharedDetailViewController.swift in Sources */,
 				50FDDEB025C09A96007941CC /* FavoriteCollectionViewCell.swift in Sources */,
-				503FD9B225CBA46900741B1F /* MapContainerViewController.swift in Sources */,
 				503FDA2D25D0F16800741B1F /* City.swift in Sources */,
 				46BEB4EE24C98ECC00FE0CD1 /* ProfileController.swift in Sources */,
 				46BF10BE24D388FF001C6753 /* UIViewController+SimpleAlert.swift in Sources */,
