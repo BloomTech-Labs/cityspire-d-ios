@@ -38,34 +38,10 @@ class FavoritesCollectionViewController: UIViewController {
             }
         }
         
-        cityNetworkClient.fetchAverageRent(forCity: "Chicago") { (result) in
-            print(result)
-            print("rent score")
-        }
-
-        cityNetworkClient.fetchCrimeScore(forCity: "Chicago") { (result) in
-            print(result)
-            print("crime score")
-        }
-
-        cityNetworkClient.fetchWalkScore(forCity: "Chicago") { (result) in
-            print(result)
-            print("walk score")
-        }
-
-        cityNetworkClient.fetchAirQuality(forCity: "Chicago") { (result) in
-            print(result)
-            print("airquality score")
-        }
-
-        cityNetworkClient.fetchLifeScore(forCity: "Chicago") { (result) in
-            print(result)
-            print("life score")
-        }
+        let crimeUrl =  cityNetworkClient.urlFor(city: "Chicago", score: .crime)
         
-        cityNetworkClient.fetchPopulationForAGivenCity(forCity: "Chicago") { (result) in
-            print(result)
-            print("population score")
+        cityNetworkClient.fetch(from: crimeUrl) { (rent: CrimeScore?, error: Error?) in
+            print(rent?.score)
         }
     }
     
