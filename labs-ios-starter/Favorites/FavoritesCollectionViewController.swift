@@ -37,6 +37,12 @@ class FavoritesCollectionViewController: UIViewController {
                 print("Error unable to fetch cities.")
             }
         }
+        
+        let crimeUrl =  cityNetworkClient.urlFor(city: "Chicago", score: .crime)
+        
+        cityNetworkClient.fetch(from: crimeUrl) { (rent: CrimeScore?, error: Error?) in
+            print(rent?.score)
+        }
     }
     
 
