@@ -13,7 +13,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, MKMapViewDele
 
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var mapView: MKMapView!
-    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var detailContainerView: UIView!
     
     var toastVC: ToastViewController!
     var detailVC: SharedDetailViewController!
@@ -21,7 +21,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, MKMapViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        containerView.isHidden = true
+        detailContainerView.isHidden = true
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

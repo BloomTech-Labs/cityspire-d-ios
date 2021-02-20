@@ -381,7 +381,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="4ZR-3A-HCD"/>
                     <connections>
-                        <outlet property="containerView" destination="0bo-Vk-dPK" id="va6-s4-g1a"/>
+                        <outlet property="detailContainerView" destination="0bo-Vk-dPK" id="va6-s4-g1a"/>
                         <outlet property="mapView" destination="zSi-3b-abU" id="GcO-8e-fKu"/>
                         <outlet property="searchBar" destination="Pfm-H9-J0k" id="Pww-lG-ppl"/>
                     </connections>
