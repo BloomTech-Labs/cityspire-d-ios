@@ -11,7 +11,8 @@ import CoreData
 
 extension CityCoreData {
     
-    convenience init(cityCode: String,
+    convenience init(cityPhoto: Data,
+                     cityCode: String,
                      cityId: Double,
                      cityName: String,
                      stateAbreviation: String,
