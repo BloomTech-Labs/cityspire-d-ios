@@ -26,6 +26,7 @@
 		46BF10BE24D388FF001C6753 /* UIViewController+SimpleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */; };
 		46C2BC9224D432F90077E49D /* ProfileTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C2BC9124D432F90077E49D /* ProfileTabBarViewController.swift */; };
 		502D71A225E19494002CE119 /* labs-ios-starter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 502D71A025E19494002CE119 /* labs-ios-starter.xcdatamodeld */; };
+		502D71A525E19B7E002CE119 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502D71A425E19B7E002CE119 /* CoreDataStack.swift */; };
 		503C24E225DCAE3A004321C7 /* ScoreKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503C24E125DCAE3A004321C7 /* ScoreKeys.swift */; };
 		503FDA2D25D0F16800741B1F /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FDA2C25D0F16800741B1F /* City.swift */; };
 		503FDA3A25D0F35100741B1F /* CityNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FDA3925D0F35100741B1F /* CityNetworkClient.swift */; };
@@ -58,6 +59,7 @@
 		46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SimpleAlert.swift"; sourceTree = "<group>"; };
 		46C2BC9124D432F90077E49D /* ProfileTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabBarViewController.swift; sourceTree = "<group>"; };
 		502D71A125E19494002CE119 /* labs-ios-starter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "labs-ios-starter.xcdatamodel"; sourceTree = "<group>"; };
+		502D71A425E19B7E002CE119 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		503C24E125DCAE3A004321C7 /* ScoreKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreKeys.swift; sourceTree = "<group>"; };
 		503FDA2C25D0F16800741B1F /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		503FDA3925D0F35100741B1F /* CityNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityNetworkClient.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				466C4287249A889F007D033E /* File Organization.md */,
 				503C24E125DCAE3A004321C7 /* ScoreKeys.swift */,
 				502D71A025E19494002CE119 /* labs-ios-starter.xcdatamodeld */,
+				502D71A425E19B7E002CE119 /* CoreDataStack.swift */,
 			);
 			path = "labs-ios-starter";
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				636FD1E725DB86990052AEA3 /* SharedDetailViewController.swift in Sources */,
+				502D71A525E19B7E002CE119 /* CoreDataStack.swift in Sources */,
 				50FDDEB025C09A96007941CC /* FavoriteCollectionViewCell.swift in Sources */,
 				503FDA2D25D0F16800741B1F /* City.swift in Sources */,
 				46BEB4EE24C98ECC00FE0CD1 /* ProfileController.swift in Sources */,
