@@ -11,4 +11,14 @@ import UIKit
 class SharedDetailViewController: UIViewController {
     
     @IBOutlet weak var cityNameLabel: UILabel!
+    
+    var city: City! {
+        didSet {
+            updateViews()
+        }
+    }
+    
+    func updateViews() {
+        cityNameLabel.text = city.cityName
+    }
 }
