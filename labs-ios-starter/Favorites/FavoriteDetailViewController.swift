@@ -10,7 +10,11 @@ import UIKit
 import MapKit
 
 class FavoriteDetailViewController: UIViewController {
+    
     @IBOutlet weak var mapView: MKMapView!
+    
+    
+    var sharedDetailVC: SharedDetailViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,15 +22,9 @@ class FavoriteDetailViewController: UIViewController {
         mapView.isUserInteractionEnabled = false
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let sharedDetailVC = segue.destination as? SharedDetailViewController {
+            self.sharedDetailVC = sharedDetailVC
+        }
     }
-    */
-
 }
