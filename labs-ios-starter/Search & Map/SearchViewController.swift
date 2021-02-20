@@ -16,6 +16,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, MKMapViewDele
     @IBOutlet weak var containerView: UIView!
     
     var toastVC: ToastViewController!
+    var detailVC: SharedDetailViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,8 @@ class SearchViewController: UIViewController, UISearchBarDelegate, MKMapViewDele
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let toastVC = segue.destination as? ToastViewController {
             self.toastVC = toastVC
+        } else if let detailVC = segue.destination as? SharedDetailViewController {
+            self.detailVC = detailVC
         }
     }
 
