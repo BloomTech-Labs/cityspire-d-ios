@@ -12,13 +12,13 @@ class SharedDetailViewController: UIViewController {
     
     @IBOutlet weak var cityNameLabel: UILabel!
     
-    var city: City! {
-        didSet {
-            updateViews()
-        }
-    }
+    var city: City!
     
-    func updateViews() {
-        cityNameLabel.text = city.cityName
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        if city != nil {
+            cityNameLabel.text = city.cityName
+        }
     }
 }
