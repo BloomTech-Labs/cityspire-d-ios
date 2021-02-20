@@ -13,6 +13,8 @@ struct City : Codable {
     let cityCode: String
     let cityId: Int
     let stateAbreviation: String
+    let latitude: Double?
+    let longitude: Double?
     let rentAverage: Rent?
     let walkScore: WalkScore?
     let crimeScore: CrimeScore?
@@ -25,6 +27,8 @@ struct City : Codable {
         case cityCode = "city_code"
         case cityId = "id"
         case stateAbreviation = "state"
+        case latitude
+        case longitude
         case rentAverage
         case walkScore
         case crimeScore
