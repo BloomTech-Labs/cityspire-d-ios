@@ -48,10 +48,11 @@ class FavoritesCollectionViewController: UIViewController {
 
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let favoriteDetailVC = segue.destination as? FavoriteDetailViewController {
+            guard let cell = sender as? FavoriteCollectionViewCell else { return }
+            favoriteDetailVC.city = cell.city
+        }
     }
 }
 
@@ -67,8 +68,9 @@ extension FavoritesCollectionViewController: UICollectionViewDelegateFlowLayout,
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! FavoriteCollectionViewCell
         
         cell.layer.cornerRadius = 10
-        let currentObject = self.cityNetworkClient.cities[indexPath.row]
-        cell.cityNameLabel.text = currentObject.cityName
+        let city = self.cityNetworkClient.cities[indexPath.row]
+        cell.city = city
+        cell.cityNameLabel.text = city.cityName
         cell.backgroundView = cell.backgroundImageView
         
         return cell

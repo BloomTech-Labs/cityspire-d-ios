@@ -9,8 +9,16 @@
 import UIKit
 
 class SharedDetailViewController: UIViewController {
-
+    
+    @IBOutlet weak var cityNameLabel: UILabel!
+    
+    var city: City!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        if city != nil {
+            cityNameLabel.text = city.cityName
+        }
     }
 }
