@@ -25,6 +25,7 @@
 		46BEB4F124C98F0D00FE0CD1 /* Profiles.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BEB4F024C98F0D00FE0CD1 /* Profiles.storyboard */; };
 		46BF10BE24D388FF001C6753 /* UIViewController+SimpleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */; };
 		46C2BC9224D432F90077E49D /* ProfileTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C2BC9124D432F90077E49D /* ProfileTabBarViewController.swift */; };
+		502D71A225E19494002CE119 /* labs-ios-starter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 502D71A025E19494002CE119 /* labs-ios-starter.xcdatamodeld */; };
 		503C24E225DCAE3A004321C7 /* ScoreKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503C24E125DCAE3A004321C7 /* ScoreKeys.swift */; };
 		503FDA2D25D0F16800741B1F /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FDA2C25D0F16800741B1F /* City.swift */; };
 		503FDA3A25D0F35100741B1F /* CityNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FDA3925D0F35100741B1F /* CityNetworkClient.swift */; };
@@ -56,6 +57,7 @@
 		46BEB4F024C98F0D00FE0CD1 /* Profiles.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profiles.storyboard; sourceTree = "<group>"; };
 		46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SimpleAlert.swift"; sourceTree = "<group>"; };
 		46C2BC9124D432F90077E49D /* ProfileTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabBarViewController.swift; sourceTree = "<group>"; };
+		502D71A125E19494002CE119 /* labs-ios-starter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "labs-ios-starter.xcdatamodel"; sourceTree = "<group>"; };
 		503C24E125DCAE3A004321C7 /* ScoreKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreKeys.swift; sourceTree = "<group>"; };
 		503FDA2C25D0F16800741B1F /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		503FDA3925D0F35100741B1F /* CityNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityNetworkClient.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				466C4281249A8749007D033E /* Info.plist */,
 				466C4287249A889F007D033E /* File Organization.md */,
 				503C24E125DCAE3A004321C7 /* ScoreKeys.swift */,
+				502D71A025E19494002CE119 /* labs-ios-starter.xcdatamodeld */,
 			);
 			path = "labs-ios-starter";
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				1753D83425BFE231004F9E73 /* MyProfileViewController.swift in Sources */,
 				503FDA3A25D0F35100741B1F /* CityNetworkClient.swift in Sources */,
 				466C4274249A8748007D033E /* AppDelegate.swift in Sources */,
+				502D71A225E19494002CE119 /* labs-ios-starter.xcdatamodeld in Sources */,
 				46C2BC9224D432F90077E49D /* ProfileTabBarViewController.swift in Sources */,
 				463AD24324CF275900447BB8 /* ProfileDetailViewController.swift in Sources */,
 				503C24E225DCAE3A004321C7 /* ScoreKeys.swift in Sources */,
@@ -544,6 +548,19 @@
 			productName = OktaAuth;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		502D71A025E19494002CE119 /* labs-ios-starter.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				502D71A125E19494002CE119 /* labs-ios-starter.xcdatamodel */,
+			);
+			currentVersion = 502D71A125E19494002CE119 /* labs-ios-starter.xcdatamodel */;
+			path = "labs-ios-starter.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 466C4268249A8748007D033E /* Project object */;
 }
