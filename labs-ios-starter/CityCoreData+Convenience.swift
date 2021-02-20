@@ -9,12 +9,18 @@
 import Foundation
 import CoreData
 
-extension FavoriteCity {
+extension CityCoreData {
     
     convenience init(cityCode: String,
                      cityId: Double,
                      cityName: String,
                      stateAbreviation: String,
+                     airQualityScore: AirQualityCoreData,
+                     crimeScore: CrimeScoreCoreData,
+                     lifeScore: LifeScoreCoreData,
+                     populationScore: PopulationCoreData,
+                     rentScore: RentCoreData,
+                     walkScore: WalkScoreCoreData,
                      context: NSManagedObjectContext = CoreDataStack.shared.mainContext
     ) {
         self.init(context: context)
@@ -22,5 +28,11 @@ extension FavoriteCity {
         self.cityId = cityId
         self.cityName = cityName
         self.stateAbreviation = stateAbreviation
+        self.airQualityScore = airQualityScore
+        self.crimeScore = crimeScore
+        self.lifeScore = lifeScore
+        self.populationScore = populationScore
+        self.rentScore = rentScore
+        self.walkScore = walkScore
     }
 }

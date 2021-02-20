@@ -27,7 +27,7 @@
 		46C2BC9224D432F90077E49D /* ProfileTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C2BC9124D432F90077E49D /* ProfileTabBarViewController.swift */; };
 		502D71A225E19494002CE119 /* labs-ios-starter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 502D71A025E19494002CE119 /* labs-ios-starter.xcdatamodeld */; };
 		502D71A525E19B7E002CE119 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502D71A425E19B7E002CE119 /* CoreDataStack.swift */; };
-		502D71AF25E19F4B002CE119 /* FavoriteCity+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502D71AE25E19F4B002CE119 /* FavoriteCity+Convenience.swift */; };
+		502D71AF25E19F4B002CE119 /* CityCoreData+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502D71AE25E19F4B002CE119 /* CityCoreData+Convenience.swift */; };
 		502D71B225E19F68002CE119 /* Scores+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502D71B125E19F68002CE119 /* Scores+Convenience.swift */; };
 		503C24E225DCAE3A004321C7 /* ScoreKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503C24E125DCAE3A004321C7 /* ScoreKeys.swift */; };
 		503FDA2D25D0F16800741B1F /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FDA2C25D0F16800741B1F /* City.swift */; };
@@ -62,7 +62,7 @@
 		46C2BC9124D432F90077E49D /* ProfileTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabBarViewController.swift; sourceTree = "<group>"; };
 		502D71A125E19494002CE119 /* labs-ios-starter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "labs-ios-starter.xcdatamodel"; sourceTree = "<group>"; };
 		502D71A425E19B7E002CE119 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		502D71AE25E19F4B002CE119 /* FavoriteCity+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoriteCity+Convenience.swift"; sourceTree = "<group>"; };
+		502D71AE25E19F4B002CE119 /* CityCoreData+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CityCoreData+Convenience.swift"; sourceTree = "<group>"; };
 		502D71B125E19F68002CE119 /* Scores+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scores+Convenience.swift"; sourceTree = "<group>"; };
 		503C24E125DCAE3A004321C7 /* ScoreKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreKeys.swift; sourceTree = "<group>"; };
 		503FDA2C25D0F16800741B1F /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 				503C24E125DCAE3A004321C7 /* ScoreKeys.swift */,
 				502D71A025E19494002CE119 /* labs-ios-starter.xcdatamodeld */,
 				502D71A425E19B7E002CE119 /* CoreDataStack.swift */,
-				502D71AE25E19F4B002CE119 /* FavoriteCity+Convenience.swift */,
+				502D71AE25E19F4B002CE119 /* CityCoreData+Convenience.swift */,
 				502D71B125E19F68002CE119 /* Scores+Convenience.swift */,
 			);
 			path = "labs-ios-starter";
@@ -321,7 +321,7 @@
 				466C4274249A8748007D033E /* AppDelegate.swift in Sources */,
 				502D71A225E19494002CE119 /* labs-ios-starter.xcdatamodeld in Sources */,
 				46C2BC9224D432F90077E49D /* ProfileTabBarViewController.swift in Sources */,
-				502D71AF25E19F4B002CE119 /* FavoriteCity+Convenience.swift in Sources */,
+				502D71AF25E19F4B002CE119 /* CityCoreData+Convenience.swift in Sources */,
 				463AD24324CF275900447BB8 /* ProfileDetailViewController.swift in Sources */,
 				503C24E225DCAE3A004321C7 /* ScoreKeys.swift in Sources */,
 				46BEB4E524C98CDC00FE0CD1 /* LoginViewController.swift in Sources */,
