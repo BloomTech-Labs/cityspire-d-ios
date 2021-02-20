@@ -13,6 +13,11 @@ class FavoriteDetailViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     
+    var city: City! {
+        didSet {
+            sharedDetailVC.city = city
+        }
+    }
     
     var sharedDetailVC: SharedDetailViewController!
     
