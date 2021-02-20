@@ -9,8 +9,6 @@
 import UIKit
 
 class SharedDetailViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    
+    @IBOutlet weak var cityNameLabel: UILabel!
 }
