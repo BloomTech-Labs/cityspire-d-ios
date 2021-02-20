@@ -13,11 +13,7 @@ class FavoriteDetailViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     
-    var city: City! {
-        didSet {
-            sharedDetailVC.city = city
-        }
-    }
+    var city: City!
     
     var sharedDetailVC: SharedDetailViewController!
     
@@ -29,6 +25,7 @@ class FavoriteDetailViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let sharedDetailVC = segue.destination as? SharedDetailViewController {
+            sharedDetailVC.city = self.city
             self.sharedDetailVC = sharedDetailVC
         }
     }
