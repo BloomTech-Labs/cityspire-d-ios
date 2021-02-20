@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class SearchViewController: UIViewController, UISearchBarDelegate, MKMapViewDelegate {
+class SearchViewController: UIViewController, UISearchBarDelegate {
 
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var mapView: MKMapView!
@@ -93,5 +93,29 @@ class SearchViewController: UIViewController, UISearchBarDelegate, MKMapViewDele
 
             self.searchBar.resignFirstResponder()
         }
+    }
+    
+    private func showDetailContainerView() {
+        detailContainerView.isHidden = false
+    }
+    
+    private func hideDetailContainerView() {
+        detailContainerView.isHidden = true
+    }
+}
+
+extension SearchViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        guard
+            let annotation = view.annotation,
+            let title = annotation.title
+        else {
+            return
+        }
+        
+        detailVC.cityNameLabel.text = title
+        
+        showDetailContainerView()
     }
 }
