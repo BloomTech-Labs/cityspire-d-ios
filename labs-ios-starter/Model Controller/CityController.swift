@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import CoreData
 
 class CityController {
     
-    @discardableResult func createFavoriteCity(cityPhoto: Data, cityCode: String, cityId: Double, cityName: String, stateAvreviation: String, airQualityScore: AirQualityCoreData, crimeScore: CrimeScoreCoreData, lifeScore: LifeScoreCoreData, populationScore: PopulationCoreData, rentScore: RentCoreData, walkScore: WalkScoreCoreData) -> CityCoreData {
+    @discardableResult func createCityInCoreData(cityPhoto: Data, cityCode: String, cityId: Double, cityName: String, stateAvreviation: String, airQualityScore: AirQualityCoreData, crimeScore: CrimeScoreCoreData, lifeScore: LifeScoreCoreData, populationScore: PopulationCoreData, rentScore: RentCoreData, walkScore: WalkScoreCoreData) -> CityCoreData {
         
         let newFavoriteCity = CityCoreData(cityPhoto: cityPhoto, cityCode: cityCode, cityId: cityId, cityName: cityName, stateAbreviation: stateAvreviation, airQualityScore: airQualityScore, crimeScore: crimeScore, lifeScore: lifeScore, populationScore: populationScore, rentScore: rentScore, walkScore: walkScore)
         
@@ -19,4 +20,23 @@ class CityController {
         return newFavoriteCity
     }
     
+    func updateCityInCoreData(cityCoreData: CityCoreData, cityPhoto: Data, cityCode: String, cityId: Double, cityName: String, stateAbvreviation: String, airQualityScore: AirQualityCoreData, crimeScore: CrimeScoreCoreData, lifeScore: LifeScoreCoreData, populationScore: PopulationCoreData, rentScore: RentCoreData, walkScore: WalkScoreCoreData) {
+        
+        cityCoreData.cityPhoto = cityPhoto
+        cityCoreData.cityCode = cityCode
+        cityCoreData.cityId = cityId
+        cityCoreData.cityName = cityName
+        cityCoreData.stateAbreviation = stateAbvreviation
+        cityCoreData.airQualityScore = airQualityScore
+        cityCoreData.crimeScore = crimeScore
+        cityCoreData.lifeScore = lifeScore
+        cityCoreData.populationScore = populationScore
+        cityCoreData.rentScore = rentScore
+        cityCoreData.walkScore = walkScore
+    }
+    
+    func deleteCityFromCoreData(cityToDelete: NSManagedObject ) {
+        CoreDataStack.shared.mainContext.delete(cityToDelete)
+        CoreDataStack.shared.saveToPersistentStore()
+    }
 }
