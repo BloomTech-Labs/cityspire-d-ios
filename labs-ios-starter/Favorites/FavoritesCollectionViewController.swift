@@ -7,14 +7,34 @@
 //
 
 import UIKit
+import CoreData
 
-class FavoritesCollectionViewController: UIViewController {
+class FavoritesCollectionViewController: UIViewController, NSFetchedResultsControllerDelegate {
     
     // MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: - Properties
     let cityNetworkClient = CityNetworkClient()
+    let cityController = CityController()
+    
+    lazy var fetchResultsController: NSFetchedResultsController<CityCoreData> = {
+       
+        let fetchRequest: NSFetchRequest<CityCoreData> = CityCoreData.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "cityName", ascending: true)]
+        
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.shared.mainContext, sectionNameKeyPath: nil, cacheName: nil)
+        
+        frc.delegate = self
+        
+        do {
+            try frc.performFetch()
+        } catch {
+            print("Error fetching cities from core data.")
+        }
+        
+        return frc
+    }()
     
     
     // MARK: - Life Cycle
@@ -26,22 +46,29 @@ class FavoritesCollectionViewController: UIViewController {
         view.backgroundColor = .lightGray
         collectionView.backgroundColor = .lightGray
         
-        cityNetworkClient.fetchAllCities { (result) in
-            do {
-                if try result.get() {
-                    DispatchQueue.main.async {
-                        self.collectionView.reloadData()
-                    }
-                }
-            } catch {
-                print("Error unable to fetch cities.")
-            }
-        }
+//        cityNetworkClient.fetchAllCities { (result) in
+//            do {
+//                if try result.get() {
+//                    DispatchQueue.main.async {
+//                        self.collectionView.reloadData()
+//                    }
+//                }
+//            } catch {
+//                print("Error unable to fetch cities.")
+//            }
+//        }
         
         let crimeUrl =  cityNetworkClient.urlFor(city: "Chicago", score: .crime)
         
         cityNetworkClient.fetch(from: crimeUrl) { (rent: CrimeScore?, error: Error?) in
             print(rent?.score)
+        }
+        
+        cityController.createCityInCoreData(cityPhoto: UIImage(named: "NEWYORK")?.pngData() ?? Data(), cityCode: "New_York_City", cityId: 1, cityName: "New York City", stateAvreviation: "NY", airQualityScore: AirQualityCoreData(score: 5), crimeScore: CrimeScoreCoreData(score: 4), lifeScore: LifeScoreCoreData(score: 10), populationScore: PopulationCoreData(population: 10), rentScore: RentCoreData(score: 10, averageRent: 3000), walkScore: WalkScoreCoreData(score: 3))
+        
+        
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
         }
     }
     
@@ -60,7 +87,7 @@ class FavoritesCollectionViewController: UIViewController {
 extension FavoritesCollectionViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.cityNetworkClient.cities.count
+        return fetchResultsController.sections?[section].numberOfObjects ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -68,7 +95,7 @@ extension FavoritesCollectionViewController: UICollectionViewDelegateFlowLayout,
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! FavoriteCollectionViewCell
         
         cell.layer.cornerRadius = 10
-        let city = self.cityNetworkClient.cities[indexPath.row]
+        let city = fetchResultsController.object(at: indexPath)
         cell.city = city
         cell.cityNameLabel.text = city.cityName
         cell.backgroundView = cell.backgroundImageView
