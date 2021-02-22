@@ -9,18 +9,19 @@
 import UIKit
 import MapKit
 
-class SearchViewController: UIViewController, UISearchBarDelegate, MKMapViewDelegate {
+class SearchViewController: UIViewController, UISearchBarDelegate {
 
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var mapView: MKMapView!
-    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var detailContainerView: UIView!
     
     var toastVC: ToastViewController!
+    var detailVC: SharedDetailViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        containerView.isHidden = true
+        detailContainerView.isHidden = true
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -34,6 +35,8 @@ class SearchViewController: UIViewController, UISearchBarDelegate, MKMapViewDele
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let toastVC = segue.destination as? ToastViewController {
             self.toastVC = toastVC
+        } else if let detailVC = segue.destination as? SharedDetailViewController {
+            self.detailVC = detailVC
         }
     }
 
@@ -90,5 +93,29 @@ class SearchViewController: UIViewController, UISearchBarDelegate, MKMapViewDele
 
             self.searchBar.resignFirstResponder()
         }
+    }
+    
+    private func showDetailContainerView() {
+        detailContainerView.isHidden = false
+    }
+    
+    private func hideDetailContainerView() {
+        detailContainerView.isHidden = true
+    }
+}
+
+extension SearchViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        guard
+            let annotation = view.annotation,
+            let title = annotation.title
+        else {
+            return
+        }
+        
+        detailVC.cityNameLabel.text = title
+        
+        showDetailContainerView()
     }
 }

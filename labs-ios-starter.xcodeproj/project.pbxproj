@@ -30,6 +30,7 @@
 		503FDA3A25D0F35100741B1F /* CityNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FDA3925D0F35100741B1F /* CityNetworkClient.swift */; };
 		50FDDEA625BFC8AF007941CC /* FavoritesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FDDEA525BFC8AF007941CC /* FavoritesCollectionViewController.swift */; };
 		50FDDEB025C09A96007941CC /* FavoriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FDDEAF25C09A96007941CC /* FavoriteCollectionViewCell.swift */; };
+		63137A2E25DCCA6A00C0FEFE /* FavoriteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63137A2D25DCCA6A00C0FEFE /* FavoriteDetailViewController.swift */; };
 		636FD1E725DB86990052AEA3 /* SharedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636FD1E625DB86990052AEA3 /* SharedDetailViewController.swift */; };
 		638CA13225C2674E00B996B9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638CA13125C2674E00B996B9 /* SearchViewController.swift */; };
 		63BF5D7E25D23F550096D5D4 /* ToastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF5D7D25D23F550096D5D4 /* ToastViewController.swift */; };
@@ -60,6 +61,7 @@
 		503FDA3925D0F35100741B1F /* CityNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityNetworkClient.swift; sourceTree = "<group>"; };
 		50FDDEA525BFC8AF007941CC /* FavoritesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCollectionViewController.swift; sourceTree = "<group>"; };
 		50FDDEAF25C09A96007941CC /* FavoriteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionViewCell.swift; sourceTree = "<group>"; };
+		63137A2D25DCCA6A00C0FEFE /* FavoriteDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteDetailViewController.swift; sourceTree = "<group>"; };
 		636FD1E625DB86990052AEA3 /* SharedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedDetailViewController.swift; sourceTree = "<group>"; };
 		638CA13125C2674E00B996B9 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		63BF5D7D25D23F550096D5D4 /* ToastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			children = (
 				50FDDEA525BFC8AF007941CC /* FavoritesCollectionViewController.swift */,
 				50FDDEAF25C09A96007941CC /* FavoriteCollectionViewCell.swift */,
+				63137A2D25DCCA6A00C0FEFE /* FavoriteDetailViewController.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				46BEB4E724C98D8900FE0CD1 /* Notifications.swift in Sources */,
 				46BEB4E124C9828800FE0CD1 /* Profile.swift in Sources */,
 				50FDDEA625BFC8AF007941CC /* FavoritesCollectionViewController.swift in Sources */,
+				63137A2E25DCCA6A00C0FEFE /* FavoriteDetailViewController.swift in Sources */,
 				63BF5D7E25D23F550096D5D4 /* ToastViewController.swift in Sources */,
 				46BEB4E924C98DAF00FE0CD1 /* ProfileListViewController.swift in Sources */,
 				463AD24524CF2CDB00447BB8 /* AddProfileViewController.swift in Sources */,
