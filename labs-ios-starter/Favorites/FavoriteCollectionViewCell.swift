@@ -14,6 +14,7 @@ protocol ProtocolDelegate {
 
 class FavoriteCollectionViewCell: UICollectionViewCell {
     
+    // MARK: - Required Inits
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupCell()
@@ -24,6 +25,7 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
         setupCell()
     }
     
+    // MARK: - Properties
     let backgroundImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "New York")
@@ -106,7 +108,8 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
     let controller = CityController()
     var delegate : ProtocolDelegate?
     
-    @objc func deleteFavorite() {
+    // MARK: - Private Functions
+    @objc private func deleteFavorite() {
         let alert = UIAlertController(title: "Delete \(city.cityName ?? "this city")?", message: "are you sure?", preferredStyle: .alert)
         alert.addAction(.init(title: "Dismiss", style: .default, handler: nil))
         alert.addAction(.init(title: "Delete", style: .destructive, handler: { (action) in
@@ -118,7 +121,6 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
         //FavoriteDetailViewController().present(alert, animated: true, completion: nil)
         UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
     }
-    
     
     fileprivate func setupCell() {
         
@@ -133,20 +135,6 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
             iconFavoriteButton.widthAnchor.constraint(equalToConstant: 30)
             
         ])
-        
-        
-        
-//        self.addSubview(iconImageView)
-//        iconImageView.translatesAutoresizingMaskIntoConstraints = false
-//
-//        NSLayoutConstraint.activate([
-//            iconImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
-//            iconImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
-//            iconImageView.heightAnchor.constraint(equalToConstant: 30),
-//            iconImageView.widthAnchor.constraint(equalToConstant: 30)
-//
-//        ])
-        
         self.addSubview(blurredContainerView)
         blurredContainerView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -178,7 +166,6 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
         
         blurredContainerView.addSubview(testView)
         testView.translatesAutoresizingMaskIntoConstraints = false
-        //testView.backgroundColor = .blue
         
         NSLayoutConstraint.activate([
             testView.trailingAnchor.constraint(equalTo: self.blurredContainerView.trailingAnchor, constant: -20),

@@ -10,26 +10,6 @@ import UIKit
 import CoreData
 
 class FavoritesCollectionViewController: UIViewController, NSFetchedResultsControllerDelegate, ProtocolDelegate {
-    func refreshView(cell: FavoriteCollectionViewCell) {
-        print(cell.cityNameLabel)
-        
-        if let indexPath = collectionView.indexPath(for: cell) {
-            self.collectionView.performBatchUpdates {
-                self.collectionView.deleteItems(at:[indexPath])
-            } completion: { (ok) in
-                print("Completed")
-            }
-
-            do {
-                try self.fetchResultsController.performFetch()
-            } catch {
-                print("ERRROR FETCHING AFTER DELETION")
-            }
-            
-        }
-    }
-    
-    
     // MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -75,6 +55,26 @@ class FavoritesCollectionViewController: UIViewController, NSFetchedResultsContr
         guard let cityPhoto = UIImage(named: "rio"), let cityPhotoData = cityPhoto.pngData() else { fatalError() }
         
         cityController.createCityInCoreData(cityPhoto: cityPhotoData, cityCode: "New_York_City", cityId: 1, cityName: "New York", stateAvreviation: "NY", airQualityScore: AirQualityCoreData(score: 5), crimeScore: CrimeScoreCoreData(score: 4), lifeScore: LifeScoreCoreData(score: 10), populationScore: PopulationCoreData(population: 10), rentScore: RentCoreData(score: 10, averageRent: 3000), walkScore: WalkScoreCoreData(score: 3))
+    }
+    
+    // MARK: - Functions
+    func refreshView(cell: FavoriteCollectionViewCell) {
+        print(cell.cityNameLabel)
+        
+        if let indexPath = collectionView.indexPath(for: cell) {
+            self.collectionView.performBatchUpdates {
+                self.collectionView.deleteItems(at:[indexPath])
+            } completion: { (ok) in
+                print("Completed")
+            }
+
+            do {
+                try self.fetchResultsController.performFetch()
+            } catch {
+                print("ERRROR FETCHING AFTER DELETION")
+            }
+            
+        }
     }
     
     // MARK: - Navigation
