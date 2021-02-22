@@ -30,8 +30,9 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
     
     let iconImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "Star")
+        imageView.image = UIImage(systemName: "star.fill")
         imageView.contentMode = .scaleToFill
+        imageView.tintColor = .yellow
         
         return imageView
     }()

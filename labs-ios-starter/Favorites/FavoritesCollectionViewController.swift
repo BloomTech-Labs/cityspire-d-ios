@@ -43,8 +43,8 @@ class FavoritesCollectionViewController: UIViewController, NSFetchedResultsContr
 
         collectionView.delegate = self
         collectionView.dataSource = self
-        view.backgroundColor = .lightGray
-        collectionView.backgroundColor = .lightGray
+        view.backgroundColor = UIColor(named: "BackgroundCollection")
+        collectionView.backgroundColor = UIColor(named: "BackgroundCollection")
         
 //        cityNetworkClient.fetchAllCities { (result) in
 //            do {
@@ -64,13 +64,36 @@ class FavoritesCollectionViewController: UIViewController, NSFetchedResultsContr
             print(rent?.score)
         }
         
-        cityController.createCityInCoreData(cityPhoto: UIImage(named: "NEWYORK")?.pngData() ?? Data(), cityCode: "New_York_City", cityId: 1, cityName: "New York City", stateAvreviation: "NY", airQualityScore: AirQualityCoreData(score: 5), crimeScore: CrimeScoreCoreData(score: 4), lifeScore: LifeScoreCoreData(score: 10), populationScore: PopulationCoreData(population: 10), rentScore: RentCoreData(score: 10, averageRent: 3000), walkScore: WalkScoreCoreData(score: 3))
+        if let image = UIImage(named: "New York") {
+            print("DADDY")
+        }
+        
+        guard let cityPhoto = UIImage(named: "rio"), let cityPhotoData = cityPhoto.pngData() else { fatalError() }
+        
+//        cityController.createCityInCoreData(cityPhoto: cityPhotoData, cityCode: "New_York_City", cityId: 1, cityName: "New York City", stateAvreviation: "NY", airQualityScore: AirQualityCoreData(score: 5), crimeScore: CrimeScoreCoreData(score: 4), lifeScore: LifeScoreCoreData(score: 10), populationScore: PopulationCoreData(population: 10), rentScore: RentCoreData(score: 10, averageRent: 3000), walkScore: WalkScoreCoreData(score: 3))
+        
+        //deleteAllRecords()
         
         
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }
     }
+    
+    func deleteAllRecords() {
+           //delete all data
+        let context = CoreDataStack.shared.mainContext
+
+           let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "CityCoreData")
+           let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+
+           do {
+               try context.execute(deleteRequest)
+               try context.save()
+           } catch {
+               print ("There was an error")
+           }
+       }
     
 
     // MARK: - Navigation
@@ -98,7 +121,13 @@ extension FavoritesCollectionViewController: UICollectionViewDelegateFlowLayout,
         let city = fetchResultsController.object(at: indexPath)
         cell.city = city
         cell.cityNameLabel.text = city.cityName
-        cell.backgroundView = cell.backgroundImageView
+        var imageTwo = UIImage()
+        if let imageData = city.cityPhoto {
+            imageTwo = UIImage(data: imageData)!
+            print("TESTES")
+        }
+        
+        cell.backgroundView = UIImageView(image: imageTwo)
         
         return cell
         

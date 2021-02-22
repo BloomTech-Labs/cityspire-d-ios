@@ -25,6 +25,7 @@ extension CityCoreData {
                      context: NSManagedObjectContext = CoreDataStack.shared.mainContext
     ) {
         self.init(context: context)
+        self.cityPhoto = cityPhoto
         self.cityCode = cityCode
         self.cityId = cityId
         self.cityName = cityName
