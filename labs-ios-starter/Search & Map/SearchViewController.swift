@@ -44,13 +44,13 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(query) { placemarks, error in
             guard error == nil else {
-                guard let error = error as? CLError else {
+                guard let clError = error as? CLError else {
                     NSLog("Geocode error was not a CLError: \(error!)")
                     return
                 }
                 
                 let message: String
-                switch error.code {
+                switch clError.code {
                 case .network:
                     message = "Network error. Please connect device to internet."
                 case .geocodeFoundNoResult:
@@ -59,7 +59,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
                     message = "Location unknown."
                 default:
                     message = "Error occured. Please try again."
-                    NSLog("Unknown error occured: \((error as NSError).localizedDescription)")
+                    NSLog("Unknown error occured: \((clError as NSError).localizedDescription)")
                 }
                 self.toastVC.showMessage(message)
                 return
