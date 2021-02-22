@@ -37,4 +37,19 @@ class CoreDataStack {
         }
     }
     
+    func deleteAllRecords(entityName: String) {
+        //delete all data
+        let context = CoreDataStack.shared.mainContext
+        
+        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+        
+        do {
+            try context.execute(deleteRequest)
+            try context.save()
+        } catch {
+            print ("There was an error")
+        }
+    }
+    
 }

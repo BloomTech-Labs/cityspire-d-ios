@@ -9,7 +9,26 @@
 import UIKit
 import CoreData
 
-class FavoritesCollectionViewController: UIViewController, NSFetchedResultsControllerDelegate {
+class FavoritesCollectionViewController: UIViewController, NSFetchedResultsControllerDelegate, ProtocolDelegate {
+    func refreshView(cell: FavoriteCollectionViewCell) {
+        print(cell.cityNameLabel)
+        
+        if let indexPath = collectionView.indexPath(for: cell) {
+            self.collectionView.performBatchUpdates {
+                self.collectionView.deleteItems(at:[indexPath])
+            } completion: { (ok) in
+                print("Completed")
+            }
+
+            do {
+                try self.fetchResultsController.performFetch()
+            } catch {
+                print("ERRROR FETCHING AFTER DELETION")
+            }
+            
+        }
+    }
+    
     
     // MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
@@ -19,7 +38,7 @@ class FavoritesCollectionViewController: UIViewController, NSFetchedResultsContr
     let cityController = CityController()
     
     lazy var fetchResultsController: NSFetchedResultsController<CityCoreData> = {
-       
+        
         let fetchRequest: NSFetchRequest<CityCoreData> = CityCoreData.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "cityName", ascending: true)]
         
@@ -36,27 +55,16 @@ class FavoritesCollectionViewController: UIViewController, NSFetchedResultsContr
         return frc
     }()
     
+    var favoriteCities = [CityCoreData]()
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         view.backgroundColor = UIColor(named: "BackgroundCollection")
         collectionView.backgroundColor = UIColor(named: "BackgroundCollection")
-        
-//        cityNetworkClient.fetchAllCities { (result) in
-//            do {
-//                if try result.get() {
-//                    DispatchQueue.main.async {
-//                        self.collectionView.reloadData()
-//                    }
-//                }
-//            } catch {
-//                print("Error unable to fetch cities.")
-//            }
-//        }
         
         let crimeUrl =  cityNetworkClient.urlFor(city: "Chicago", score: .crime)
         
@@ -64,40 +72,13 @@ class FavoritesCollectionViewController: UIViewController, NSFetchedResultsContr
             print(rent?.score)
         }
         
-        if let image = UIImage(named: "New York") {
-            print("DADDY")
-        }
-        
         guard let cityPhoto = UIImage(named: "rio"), let cityPhotoData = cityPhoto.pngData() else { fatalError() }
         
-//        cityController.createCityInCoreData(cityPhoto: cityPhotoData, cityCode: "New_York_City", cityId: 1, cityName: "New York City", stateAvreviation: "NY", airQualityScore: AirQualityCoreData(score: 5), crimeScore: CrimeScoreCoreData(score: 4), lifeScore: LifeScoreCoreData(score: 10), populationScore: PopulationCoreData(population: 10), rentScore: RentCoreData(score: 10, averageRent: 3000), walkScore: WalkScoreCoreData(score: 3))
-        
-        //deleteAllRecords()
-        
-        
-        DispatchQueue.main.async {
-            self.collectionView.reloadData()
-        }
+        cityController.createCityInCoreData(cityPhoto: cityPhotoData, cityCode: "New_York_City", cityId: 1, cityName: "New York", stateAvreviation: "NY", airQualityScore: AirQualityCoreData(score: 5), crimeScore: CrimeScoreCoreData(score: 4), lifeScore: LifeScoreCoreData(score: 10), populationScore: PopulationCoreData(population: 10), rentScore: RentCoreData(score: 10, averageRent: 3000), walkScore: WalkScoreCoreData(score: 3))
     }
     
-    func deleteAllRecords() {
-           //delete all data
-        let context = CoreDataStack.shared.mainContext
-
-           let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "CityCoreData")
-           let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
-
-           do {
-               try context.execute(deleteRequest)
-               try context.save()
-           } catch {
-               print ("There was an error")
-           }
-       }
-    
-
     // MARK: - Navigation
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let favoriteDetailVC = segue.destination as? FavoriteDetailViewController {
             guard let cell = sender as? FavoriteCollectionViewCell else { return }
@@ -121,10 +102,10 @@ extension FavoritesCollectionViewController: UICollectionViewDelegateFlowLayout,
         let city = fetchResultsController.object(at: indexPath)
         cell.city = city
         cell.cityNameLabel.text = city.cityName
+        cell.delegate = self
         var imageTwo = UIImage()
         if let imageData = city.cityPhoto {
             imageTwo = UIImage(data: imageData)!
-            print("TESTES")
         }
         
         cell.backgroundView = UIImageView(image: imageTwo)
@@ -136,7 +117,7 @@ extension FavoritesCollectionViewController: UICollectionViewDelegateFlowLayout,
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellWidth = (5 / 6) * self.collectionView.bounds.width
         //let cellSpacing = (1/16) * self.collectionView.bounds.width
-                
+        
         return CGSize(width: cellWidth, height: cellWidth)
     }
     

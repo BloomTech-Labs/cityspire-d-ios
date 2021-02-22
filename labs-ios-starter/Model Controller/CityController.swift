@@ -35,7 +35,13 @@ class CityController {
         cityCoreData.walkScore = walkScore
     }
     
-    func deleteCityFromCoreData(cityToDelete: NSManagedObject ) {
+    func deleteCityFromCoreData(cityToDelete: NSManagedObject, airQualityScore: AirQualityCoreData,crimeScore: CrimeScoreCoreData, lifeScore: LifeScoreCoreData, populationScore: PopulationCoreData, rentScore: RentCoreData, walkScore: WalkScoreCoreData ) {
+        CoreDataStack.shared.mainContext.delete(airQualityScore)
+        CoreDataStack.shared.mainContext.delete(crimeScore)
+        CoreDataStack.shared.mainContext.delete(lifeScore)
+        CoreDataStack.shared.mainContext.delete(populationScore)
+        CoreDataStack.shared.mainContext.delete(rentScore)
+        CoreDataStack.shared.mainContext.delete(walkScore)
         CoreDataStack.shared.mainContext.delete(cityToDelete)
         CoreDataStack.shared.saveToPersistentStore()
     }
