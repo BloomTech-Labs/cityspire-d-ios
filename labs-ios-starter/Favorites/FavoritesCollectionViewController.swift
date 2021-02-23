@@ -78,7 +78,7 @@ class FavoritesCollectionViewController: UIViewController, NSFetchedResultsContr
     }
     
     // MARK: - Navigation
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let favoriteDetailVC = segue.destination as? FavoriteDetailViewController {
             guard let cell = sender as? FavoriteCollectionViewCell else { return }
@@ -109,6 +109,7 @@ extension FavoritesCollectionViewController: UICollectionViewDelegateFlowLayout,
         }
         
         cell.backgroundView = UIImageView(image: imageTwo)
+
         
         return cell
         

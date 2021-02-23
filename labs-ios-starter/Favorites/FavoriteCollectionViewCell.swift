@@ -101,7 +101,10 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
         return stackView
     }()
     
+
     var city: CityCoreData!
+
+
     
     let testView = UIView()
     let testViewTwo = UIView()

@@ -14,7 +14,7 @@ class FavoriteDetailViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
     var city: CityCoreData!
-    
+
     var sharedDetailVC: SharedDetailViewController!
     
     override func viewDidLoad() {
