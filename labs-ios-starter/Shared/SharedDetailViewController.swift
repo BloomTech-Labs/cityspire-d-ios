@@ -12,7 +12,9 @@ class SharedDetailViewController: UIViewController {
     
     @IBOutlet weak var cityNameLabel: UILabel!
     
-    var city: City!
+    var city: CityCoreData!
+
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
