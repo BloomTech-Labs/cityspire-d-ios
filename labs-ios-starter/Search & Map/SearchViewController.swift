@@ -79,6 +79,18 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
             }
         }
     }
+    
+    private func placeAllCityPins() {
+        for city in self.cityNetworkClient.cities {
+            guard let latitude = city.latitude,
+                  let longitude = city.longitude else { continue }
+            
+            let annotation = MKPointAnnotation()
+            annotation.title = city.cityName
+            annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+            self.mapView.addAnnotation(annotation)
+        }
+    }
 
     private func doGeoCode(_ query: String) {
         let geocoder = CLGeocoder()
