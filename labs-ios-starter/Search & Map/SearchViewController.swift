@@ -131,8 +131,6 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
                 return
             }
 
-            self.mapView.removeAnnotations(self.mapView.annotations)
-
             let annotation = MKPointAnnotation()
             annotation.title = placemark.name
             annotation.coordinate = location.coordinate
