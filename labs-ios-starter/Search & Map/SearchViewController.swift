@@ -18,10 +18,13 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
     var toastVC: ToastViewController!
     var detailVC: SharedDetailViewController!
     
+    let cityNetworkClient = CityNetworkClient()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         detailContainerView.isHidden = true
+        loadAllCities()
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -37,6 +40,55 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
             self.toastVC = toastVC
         } else if let detailVC = segue.destination as? SharedDetailViewController {
             self.detailVC = detailVC
+        }
+    }
+    
+    private func loadAllCities() {
+        cityNetworkClient.fetchAllCities { result in
+            switch result {
+            case .success(_):
+                
+                guard let url = Bundle.main.url(forResource: "CityLocs", withExtension: "json") else {
+                    fatalError("couldn't load file")
+                }
+                
+                do {
+                    let data = try Data(contentsOf: url)
+                    let decoder = JSONDecoder()
+                    let cityLocs = try decoder.decode([CityLoc].self, from: data)
+                    
+                    var citiesWithCoordinates = [City]()
+                    for city in self.cityNetworkClient.cities {
+                        let matchingCityLoc = cityLocs.filter { $0.city == city.cityName && $0.state == city.stateAbreviation }[0]
+                        var cityCopy = city
+                        cityCopy.latitude = matchingCityLoc.latitude
+                        cityCopy.longitude = matchingCityLoc.longitude
+                        citiesWithCoordinates.append(cityCopy)
+                    }
+                    self.cityNetworkClient.cities = citiesWithCoordinates
+                    
+                    DispatchQueue.main.async {
+                        self.placeAllCityPins()
+                    }
+                } catch {
+                    print("error:\(error)")
+                }
+
+            case .failure(let networkError):
+                print("Error from CityNetworkClient: \(networkError.localizedDescription)")
+            }
+        }
+    }
+    
+    private func placeAllCityPins() {
+        for city in self.cityNetworkClient.cities {
+            guard let latitude = city.latitude,
+                  let longitude = city.longitude else { continue }
+            
+            let annotation = MKPointAnnotation()
+            annotation.title = city.cityName
+            annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+            self.mapView.addAnnotation(annotation)
         }
     }
 
@@ -78,8 +130,6 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
                 self.toastVC.showMessage("Data is only available for the United States.")
                 return
             }
-
-            self.mapView.removeAnnotations(self.mapView.annotations)
 
             let annotation = MKPointAnnotation()
             annotation.title = placemark.name

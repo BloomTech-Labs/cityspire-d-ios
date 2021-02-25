@@ -13,8 +13,8 @@ struct City : Codable {
     let cityCode: String
     let cityId: Int
     let stateAbreviation: String
-    let latitude: Double?
-    let longitude: Double?
+    var latitude: Double?
+    var longitude: Double?
     let rentAverage: Rent?
     let walkScore: WalkScore?
     let crimeScore: CrimeScore?
