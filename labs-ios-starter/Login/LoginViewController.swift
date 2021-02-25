@@ -13,6 +13,10 @@ class LoginViewController: UIViewController {
     
     let profileController = ProfileController.shared
     
+    //Outlets
+    @IBOutlet weak var signinButtonOutlet: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,6 +30,15 @@ class LoginViewController: UIViewController {
                                                queue: .main,
                                                using: alertUserOfExpiredCredentials)
         
+        //Corner radius
+        cornerRadius(for: signinButtonOutlet)
+    }
+    
+    //MARK: - Corner radius func
+    
+    func cornerRadius(for view: UIView) {
+        view.layer.cornerRadius = 5
+        view.layer.masksToBounds = true
     }
     
     // MARK: - Actions
