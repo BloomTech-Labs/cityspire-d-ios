@@ -17,6 +17,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
     
     var toastVC: ToastViewController!
     var detailVC: SharedDetailViewController!
+    var selectedCity: City?
     
     let cityNetworkClient = CityNetworkClient()
     
@@ -164,8 +165,73 @@ extension SearchViewController: MKMapViewDelegate {
             return
         }
         
-        detailVC.cityNameLabel.text = title
+        let selectedCity = cityNetworkClient.cities.first(where: {$0.cityName == title})
+        detailVC.cityNameLabel.text = selectedCity?.cityName
+        
+        fetchCityDetails(city: selectedCity!)
+        detailVC.cityNormal = self.selectedCity
+        //detailVC.updateViews()
         
         showDetailContainerView()
+    }
+    
+    func fetchCityDetails(city: City) {
+        var population: Population?
+        var lifeScore: LifeScore?
+        var airQuality: AirQuality?
+        var crimeScore: CrimeScore?
+        var walkScore: WalkScore?
+        var rent: Rent?
+        self.selectedCity = city
+        
+        let group = DispatchGroup()
+        
+        group.enter()
+        cityNetworkClient.fetch(from: cityNetworkClient.urlFor(city: city.cityName, score: .population)) { (populationNetwork: Population?, error: Error?) in
+            population = populationNetwork
+            self.selectedCity?.population = population
+            group.leave()
+        }
+        group.enter()
+        cityNetworkClient.fetch(from: cityNetworkClient.urlFor(city: city.cityName, score: .life)) { (lifeScoreNetwork: LifeScore?, error: Error?) in
+            lifeScore = lifeScoreNetwork
+            self.selectedCity?.lifeScore = lifeScore
+            group.leave()
+        }
+        group.enter()
+        cityNetworkClient.fetch(from: cityNetworkClient.urlFor(city: city.cityName, score: .air)) { (airNetwork: AirQuality?, error: Error?) in
+            airQuality = airNetwork
+            self.selectedCity?.airQuality = airQuality
+            group.leave()
+        }
+        group.enter()
+        cityNetworkClient.fetch(from: cityNetworkClient.urlFor(city: city.cityName, score: .crime)) { (crimeNetwork: CrimeScore?, error: Error?) in
+            crimeScore = crimeNetwork
+            self.selectedCity?.crimeScore = crimeScore
+            group.leave()
+        }
+        group.enter()
+        cityNetworkClient.fetch(from: cityNetworkClient.urlFor(city: city.cityName, score: .walk)) { (walkNetwork: WalkScore?, error: Error?) in
+            walkScore = walkNetwork
+            self.selectedCity?.walkScore = walkScore
+            group.leave()
+        }
+        group.enter()
+        cityNetworkClient.fetch(from: cityNetworkClient.urlFor(city: city.cityName, score: .rent)) { (rentNetwork: Rent?, error: Error?) in
+            rent = rentNetwork
+            self.selectedCity?.rentAverage = rent
+            group.leave()
+        }
+        group.notify(queue: .main) {
+            print("all done")
+            print(self.selectedCity)
+            self.detailVC.cityNormal = self.selectedCity
+            self.detailVC.updateViews()
+        }
+        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) {
+//            self.detailVC.cityNormal = self.selectedCity
+//            self.detailVC.updateViews()
+//        }
     }
 }
