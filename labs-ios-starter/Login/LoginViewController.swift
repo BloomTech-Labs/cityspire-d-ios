@@ -16,9 +16,26 @@ class LoginViewController: UIViewController {
     //Outlets
     @IBOutlet weak var signinButtonOutlet: UIButton!
     
+    @IBOutlet weak var AppsNameOutlet: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Letter animation
+        AppsNameOutlet.text = ""
+        var charIndex = 0.0
+        let titleText = "CitySpire"
+        
+        for letter in titleText {
+            print("-")
+            print(0.1 * charIndex)
+            print(letter)
+            
+            Timer.scheduledTimer(withTimeInterval: 0.15 * charIndex, repeats: false) { (timer) in
+                self.AppsNameOutlet.text?.append(letter)
+            }
+            charIndex += 1
+        }
         
         NotificationCenter.default.addObserver(forName: .oktaAuthenticationSuccessful,
                                                object: nil,
@@ -31,14 +48,11 @@ class LoginViewController: UIViewController {
                                                using: alertUserOfExpiredCredentials)
         
         //Corner radius
-        cornerRadius(for: signinButtonOutlet)
-    }
-    
-    //MARK: - Corner radius func
-    
-    func cornerRadius(for view: UIView) {
-        view.layer.cornerRadius = 5
-        view.layer.masksToBounds = true
+        let myBorderColor: UIColor = UIColor(displayP3Red: 184, green: 184, blue: 184, alpha: 0.15)
+        signinButtonOutlet.layer.borderWidth = 1
+        signinButtonOutlet.layer.borderColor = myBorderColor.cgColor
+        signinButtonOutlet.layer.cornerRadius = 15
+        signinButtonOutlet.layer.masksToBounds = true
     }
     
     // MARK: - Actions

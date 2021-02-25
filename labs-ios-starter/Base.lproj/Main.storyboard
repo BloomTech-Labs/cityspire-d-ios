@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y9z-7g-ibd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4a7-cC-Xlp">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -21,10 +21,19 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2021-02-24 at 6.39.07 PM.png" translatesAutoresizingMaskIntoConstraints="NO" id="VhR-CW-J3K">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQk-Xf-had">
-                                <rect key="frame" x="89" y="598" width="197" height="49"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CitySpire" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xyc-CX-jJH">
+                                <rect key="frame" x="98" y="20" width="178" height="38"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="Xcu-2N-7Ft"/>
+                                    <constraint firstAttribute="height" constant="38" id="F42-uS-aF3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="40"/>
+                                <color key="textColor" white="0.71999999999999997" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQk-Xf-had">
+                                <rect key="frame" x="89" y="596" width="197" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="2jO-Wy-WYZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="25"/>
                                 <state key="normal" title="Sign in with Okta">
@@ -34,33 +43,25 @@
                                     <action selector="signIn:" destination="4a7-cC-Xlp" eventType="touchUpInside" id="qez-xn-3z4"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CitySpire" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xyc-CX-jJH">
-                                <rect key="frame" x="98" y="20" width="178" height="38"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="F42-uS-aF3"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="40"/>
-                                <color key="textColor" red="0.84523385760000003" green="0.75307863949999998" blue="0.66218900680000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="R8l-LV-vJe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="VhR-CW-J3K" firstAttribute="bottom" secondItem="R8l-LV-vJe" secondAttribute="bottom" id="4VC-lT-tJz"/>
                             <constraint firstItem="VhR-CW-J3K" firstAttribute="top" secondItem="R8l-LV-vJe" secondAttribute="top" id="Aax-Gl-GVc"/>
-                            <constraint firstItem="R8l-LV-vJe" firstAttribute="trailing" secondItem="CQk-Xf-had" secondAttribute="trailing" constant="89" id="Efh-Yv-sQa"/>
                             <constraint firstItem="VhR-CW-J3K" firstAttribute="trailing" secondItem="R8l-LV-vJe" secondAttribute="trailing" id="Jvl-HS-Tvg"/>
+                            <constraint firstItem="R8l-LV-vJe" firstAttribute="bottom" secondItem="CQk-Xf-had" secondAttribute="bottom" constant="20" id="Swj-i9-Zvf"/>
                             <constraint firstItem="Xyc-CX-jJH" firstAttribute="top" secondItem="R8l-LV-vJe" secondAttribute="top" constant="20" id="eKG-Ck-BV7"/>
-                            <constraint firstItem="R8l-LV-vJe" firstAttribute="bottom" secondItem="CQk-Xf-had" secondAttribute="bottom" constant="20" id="fGV-Ow-7Qb"/>
+                            <constraint firstItem="CQk-Xf-had" firstAttribute="leading" secondItem="R8l-LV-vJe" secondAttribute="leading" constant="89" id="gdV-s8-0EN"/>
                             <constraint firstItem="R8l-LV-vJe" firstAttribute="trailing" secondItem="Xyc-CX-jJH" secondAttribute="trailing" constant="99" id="jb6-aJ-cDY"/>
+                            <constraint firstItem="R8l-LV-vJe" firstAttribute="trailing" secondItem="CQk-Xf-had" secondAttribute="trailing" constant="89" id="kI1-tZ-oSX"/>
                             <constraint firstItem="VhR-CW-J3K" firstAttribute="leading" secondItem="R8l-LV-vJe" secondAttribute="leading" id="n3k-HD-A08"/>
                             <constraint firstItem="Xyc-CX-jJH" firstAttribute="leading" secondItem="R8l-LV-vJe" secondAttribute="leading" constant="98" id="nZy-ul-puF"/>
-                            <constraint firstItem="CQk-Xf-had" firstAttribute="leading" secondItem="R8l-LV-vJe" secondAttribute="leading" constant="89" id="q6W-b2-egj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="ProfileViewer" id="fm5-ES-PwH"/>
                     <connections>
+                        <outlet property="AppsNameOutlet" destination="Xyc-CX-jJH" id="YZ2-up-YVG"/>
                         <outlet property="signinButtonOutlet" destination="CQk-Xf-had" id="YNH-5j-TZT"/>
                         <segue destination="o9A-9L-jW8" kind="presentation" identifier="ModalAddProfile" id="vYb-th-yYx"/>
                         <segue destination="aOC-qF-9qB" kind="presentation" identifier="ShowDetailProfileList" modalPresentationStyle="fullScreen" id="Tfb-bT-2YH"/>
