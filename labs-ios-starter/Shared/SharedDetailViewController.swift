@@ -30,20 +30,55 @@ class SharedDetailViewController: UIViewController {
     }
     
     func updateViews() {
-        guard let city = cityNormal,
-              let population = city.population?.population,
-              //let livingCostScore = city.rentAverage?.avg_rent,
-              //let livabilityScore = city.lifeScore,
-              let rentRates = city.rentAverage?.score,
-              let airQuality = city.airQuality?.score,
-              let walkScore = city.walkScore?.score else { return }
-
+        guard let city = cityNormal else { return }
+        
+        
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .currency
+        numberFormatter.locale = Locale.current
+        numberFormatter.maximumFractionDigits = 0
+        
         cityNameLabel.text = city.cityName
-        populationScoreLabel.text = "\(population)"
-        //costOfLivingScoreLabel.text = "\(livingCostScore)"
-        //livabilityScoreLabel.text = "\(livabilityScore)"
-        rentRatesScoreLabel.text = "\(rentRates)"
-        airQualityScoreLabel.text = "\(airQuality)"
-        walkScoreLabel.text = "\(walkScore)"
+        
+        if let livingCost = city.rentAverage?.avg_rent {
+            if let averageRentPrice = numberFormatter.string(from: livingCost as NSNumber) {
+                costOfLivingScoreLabel.text = "\(averageRentPrice)"
+            }
+        } else {
+            costOfLivingScoreLabel.text = "?"
+        }
+        
+        if let population = city.population?.population {
+            numberFormatter.numberStyle = .decimal
+            if let populationFormatted = numberFormatter.string(from: population as NSNumber) {
+                populationScoreLabel.text = "\(populationFormatted)"
+            }
+        } else {
+            populationScoreLabel.text = "?"
+        }
+        
+        if let livability = city.lifeScore?.score {
+            livabilityScoreLabel.text = "\(livability)"
+        } else {
+            livabilityScoreLabel.text = "?"
+        }
+        
+        if let rentRates = city.rentAverage?.score {
+            rentRatesScoreLabel.text = "\(rentRates)"
+        } else {
+            rentRatesScoreLabel.text = "?"
+        }
+        
+        if let airQuality = city.airQuality?.score {
+            airQualityScoreLabel.text = "\(airQuality)"
+        } else {
+            airQualityScoreLabel.text = "?"
+        }
+        
+        if let walkScore = city.walkScore?.score {
+            walkScoreLabel.text = "\(walkScore)"
+        } else {
+            walkScoreLabel.text = "?"
+        }
     }
 }
