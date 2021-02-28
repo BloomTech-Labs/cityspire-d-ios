@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y9z-7g-ibd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4a7-cC-Xlp">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -18,9 +18,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2021-02-24 at 6.39.07 PM.png" translatesAutoresizingMaskIntoConstraints="NO" id="VhR-CW-J3K">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CitySpire" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xyc-CX-jJH">
+                                <rect key="frame" x="98" y="20" width="178" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="F42-uS-aF3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="40"/>
+                                <color key="textColor" white="0.71999999999999997" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQk-Xf-had">
-                                <rect key="frame" x="129.5" y="318.5" width="116" height="30"/>
-                                <state key="normal" title="Sign in with Okta"/>
+                                <rect key="frame" x="89" y="596" width="197" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="2jO-Wy-WYZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="25"/>
+                                <state key="normal" title="Sign in with Okta">
+                                    <color key="titleColor" red="0.84523385760000003" green="0.75307863949999998" blue="0.66218900680000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="signIn:" destination="4a7-cC-Xlp" eventType="touchUpInside" id="qez-xn-3z4"/>
                                 </connections>
@@ -29,12 +47,22 @@
                         <viewLayoutGuide key="safeArea" id="R8l-LV-vJe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="CQk-Xf-had" firstAttribute="centerX" secondItem="INU-fS-Snd" secondAttribute="centerXWithinMargins" id="5R1-zz-EZZ"/>
-                            <constraint firstItem="CQk-Xf-had" firstAttribute="centerY" secondItem="INU-fS-Snd" secondAttribute="centerYWithinMargins" id="ADM-g9-0Ut"/>
+                            <constraint firstItem="VhR-CW-J3K" firstAttribute="bottom" secondItem="R8l-LV-vJe" secondAttribute="bottom" id="4VC-lT-tJz"/>
+                            <constraint firstItem="VhR-CW-J3K" firstAttribute="top" secondItem="R8l-LV-vJe" secondAttribute="top" id="Aax-Gl-GVc"/>
+                            <constraint firstItem="VhR-CW-J3K" firstAttribute="trailing" secondItem="R8l-LV-vJe" secondAttribute="trailing" id="Jvl-HS-Tvg"/>
+                            <constraint firstItem="R8l-LV-vJe" firstAttribute="bottom" secondItem="CQk-Xf-had" secondAttribute="bottom" constant="20" id="Swj-i9-Zvf"/>
+                            <constraint firstItem="Xyc-CX-jJH" firstAttribute="top" secondItem="R8l-LV-vJe" secondAttribute="top" constant="20" id="eKG-Ck-BV7"/>
+                            <constraint firstItem="CQk-Xf-had" firstAttribute="leading" secondItem="R8l-LV-vJe" secondAttribute="leading" constant="89" id="gdV-s8-0EN"/>
+                            <constraint firstItem="R8l-LV-vJe" firstAttribute="trailing" secondItem="Xyc-CX-jJH" secondAttribute="trailing" constant="99" id="jb6-aJ-cDY"/>
+                            <constraint firstItem="R8l-LV-vJe" firstAttribute="trailing" secondItem="CQk-Xf-had" secondAttribute="trailing" constant="89" id="kI1-tZ-oSX"/>
+                            <constraint firstItem="VhR-CW-J3K" firstAttribute="leading" secondItem="R8l-LV-vJe" secondAttribute="leading" id="n3k-HD-A08"/>
+                            <constraint firstItem="Xyc-CX-jJH" firstAttribute="leading" secondItem="R8l-LV-vJe" secondAttribute="leading" constant="98" id="nZy-ul-puF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="ProfileViewer" id="fm5-ES-PwH"/>
                     <connections>
+                        <outlet property="AppsNameOutlet" destination="Xyc-CX-jJH" id="YZ2-up-YVG"/>
+                        <outlet property="signinButtonOutlet" destination="CQk-Xf-had" id="YNH-5j-TZT"/>
                         <segue destination="o9A-9L-jW8" kind="presentation" identifier="ModalAddProfile" id="vYb-th-yYx"/>
                         <segue destination="aOC-qF-9qB" kind="presentation" identifier="ShowDetailProfileList" modalPresentationStyle="fullScreen" id="Tfb-bT-2YH"/>
                         <segue destination="Y9z-7g-ibd" kind="presentation" identifier="SegueToTabBarController" modalPresentationStyle="fullScreen" id="JvO-Mp-KYq"/>
@@ -42,7 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcT-Mn-ZnW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1545" y="84"/>
+            <point key="canvasLocation" x="1544.8" y="83.208395802098963"/>
         </scene>
         <!--Profiles-->
         <scene sceneID="3Na-TO-5aB">
@@ -496,7 +524,7 @@
             <objects>
                 <viewController id="d9d-1f-IRx" customClass="SharedDetailViewController" customModule="labs_ios_starter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="odw-dI-I4m">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="238"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="San Francisco" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8x2-BW-hi1">
@@ -535,9 +563,9 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rental Rates:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAC-7z-Skt">
-                                        <rect key="frame" x="0.0" y="124.5" width="114.5" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Walk Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lT6-ne-bmg">
+                                        <rect key="frame" x="0.0" y="137" width="68.5" height="37.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -728,6 +756,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Male" width="200" height="248"/>
+        <image name="Screen Shot 2021-02-24 at 6.39.07 PM.png" width="413" height="620"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
