@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1753D83425BFE231004F9E73 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1753D83325BFE231004F9E73 /* MyProfileViewController.swift */; };
-		178ADBA225E7494C005312CF /* Screen Shot 2021-02-24 at 6.39.07 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 178ADBA125E7494C005312CF /* Screen Shot 2021-02-24 at 6.39.07 PM.png */; };
 		17FECA6225C2B89F0065F864 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 17FECA6125C2B89F0065F864 /* IQKeyboardManagerSwift */; };
 		463AD24324CF275900447BB8 /* ProfileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463AD24224CF275900447BB8 /* ProfileDetailViewController.swift */; };
 		463AD24524CF2CDB00447BB8 /* AddProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463AD24424CF2CDB00447BB8 /* AddProfileViewController.swift */; };
@@ -46,7 +45,6 @@
 
 /* Begin PBXFileReference section */
 		1753D83325BFE231004F9E73 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
-		178ADBA125E7494C005312CF /* Screen Shot 2021-02-24 at 6.39.07 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2021-02-24 at 6.39.07 PM.png"; sourceTree = "<group>"; };
 		463AD24224CF275900447BB8 /* ProfileDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailViewController.swift; sourceTree = "<group>"; };
 		463AD24424CF2CDB00447BB8 /* AddProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProfileViewController.swift; sourceTree = "<group>"; };
 		466C4270249A8748007D033E /* labs-ios-starter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "labs-ios-starter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,7 +178,6 @@
 		46BEB4EF24C98ED900FE0CD1 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				178ADBA125E7494C005312CF /* Screen Shot 2021-02-24 at 6.39.07 PM.png */,
 				46BEB4E424C98CDC00FE0CD1 /* LoginViewController.swift */,
 				463AD24424CF2CDB00447BB8 /* AddProfileViewController.swift */,
 				46C2BC9124D432F90077E49D /* ProfileTabBarViewController.swift */,
@@ -302,7 +299,6 @@
 			files = (
 				466C4280249A8749007D033E /* LaunchScreen.storyboard in Resources */,
 				466C427D249A8749007D033E /* Assets.xcassets in Resources */,
-				178ADBA225E7494C005312CF /* Screen Shot 2021-02-24 at 6.39.07 PM.png in Resources */,
 				6377078425E5EAFD00E529ED /* CityLocs.json in Resources */,
 				46BEB4F124C98F0D00FE0CD1 /* Profiles.storyboard in Resources */,
 				466C427B249A8748007D033E /* Main.storyboard in Resources */,

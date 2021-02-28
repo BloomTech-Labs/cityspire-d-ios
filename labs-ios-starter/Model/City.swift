@@ -15,12 +15,12 @@ struct City : Codable {
     let stateAbreviation: String
     var latitude: Double?
     var longitude: Double?
-    let rentAverage: Rent?
-    let walkScore: WalkScore?
-    let crimeScore: CrimeScore?
-    let airQuality: AirQuality?
-    let lifeScore: LifeScore?
-    let population: Population?
+    var rentAverage: Rent?
+    var walkScore: WalkScore?
+    var crimeScore: CrimeScore?
+    var airQuality: AirQuality?
+    var lifeScore: LifeScore?
+    var population: Population?
     
     enum CodingKeys: String, CodingKey {
         case cityName = "city"
@@ -62,7 +62,7 @@ struct AirQuality : Codable {
 
 struct LifeScore : Codable {
     let msg: String
-    let score: Int
+    let score: Double
 }
 
 struct Population: Codable {

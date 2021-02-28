@@ -93,4 +93,15 @@ class CityNetworkClient {
             return baseDSURL.appendingPathComponent("population_data/\(city)")
         }
     }
+    
+    func urlForLifeScore(city: String, crimeScore: Int, rentScore: Int, walkScore: Int, airScore: Int) -> URL {
+        baseDSURL.appendPathComponent("city_scr/\(city)")
+        var urlComponents = URLComponents(url: baseDSURL, resolvingAgainstBaseURL: true)!
+        urlComponents.queryItems = [URLQueryItem(name: "crime", value: String(crimeScore)),
+                                    URLQueryItem(name: "rent", value: String(rentScore)),
+                                    URLQueryItem(name: "walk", value: String(walkScore)),
+                                    URLQueryItem(name: "air", value: String(airScore))
+        ]
+        return urlComponents.url!
+    }
 }
