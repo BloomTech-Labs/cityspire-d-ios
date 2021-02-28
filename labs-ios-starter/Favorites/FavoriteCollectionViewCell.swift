@@ -69,7 +69,7 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
     
     let locationRating: UILabel = {
         let label = UILabel()
-        label.text = "B+"
+        label.text = "4"
         label.font = UIFont.boldSystemFont(ofSize: 40)
         label.textColor = .white
         return label
@@ -182,9 +182,9 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
         locationRating.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
+            locationRating.centerYAnchor.constraint(equalTo: self.testView.centerYAnchor),
+            locationRating.leadingAnchor.constraint(equalTo: self.testView.trailingAnchor, constant: -50),
             locationRating.centerXAnchor.constraint(equalTo: self.testView.centerXAnchor),
-            locationRating.centerYAnchor.constraint(equalTo: self.testView.centerYAnchor)
-
         ])
     }
 }
