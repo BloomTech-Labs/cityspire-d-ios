@@ -187,37 +187,37 @@ extension SearchViewController: MKMapViewDelegate {
         let group = DispatchGroup()
         
         group.enter()
-        cityNetworkClient.fetch(from: cityNetworkClient.urlFor(city: city.cityName, score: .population)) { (populationNetwork: Population?, error: Error?) in
+        cityNetworkClient.fetch(from: cityNetworkClient.urlFor(city: city.cityCode, score: .population)) { (populationNetwork: Population?, error: Error?) in
             population = populationNetwork
             self.selectedCity?.population = population
             group.leave()
         }
         group.enter()
-        cityNetworkClient.fetch(from: cityNetworkClient.urlFor(city: city.cityName, score: .life)) { (lifeScoreNetwork: LifeScore?, error: Error?) in
+        cityNetworkClient.fetch(from: cityNetworkClient.urlFor(city: city.cityCode, score: .life)) { (lifeScoreNetwork: LifeScore?, error: Error?) in
             lifeScore = lifeScoreNetwork
             self.selectedCity?.lifeScore = lifeScore
             group.leave()
         }
         group.enter()
-        cityNetworkClient.fetch(from: cityNetworkClient.urlFor(city: city.cityName, score: .air)) { (airNetwork: AirQuality?, error: Error?) in
+        cityNetworkClient.fetch(from: cityNetworkClient.urlFor(city: city.cityCode, score: .air)) { (airNetwork: AirQuality?, error: Error?) in
             airQuality = airNetwork
             self.selectedCity?.airQuality = airQuality
             group.leave()
         }
         group.enter()
-        cityNetworkClient.fetch(from: cityNetworkClient.urlFor(city: city.cityName, score: .crime)) { (crimeNetwork: CrimeScore?, error: Error?) in
+        cityNetworkClient.fetch(from: cityNetworkClient.urlFor(city: city.cityCode, score: .crime)) { (crimeNetwork: CrimeScore?, error: Error?) in
             crimeScore = crimeNetwork
             self.selectedCity?.crimeScore = crimeScore
             group.leave()
         }
         group.enter()
-        cityNetworkClient.fetch(from: cityNetworkClient.urlFor(city: city.cityName, score: .walk)) { (walkNetwork: WalkScore?, error: Error?) in
+        cityNetworkClient.fetch(from: cityNetworkClient.urlFor(city: city.cityCode, score: .walk)) { (walkNetwork: WalkScore?, error: Error?) in
             walkScore = walkNetwork
             self.selectedCity?.walkScore = walkScore
             group.leave()
         }
         group.enter()
-        cityNetworkClient.fetch(from: cityNetworkClient.urlFor(city: city.cityName, score: .rent)) { (rentNetwork: Rent?, error: Error?) in
+        cityNetworkClient.fetch(from: cityNetworkClient.urlFor(city: city.cityCode, score: .rent)) { (rentNetwork: Rent?, error: Error?) in
             rent = rentNetwork
             self.selectedCity?.rentAverage = rent
             group.leave()
@@ -227,11 +227,32 @@ extension SearchViewController: MKMapViewDelegate {
             print(self.selectedCity)
             self.detailVC.cityNormal = self.selectedCity
             self.detailVC.updateViews()
+            self.updateLifeScore()
         }
         
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) {
 //            self.detailVC.cityNormal = self.selectedCity
 //            self.detailVC.updateViews()
 //        }
+    }
+    
+    func updateLifeScore() {
+        guard let city = self.selectedCity,
+              let crime = city.crimeScore?.score,
+              let rent = city.rentAverage?.score,
+              let walk = city.rentAverage?.score,
+              let air = city.airQuality?.score
+              else { return }
+        let url = self.cityNetworkClient.urlForLifeScore(city: city.cityCode, crimeScore: crime, rentScore: rent, walkScore: walk, airScore: air)
+        
+        self.cityNetworkClient.fetch(from: url) { (lifeScore: LifeScore?, error: Error?) in
+            self.detailVC.cityNormal?.lifeScore = lifeScore
+            self.detailVC.updateLivability()
+        }
+    }
+    
+    
+    @IBAction func unwindToSearchViewController() {
+        
     }
 }

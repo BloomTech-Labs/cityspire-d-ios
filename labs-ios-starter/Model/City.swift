@@ -62,7 +62,7 @@ struct AirQuality : Codable {
 
 struct LifeScore : Codable {
     let msg: String
-    let score: Int
+    let score: Double
 }
 
 struct Population: Codable {

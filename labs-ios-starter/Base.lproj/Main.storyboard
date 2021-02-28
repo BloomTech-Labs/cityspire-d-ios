@@ -510,6 +510,9 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d77-Y8-UVh">
                                 <rect key="frame" x="329" y="16" width="30" height="30"/>
+                                <connections>
+                                    <action selector="didTapClose:" destination="d9d-1f-IRx" eventType="touchUpInside" id="5AV-r9-mAf"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mU0-gv-DbN">
                                 <rect key="frame" x="24" y="52.5" width="125.5" height="231.5"/>
@@ -596,10 +599,18 @@
                                     <constraint firstAttribute="width" constant="150" id="pXY-Gj-wjy"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4dk-aY-1uJ">
+                                <rect key="frame" x="281" y="0.0" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveAsFavorite:" destination="d9d-1f-IRx" eventType="touchUpInside" id="hLG-8O-sGi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NSY-XW-XGE"/>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="4dk-aY-1uJ" firstAttribute="top" secondItem="NSY-XW-XGE" secondAttribute="top" id="0dW-oh-MRZ"/>
                             <constraint firstItem="mU0-gv-DbN" firstAttribute="top" secondItem="8x2-BW-hi1" secondAttribute="bottom" constant="16" id="4Gs-jK-EoD"/>
                             <constraint firstItem="d77-Y8-UVh" firstAttribute="top" secondItem="NSY-XW-XGE" secondAttribute="top" constant="16" id="9YA-qX-3So"/>
                             <constraint firstItem="mU0-gv-DbN" firstAttribute="leading" secondItem="NSY-XW-XGE" secondAttribute="leading" constant="24" id="CCr-dA-8Wu"/>
@@ -608,6 +619,7 @@
                             <constraint firstItem="NSY-XW-XGE" firstAttribute="bottom" secondItem="mU0-gv-DbN" secondAttribute="bottom" constant="16" id="Rg5-07-HyH"/>
                             <constraint firstItem="NSY-XW-XGE" firstAttribute="bottom" secondItem="PNK-Hd-6VU" secondAttribute="bottom" constant="16" id="VKZ-Sl-78K"/>
                             <constraint firstItem="8x2-BW-hi1" firstAttribute="leading" secondItem="NSY-XW-XGE" secondAttribute="leading" constant="16" id="auf-7i-G2I"/>
+                            <constraint firstItem="d77-Y8-UVh" firstAttribute="leading" secondItem="4dk-aY-1uJ" secondAttribute="trailing" constant="14" id="dZb-sy-kSs"/>
                             <constraint firstItem="d77-Y8-UVh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8x2-BW-hi1" secondAttribute="trailing" constant="16" id="l6O-LD-oOp"/>
                             <constraint firstItem="NSY-XW-XGE" firstAttribute="trailing" secondItem="d77-Y8-UVh" secondAttribute="trailing" constant="16" id="qfS-5y-UdM"/>
                             <constraint firstItem="8x2-BW-hi1" firstAttribute="top" secondItem="NSY-XW-XGE" secondAttribute="top" constant="16" id="rYb-qR-r2r"/>
@@ -712,7 +724,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="OH0-zN-0GO"/>
+        <segue reference="f4m-uy-KBa"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Male" width="200" height="248"/>
