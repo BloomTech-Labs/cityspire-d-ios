@@ -19,12 +19,14 @@
 
 <!-- 🚫 more info on using badges [here](https://github.com/badges/shields) -->
 
-### Running
+## Running
 
 - Fork and clone the repo
 - Open `labs-ios-starter.xcodeproj` in Xcode 12.4+
 
-### Key Features
+## Key Features
+
+🚫Edit these
 
 - feature one
 - feature two
@@ -32,7 +34,7 @@
 - feature four
 - feature five
 
-### Remote APIs used
+## Remote APIs used
 
 🚫Edit these and add details:
 
@@ -40,13 +42,15 @@
 - Web API
 - DS API
 
-# Contributing
+## Contributing
 
 When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change.
 
+🚫Create `CODE_OF_CONDUCT.md`
+
 Please note we have a [code of conduct](./CODE_OF_CONDUCT.md). Please follow it in all your interactions with the project.
 
-## Issue/Bug Request
+### Issue/Bug Request
 
 **If you are having an issue with the existing project code, please submit a bug report under the following guidelines:**
 
