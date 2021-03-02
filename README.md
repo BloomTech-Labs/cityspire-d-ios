@@ -39,12 +39,10 @@
 🚫Edit these and add details:
 
 - Okta Authentication API
-- Web API
-- DS API
-
-## Development Description
-
-See [`labs-pt15-about.md`](./labs-pt15-about.md)
+  - Built in fuctionality written by Spencer Curtis a former instructor here at Lambda. Test accounts to use are located at [Okta Iformation](https://docs.labs.lambdaschool.com/guides/okta/okta-basics). 
+  - Comments for functionality and usage are provided.
+- Data Science API
+  - Infomation on Data Science API can be found here. [Data Science information API](http://cityspire-d-ds-01.eba-5qfhebrw.us-east-1.elasticbeanstalk.com/#/)
 
 ## Known bugs, issues, incomplete features
 
