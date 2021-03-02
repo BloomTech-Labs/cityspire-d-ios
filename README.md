@@ -1,4 +1,4 @@
-# cityspire-d-ios
+# CitySpire iOS
 
 <!-- TestFlight / App Store link will go here -->
 
