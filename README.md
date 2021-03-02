@@ -42,6 +42,10 @@
 - Web API
 - DS API
 
+## Development Description
+
+See [`labs-pt15-about.md`](./labs-pt15-about.md)
+
 ## Known bugs, issues, incomplete features
 
 See [`KnownDefects.md`](./KnownDefects.md)
