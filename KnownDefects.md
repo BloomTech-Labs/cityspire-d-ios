@@ -20,3 +20,5 @@ Fill out a `KnownDefects.md` file with known bugs, incomplete features, and issu
   * The cities currently show as generic pins on the map. We want to show an icon and more information.
 * [Improve the look of temporary notifications](https://trello.com/c/JCjHmgMA)
   * The notifications for search on the map view are functional but ugly. Need to make pretty.
+
+* [Sort favorite locations by different categories (crime score, air score, etc.)] (https://trello.com/c/I5O0xexo)
