@@ -44,7 +44,7 @@
 
 ## Known bugs, issues, incomplete features
 
-See `KnownDefects.md`
+See [`KnownDefects.md`](./KnownDefects.md)
 
 ## Contributing
 
