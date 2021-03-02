@@ -21,4 +21,4 @@ Fill out a `KnownDefects.md` file with known bugs, incomplete features, and issu
 * [Improve the look of temporary notifications](https://trello.com/c/JCjHmgMA)
   * The notifications for search on the map view are functional but ugly. Need to make pretty.
 
-* [Sort favorite locations by different categories (crime score, air score, etc.)] (https://trello.com/c/I5O0xexo)
+* [Sort favorite locations by different categories (crime score, air score, etc.)](https://trello.com/c/I5O0xexo)
