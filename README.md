@@ -39,10 +39,11 @@
 🚫Edit these and add details:
 
 - Okta Authentication API
-  - Built in fuctionality written by Spencer Curtis a former instructor here at Lambda. Test accounts to use are located at [Okta Iformation](https://docs.labs.lambdaschool.com/guides/okta/okta-basics). 
+  - Built in fuctionality written by Spencer Curtis a former instructor here at Lambda. Test accounts to use are located at [Okta Information](https://docs.labs.lambdaschool.com/guides/okta/okta-basics). 
   - Comments for functionality and usage are provided.
 - Data Science API
   - Infomation on Data Science API can be found here. [Data Science information API](http://cityspire-d-ds-01.eba-5qfhebrw.us-east-1.elasticbeanstalk.com/#/)
+  - This api provides various endpoints such as /crime_scr /rent_rate for individual city information. As well as returns an array of supported cities.
 
 ## Known bugs, issues, incomplete features
 
