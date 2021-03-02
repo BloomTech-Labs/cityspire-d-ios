@@ -46,8 +46,6 @@
 
 When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change.
 
-🚫Create `CODE_OF_CONDUCT.md`
-
 Please note we have a [code of conduct](./CODE_OF_CONDUCT.md). Please follow it in all your interactions with the project.
 
 ### Issue/Bug Request
