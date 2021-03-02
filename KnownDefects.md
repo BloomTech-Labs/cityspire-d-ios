@@ -5,12 +5,14 @@ Fill out a `KnownDefects.md` file with known bugs, incomplete features, and issu
 ## Issues
 
 * [App crashes when United States is searched](https://github.com/Lambda-School-Labs/cityspire-d-ios/issues/13)
+* Data Science API only works ocasionally, the /cities api call usually works. But for specific information /crime_scr/Boston will sometimes return an error.
 
 ## Incomplete
 
 * Profile screen
   * Needs to read profile from server
   * Needs to be able to save profile to server
+
 
 ## Not completed
 
