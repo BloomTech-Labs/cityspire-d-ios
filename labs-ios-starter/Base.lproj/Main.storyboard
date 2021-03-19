@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2021-02-24 at 6.39.07 PM.png" translatesAutoresizingMaskIntoConstraints="NO" id="A45-XG-L1e">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CitySpire" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5z-CZ-hMM">
                                 <rect key="frame" x="67" y="64" width="241" height="52"/>
@@ -49,9 +49,9 @@
                         <constraints>
                             <constraint firstItem="CQk-Xf-had" firstAttribute="leading" secondItem="R8l-LV-vJe" secondAttribute="leading" constant="88" id="3a0-dN-y56"/>
                             <constraint firstItem="O5z-CZ-hMM" firstAttribute="top" secondItem="R8l-LV-vJe" secondAttribute="top" constant="20" id="6ic-oG-aOf"/>
-                            <constraint firstItem="A45-XG-L1e" firstAttribute="bottom" secondItem="R8l-LV-vJe" secondAttribute="bottom" id="Ii8-we-hy8"/>
+                            <constraint firstItem="A45-XG-L1e" firstAttribute="bottom" secondItem="INU-fS-Snd" secondAttribute="bottom" id="Ii8-we-hy8"/>
                             <constraint firstItem="R8l-LV-vJe" firstAttribute="bottom" secondItem="CQk-Xf-had" secondAttribute="bottom" constant="34" id="RaL-vF-2s2"/>
-                            <constraint firstItem="A45-XG-L1e" firstAttribute="top" secondItem="R8l-LV-vJe" secondAttribute="top" id="SCn-Nc-g1K"/>
+                            <constraint firstItem="A45-XG-L1e" firstAttribute="top" secondItem="INU-fS-Snd" secondAttribute="top" id="SCn-Nc-g1K"/>
                             <constraint firstItem="O5z-CZ-hMM" firstAttribute="leading" secondItem="R8l-LV-vJe" secondAttribute="leading" constant="67" id="fGn-qd-hXJ"/>
                             <constraint firstItem="A45-XG-L1e" firstAttribute="leading" secondItem="R8l-LV-vJe" secondAttribute="leading" id="mf2-mC-UWb"/>
                             <constraint firstItem="A45-XG-L1e" firstAttribute="trailing" secondItem="R8l-LV-vJe" secondAttribute="trailing" id="nZC-GG-MZU"/>
