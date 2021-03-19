@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18091"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -552,8 +553,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="San Francisco" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8x2-BW-hi1">
-                                <rect key="frame" x="16" y="59.999999999999993" width="170.66666666666666" height="20.666666666666664"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Colorado Springs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8x2-BW-hi1">
+                                <rect key="frame" x="60.000000000000014" y="59.999999999999993" width="210.33333333333337" height="20.666666666666664"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20.5" id="H0V-Uv-jKe"/>
                                 </constraints>
@@ -568,7 +569,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mU0-gv-DbN">
-                                <rect key="frame" x="23.999999999999993" y="96.666666666666671" width="125.33333333333331" height="187.33333333333331"/>
+                                <rect key="frame" x="70" y="96.666666666666671" width="125.33333333333331" height="187.33333333333331"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Population:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7U-Oc-eLb">
                                         <rect key="frame" x="0.0" y="0.0" width="98" height="24"/>
@@ -609,7 +610,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PNK-Hd-6VU">
-                                <rect key="frame" x="172.66666666666666" y="96.666666666666671" width="149.99999999999997" height="187.33333333333331"/>
+                                <rect key="frame" x="252.66666666666663" y="96.666666666666671" width="70" height="187.33333333333331"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dz3-tx-lQK">
                                         <rect key="frame" x="0.0" y="0.0" width="9" height="24"/>
@@ -649,12 +650,18 @@
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="pXY-Gj-wjy"/>
+                                    <constraint firstAttribute="width" constant="70" id="pXY-Gj-wjy"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4dk-aY-1uJ">
-                                <rect key="frame" x="281" y="44" width="34" height="30"/>
-                                <state key="normal" title="Save"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4dk-aY-1uJ">
+                                <rect key="frame" x="0.0" y="54" width="60" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="K79-Fj-eCg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="heart" catalog="system" symbolScale="large"/>
+                                </state>
                                 <connections>
                                     <action selector="saveAsFavorite:" destination="d9d-1f-IRx" eventType="touchUpInside" id="hLG-8O-sGi"/>
                                 </connections>
@@ -663,19 +670,20 @@
                         <viewLayoutGuide key="safeArea" id="NSY-XW-XGE"/>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="4dk-aY-1uJ" firstAttribute="top" secondItem="NSY-XW-XGE" secondAttribute="top" id="0dW-oh-MRZ"/>
+                            <constraint firstItem="4dk-aY-1uJ" firstAttribute="top" secondItem="NSY-XW-XGE" secondAttribute="top" constant="10" id="0dW-oh-MRZ"/>
                             <constraint firstItem="mU0-gv-DbN" firstAttribute="top" secondItem="8x2-BW-hi1" secondAttribute="bottom" constant="16" id="4Gs-jK-EoD"/>
                             <constraint firstItem="d77-Y8-UVh" firstAttribute="top" secondItem="NSY-XW-XGE" secondAttribute="top" constant="16" id="9YA-qX-3So"/>
-                            <constraint firstItem="mU0-gv-DbN" firstAttribute="leading" secondItem="NSY-XW-XGE" secondAttribute="leading" constant="24" id="CCr-dA-8Wu"/>
+                            <constraint firstItem="mU0-gv-DbN" firstAttribute="leading" secondItem="NSY-XW-XGE" secondAttribute="leading" constant="70" id="CCr-dA-8Wu"/>
                             <constraint firstItem="NSY-XW-XGE" firstAttribute="trailing" secondItem="PNK-Hd-6VU" secondAttribute="trailing" constant="52.5" id="ISR-EH-NR0"/>
                             <constraint firstItem="PNK-Hd-6VU" firstAttribute="top" secondItem="8x2-BW-hi1" secondAttribute="bottom" constant="16" id="J57-Ts-N4z"/>
                             <constraint firstItem="NSY-XW-XGE" firstAttribute="bottom" secondItem="mU0-gv-DbN" secondAttribute="bottom" constant="16" id="Rg5-07-HyH"/>
                             <constraint firstItem="NSY-XW-XGE" firstAttribute="bottom" secondItem="PNK-Hd-6VU" secondAttribute="bottom" constant="16" id="VKZ-Sl-78K"/>
-                            <constraint firstItem="8x2-BW-hi1" firstAttribute="leading" secondItem="NSY-XW-XGE" secondAttribute="leading" constant="16" id="auf-7i-G2I"/>
-                            <constraint firstItem="d77-Y8-UVh" firstAttribute="leading" secondItem="4dk-aY-1uJ" secondAttribute="trailing" constant="14" id="dZb-sy-kSs"/>
+                            <constraint firstItem="8x2-BW-hi1" firstAttribute="leading" secondItem="NSY-XW-XGE" secondAttribute="leading" constant="60" id="auf-7i-G2I"/>
                             <constraint firstItem="d77-Y8-UVh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8x2-BW-hi1" secondAttribute="trailing" constant="16" id="l6O-LD-oOp"/>
+                            <constraint firstItem="8x2-BW-hi1" firstAttribute="leading" secondItem="4dk-aY-1uJ" secondAttribute="trailing" id="nK5-nt-pug"/>
                             <constraint firstItem="NSY-XW-XGE" firstAttribute="trailing" secondItem="d77-Y8-UVh" secondAttribute="trailing" constant="16" id="qfS-5y-UdM"/>
                             <constraint firstItem="8x2-BW-hi1" firstAttribute="top" secondItem="NSY-XW-XGE" secondAttribute="top" constant="16" id="rYb-qR-r2r"/>
+                            <constraint firstItem="4dk-aY-1uJ" firstAttribute="leading" secondItem="NSY-XW-XGE" secondAttribute="leading" id="y4p-5u-ek5"/>
                         </constraints>
                     </view>
                     <value key="contentSizeForViewInPopover" type="size" width="375" height="300"/>
@@ -782,6 +790,7 @@
     <resources>
         <image name="Male" width="200" height="248"/>
         <image name="Screen Shot 2021-02-24 at 6.39.07 PM.png" width="413" height="620"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
