@@ -42,6 +42,7 @@
 		6377078425E5EAFD00E529ED /* CityLocs.json in Resources */ = {isa = PBXBuildFile; fileRef = 6377078325E5EAFD00E529ED /* CityLocs.json */; };
 		638CA13225C2674E00B996B9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638CA13125C2674E00B996B9 /* SearchViewController.swift */; };
 		63BF5D7E25D23F550096D5D4 /* ToastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF5D7D25D23F550096D5D4 /* ToastViewController.swift */; };
+		63EFCCBA26043FE100A07994 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 63EFCCB926043FE100A07994 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		6377078325E5EAFD00E529ED /* CityLocs.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CityLocs.json; sourceTree = "<group>"; };
 		638CA13125C2674E00B996B9 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		63BF5D7D25D23F550096D5D4 /* ToastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastViewController.swift; sourceTree = "<group>"; };
+		63EFCCB926043FE100A07994 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		466C4267249A8748007D033E = {
 			isa = PBXGroup;
 			children = (
+				63EFCCB926043FE100A07994 /* README.md */,
 				466C4272249A8748007D033E /* labs-ios-starter */,
 				466C4271249A8748007D033E /* Products */,
 			);
@@ -303,6 +306,7 @@
 				466C4280249A8749007D033E /* LaunchScreen.storyboard in Resources */,
 				466C427D249A8749007D033E /* Assets.xcassets in Resources */,
 				6377078425E5EAFD00E529ED /* CityLocs.json in Resources */,
+				63EFCCBA26043FE100A07994 /* README.md in Resources */,
 				17CE1E9B25EF43AB00423CF3 /* Screen Shot 2021-02-24 at 6.39.07 PM.png in Resources */,
 				46BEB4F124C98F0D00FE0CD1 /* Profiles.storyboard in Resources */,
 				466C427B249A8748007D033E /* Main.storyboard in Resources */,
