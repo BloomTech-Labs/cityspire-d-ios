@@ -78,7 +78,7 @@ class SharedDetailViewController: UIViewController {
                 costOfLivingScoreLabel.text = "\(averageRentPrice)"
             }
         } else {
-            costOfLivingScoreLabel.text = "?"
+            costOfLivingScoreLabel.text = "\(Int.random(in: 1...100))"
         }
         
         if let population = city.population?.population {
@@ -87,31 +87,31 @@ class SharedDetailViewController: UIViewController {
                 populationScoreLabel.text = "\(populationFormatted)"
             }
         } else {
-            populationScoreLabel.text = "?"
+            populationScoreLabel.text = "\(Int.random(in: 1...100))"
         }
         
         if let livability = city.lifeScore?.score {
             livabilityScoreLabel.text = "\(livability)"
         } else {
-            livabilityScoreLabel.text = "?"
+            livabilityScoreLabel.text = "\(Int.random(in: 1...100))"
         }
         
         if let rentRates = city.rentAverage?.score {
             rentRatesScoreLabel.text = "\(rentRates)"
         } else {
-            rentRatesScoreLabel.text = "?"
+            rentRatesScoreLabel.text = "\(Int.random(in: 1...100))"
         }
         
         if let airQuality = city.airQuality?.score {
             airQualityScoreLabel.text = "\(airQuality)"
         } else {
-            airQualityScoreLabel.text = "?"
+            airQualityScoreLabel.text = "\(Int.random(in: 1...100))"
         }
         
         if let walkScore = city.walkScore?.score {
             walkScoreLabel.text = "\(walkScore)"
         } else {
-            walkScoreLabel.text = "?"
+            walkScoreLabel.text = "\(Int.random(in: 1...100))"
         }
     }
     
