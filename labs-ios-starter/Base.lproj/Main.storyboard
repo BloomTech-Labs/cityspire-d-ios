@@ -21,6 +21,17 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2021-02-24 at 6.39.07 PM.png" translatesAutoresizingMaskIntoConstraints="NO" id="A45-XG-L1e">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rew-OF-uNQ">
+                                <rect key="frame" x="0.0" y="630" width="375" height="182"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="uh9-kU-ex9">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="182"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="182" id="CpK-bJ-3dt"/>
+                                </constraints>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CitySpire" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5z-CZ-hMM">
                                 <rect key="frame" x="71.333333333333329" y="100" width="232.33333333333337" height="80"/>
                                 <constraints>
@@ -33,13 +44,13 @@
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQk-Xf-had">
-                                <rect key="frame" x="88" y="691" width="198" height="53"/>
+                                <rect key="frame" x="61.666666666666657" y="691" width="251.99999999999997" height="53"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="QwL-lu-Rma"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="25"/>
-                                <state key="normal" title="Okta Sign-In">
-                                    <color key="titleColor" red="0.80297672750000004" green="0.63628447060000004" blue="0.54955589770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="25"/>
+                                <state key="normal" title="    Sign in with Okta    ">
+                                    <color key="titleColor" systemColor="systemGray5Color"/>
                                 </state>
                                 <connections>
                                     <action selector="signIn:" destination="4a7-cC-Xlp" eventType="touchUpInside" id="qez-xn-3z4"/>
@@ -49,15 +60,17 @@
                         <viewLayoutGuide key="safeArea" id="R8l-LV-vJe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="CQk-Xf-had" firstAttribute="leading" secondItem="R8l-LV-vJe" secondAttribute="leading" constant="88" id="3a0-dN-y56"/>
                             <constraint firstItem="O5z-CZ-hMM" firstAttribute="top" secondItem="R8l-LV-vJe" secondAttribute="top" constant="56" id="6ic-oG-aOf"/>
                             <constraint firstItem="A45-XG-L1e" firstAttribute="bottom" secondItem="INU-fS-Snd" secondAttribute="bottom" id="Ii8-we-hy8"/>
                             <constraint firstItem="O5z-CZ-hMM" firstAttribute="centerX" secondItem="INU-fS-Snd" secondAttribute="centerX" id="LMD-sZ-23i"/>
                             <constraint firstItem="R8l-LV-vJe" firstAttribute="bottom" secondItem="CQk-Xf-had" secondAttribute="bottom" constant="34" id="RaL-vF-2s2"/>
                             <constraint firstItem="A45-XG-L1e" firstAttribute="top" secondItem="INU-fS-Snd" secondAttribute="top" id="SCn-Nc-g1K"/>
+                            <constraint firstItem="Rew-OF-uNQ" firstAttribute="leading" secondItem="R8l-LV-vJe" secondAttribute="leading" id="cCA-J0-L6I"/>
+                            <constraint firstItem="CQk-Xf-had" firstAttribute="centerX" secondItem="INU-fS-Snd" secondAttribute="centerX" id="dR8-hs-ejb"/>
+                            <constraint firstAttribute="bottom" secondItem="Rew-OF-uNQ" secondAttribute="bottom" id="fXZ-95-1mV"/>
+                            <constraint firstItem="Rew-OF-uNQ" firstAttribute="trailing" secondItem="R8l-LV-vJe" secondAttribute="trailing" id="lMY-4t-o1X"/>
                             <constraint firstItem="A45-XG-L1e" firstAttribute="leading" secondItem="R8l-LV-vJe" secondAttribute="leading" id="mf2-mC-UWb"/>
                             <constraint firstItem="A45-XG-L1e" firstAttribute="trailing" secondItem="R8l-LV-vJe" secondAttribute="trailing" id="nZC-GG-MZU"/>
-                            <constraint firstItem="R8l-LV-vJe" firstAttribute="trailing" secondItem="CQk-Xf-had" secondAttribute="trailing" constant="89" id="s0O-Uc-bSU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="ProfileViewer" id="fm5-ES-PwH"/>
@@ -71,7 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcT-Mn-ZnW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1544.8" y="83.208395802098963"/>
+            <point key="canvasLocation" x="1544.8" y="82.758620689655174"/>
         </scene>
         <!--Profiles-->
         <scene sceneID="3Na-TO-5aB">
@@ -772,6 +785,9 @@
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
