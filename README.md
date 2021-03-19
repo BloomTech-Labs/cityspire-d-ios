@@ -1,6 +1,6 @@
 # CitySpire iOS
 
-<img width="280" alt="App launch screen" src="https://user-images.githubusercontent.com/438307/111725924-2d4b2900-8825-11eb-894d-5d655d540440.png"><img width="280" alt="App search screen" src="https://user-images.githubusercontent.com/438307/111728433-1b1fb980-882a-11eb-9e58-a5b069006b68.png"><img width="280" alt="App detail screen" src="https://user-images.githubusercontent.com/438307/111730232-2ecd1f00-882e-11eb-83b8-5f7ce663576d.png">
+<img width="300" alt="App launch screen" src="https://user-images.githubusercontent.com/438307/111725924-2d4b2900-8825-11eb-894d-5d655d540440.png"><img width="300" alt="App search screen" src="https://user-images.githubusercontent.com/438307/111728433-1b1fb980-882a-11eb-9e58-a5b069006b68.png"><img width="300" alt="App detail screen" src="https://user-images.githubusercontent.com/438307/111730232-2ecd1f00-882e-11eb-83b8-5f7ce663576d.png">
 
 
 
