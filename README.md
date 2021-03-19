@@ -30,8 +30,6 @@
 
 ## Key Features
 
-🚫Edit these
-
 - feature one
 - feature two
 - feature three
@@ -39,8 +37,6 @@
 - feature five
 
 ## Remote APIs used
-
-🚫Edit these and add details:
 
 - Okta Authentication API
   - Built in fuctionality written by Spencer Curtis a former instructor here at Lambda. Test accounts to use are located at [Okta Information](https://docs.labs.lambdaschool.com/guides/okta/okta-basics). 
