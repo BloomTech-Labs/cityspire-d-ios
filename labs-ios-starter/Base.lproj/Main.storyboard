@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18121" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4a7-cC-Xlp">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18121" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y9z-7g-ibd">
+    <device id="retina5_9" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18091"/>
@@ -360,13 +360,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zSi-3b-abU">
-                                <rect key="frame" x="0.0" y="95" width="375" height="634"/>
+                                <rect key="frame" x="0.0" y="151" width="375" height="578"/>
                                 <connections>
                                     <outlet property="delegate" destination="9QV-Nz-J2q" id="SZl-qI-ekc"/>
                                 </connections>
                             </mapView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sgs-b1-7Ml" userLabel="Message">
-                                <rect key="frame" x="16" y="111" width="343" height="80"/>
+                                <rect key="frame" x="16" y="167" width="343" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="Zlb-UO-1wd"/>
                                 </constraints>
@@ -374,15 +374,25 @@
                                     <segue destination="8Bk-bf-v3m" kind="embed" id="zIt-m5-t5o"/>
                                 </connections>
                             </containerView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cs3-BG-RJg" userLabel="White Block">
-                                <rect key="frame" x="0.0" y="-56" width="375" height="100"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cs3-BG-RJg" userLabel="Header">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CitySpire" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZp-t3-9HC">
+                                        <rect key="frame" x="112.00000000000001" y="44" width="151.33333333333337" height="48"/>
+                                        <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="32"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="9Ke-IX-ywt"/>
+                                    <constraint firstItem="pZp-t3-9HC" firstAttribute="centerX" secondItem="Cs3-BG-RJg" secondAttribute="centerX" id="BzW-Qc-u8q"/>
+                                    <constraint firstAttribute="bottom" secondItem="pZp-t3-9HC" secondAttribute="bottom" constant="8" id="rAi-IU-LEu"/>
                                 </constraints>
                             </view>
                             <searchBar contentMode="redraw" placeholder="Search a US city" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pfm-H9-J0k">
-                                <rect key="frame" x="0.0" y="44" width="375" height="51"/>
+                                <rect key="frame" x="0.0" y="100" width="375" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
                                     <string>Title</string>
@@ -393,7 +403,7 @@
                                 </connections>
                             </searchBar>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0bo-Vk-dPK" userLabel="Detail">
-                                <rect key="frame" x="0.0" y="419" width="375" height="310"/>
+                                <rect key="frame" x="0.0" y="475" width="375" height="254"/>
                                 <connections>
                                     <segue destination="d9d-1f-IRx" kind="embed" id="f4m-uy-KBa"/>
                                 </connections>
@@ -407,17 +417,18 @@
                             <constraint firstItem="zSi-3b-abU" firstAttribute="bottom" secondItem="u2M-5P-ONF" secondAttribute="bottom" id="FEK-m6-uPo"/>
                             <constraint firstItem="Pfm-H9-J0k" firstAttribute="leading" secondItem="u2M-5P-ONF" secondAttribute="leading" id="Lod-FI-F8R"/>
                             <constraint firstItem="Cs3-BG-RJg" firstAttribute="trailing" secondItem="u2M-5P-ONF" secondAttribute="trailing" id="M5h-PC-Syd"/>
-                            <constraint firstItem="Cs3-BG-RJg" firstAttribute="top" secondItem="u2M-5P-ONF" secondAttribute="top" constant="-100" id="STn-E0-guF"/>
+                            <constraint firstItem="Cs3-BG-RJg" firstAttribute="top" secondItem="Ewh-6n-F4n" secondAttribute="top" id="STn-E0-guF"/>
                             <constraint firstItem="Cs3-BG-RJg" firstAttribute="leading" secondItem="u2M-5P-ONF" secondAttribute="leading" id="Sj9-qN-nU2"/>
                             <constraint firstItem="zSi-3b-abU" firstAttribute="trailing" secondItem="u2M-5P-ONF" secondAttribute="trailing" id="WR5-6Q-Rd6"/>
                             <constraint firstItem="zSi-3b-abU" firstAttribute="leading" secondItem="u2M-5P-ONF" secondAttribute="leading" id="ZlQ-we-iKc"/>
                             <constraint firstItem="0bo-Vk-dPK" firstAttribute="top" secondItem="Pfm-H9-J0k" secondAttribute="bottom" constant="324" id="cS3-nI-fqg"/>
                             <constraint firstItem="Sgs-b1-7Ml" firstAttribute="top" secondItem="Pfm-H9-J0k" secondAttribute="bottom" constant="16" id="ehc-qV-uJR"/>
                             <constraint firstItem="0bo-Vk-dPK" firstAttribute="bottom" secondItem="u2M-5P-ONF" secondAttribute="bottom" id="gE6-uI-bAG"/>
-                            <constraint firstItem="Pfm-H9-J0k" firstAttribute="top" secondItem="u2M-5P-ONF" secondAttribute="top" id="hdp-Xk-5Y2"/>
+                            <constraint firstItem="Pfm-H9-J0k" firstAttribute="top" secondItem="Cs3-BG-RJg" secondAttribute="bottom" id="hdp-Xk-5Y2"/>
                             <constraint firstItem="0bo-Vk-dPK" firstAttribute="trailing" secondItem="u2M-5P-ONF" secondAttribute="trailing" id="jdy-Ud-ATZ"/>
                             <constraint firstItem="0bo-Vk-dPK" firstAttribute="leading" secondItem="u2M-5P-ONF" secondAttribute="leading" id="m8N-yH-q9O"/>
                             <constraint firstItem="zSi-3b-abU" firstAttribute="top" secondItem="Pfm-H9-J0k" secondAttribute="bottom" id="raj-eV-UPb"/>
+                            <constraint firstItem="pZp-t3-9HC" firstAttribute="top" secondItem="u2M-5P-ONF" secondAttribute="top" id="wcJ-id-UlJ"/>
                             <constraint firstItem="Pfm-H9-J0k" firstAttribute="trailing" secondItem="u2M-5P-ONF" secondAttribute="trailing" id="wj9-e3-5GO"/>
                         </constraints>
                     </view>
